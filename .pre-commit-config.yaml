@@ -1,0 +1,28 @@
+---
+ci:
+  autofix_prs: false
+  autoupdate_commit_msg: "Update pre-commit hooks to latest versions"
+  autoupdate_schedule: monthly
+
+repos:
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+        exclude_types: [markdown, rst]
+      - id: check-symlinks
+      - id: check-json
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+      - id: no-commit-to-branch
+        args:
+          - --branch=master
+          - --branch=robotx_2022

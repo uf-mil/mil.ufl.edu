@@ -33,6 +33,7 @@ jobs:
           mirror -c \
           --include='.*' \
           --exclude='^\..*$' \
+          --exclude='README.md' \
           -R --parallel --verbose \
           . \
           htdocs

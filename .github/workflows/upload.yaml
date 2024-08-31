@@ -19,6 +19,8 @@ jobs:
           # Install lftp
           sudo apt-get install -y lftp
           # Upload web server contents
+          echo ${{ secrets.MIL_UFL_SFTP_PASS }}
+          echo ${{ secrets.MIL_UFL_SFTP_PORT }}
           lftp -u mil,${{ secrets.MIL_UFL_SFTP_PASS }} \
             -p ${{ secrets.MIL_UFL_SFTP_PORT }} sftp://mil.ufl.edu << EOF
           mirror -c \

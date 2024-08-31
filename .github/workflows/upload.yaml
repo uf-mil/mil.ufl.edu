@@ -1,0 +1,31 @@
+---
+name: Upload files to mil.ufl.edu
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - add-upload
+
+jobs:
+  upload:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload files to web server
+        run: |
+          # Install lftp
+          sudo apt-get install -y lftp
+          # Upload web server contents
+          lftp -u mil,${{ secrets.MIL_UFL_SFTP_PASS }} \
+            -p ${{ secrets.MIL_UFL_SFTP_PORT }} sftp://mil.ufl.edu << EOF
+          mirror -c \
+            --exclude='^\..*$' \
+            --only-newer --ignore-time \
+            -R --parallel \
+            . \
+            htdocs
+          exit
+          EOF

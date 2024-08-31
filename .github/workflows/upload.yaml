@@ -15,22 +15,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
       - name: Upload files to web server
         run: |
-          # Install lftp
-          sudo apt-get install -y lftp
-          # Upload web server contents
-          lftp -c "open -u mil,${{ secrets.MIL_UFL_SFTP_PASS }} \
-                        -p ${{ secrets.MIL_UFL_SFTP_PORT }} \
-                        sftp://mil.ufl.edu; \
-                        ls"
-          lftp -c "open -u mil,${{ secrets.MIL_UFL_SFTP_PASS }} \
-                        -p ${{ secrets.MIL_UFL_SFTP_PORT }} \
-                        sftp://mil.ufl.edu; \
-                        mirror -c \
-                          --include='.*' \
-                          --exclude='^\..*$' \
-                          --only-newer --ignore-time \
-                          -R --parallel \
-                          . \
-                          htdocs"
+          lftp -u mil,${{ secrets.MIL_UFL_SFTP_PASS }} \
+            -p ${{ secrets.MIL_UFL_SFTP_PORT }} sftp://mil.ufl.edu << EOF
+          ls
+          exit
+          EOF
+          # lftp -c "open -u mil,${{ secrets.MIL_UFL_SFTP_PASS }}
+          # -p ${{ secrets.MIL_UFL_SFTP_PORT }}
+          # sftp://mil.ufl.edu;
+          # ls"
+          # lftp -c "open -u mil,${{ secrets.MIL_UFL_SFTP_PASS }}
+          # -p ${{ secrets.MIL_UFL_SFTP_PORT }}
+          # sftp://mil.ufl.edu;
+          # mirror -c
+          # --include='.*'
+          # --exclude='^\..*$'
+          # --only-newer --ignore-time
+          # -R --parallel
+          # .
+          # htdocs"

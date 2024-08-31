@@ -33,7 +33,6 @@ jobs:
           mirror -c \
           --include='.*' \
           --exclude='^\..*$' \
-          --only-newer \
           -R --parallel --verbose \
           . \
           htdocs

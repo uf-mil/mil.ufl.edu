@@ -16,13 +16,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install lftp
-        run: sudo apt-get install -y lftp
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+        run: sudo apt-get install -y lftp sshpass
 
       - name: Upload files to web server
         run: |
+          # We need to connect to the server for lftp to be happy, otherwise it
+          # hangs on "Connecting...". Connecting will add the host to
+          # known_hosts.
+          sshpass -p ${{ secrets.MIL_UFL_SFTP_PASS }} \
+            sftp -o StrictHostKeyChecking=no \
+            -P ${{ secrets.MIL_UFL_SFTP_PORT }} mil@mil.ufl.edu << EOF
+          exit
+          EOF
           lftp -u mil,${{ secrets.MIL_UFL_SFTP_PASS }} \
             -p ${{ secrets.MIL_UFL_SFTP_PORT }} sftp://mil.ufl.edu << EOF
           ls

@@ -10,13 +10,16 @@ on:
 jobs:
   upload:
     runs-on: self-hosted
-    timeout-minutes: 4
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install lftp
         run: sudo apt-get install -y lftp
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
 
       - name: Upload files to web server
         run: |

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
+import "./output.css";
 import Landing from "./pages/Landing";
 
 const router = createBrowserRouter(

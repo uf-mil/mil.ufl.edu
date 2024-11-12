@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-import logo from "../assets/mil.svg";
+import logo from "../assets/mil-logo-full.svg";
 
 const NavItem = ({ to, label, dropdown }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -30,8 +30,8 @@ const NavItem = ({ to, label, dropdown }) => {
     >
       <NavLink
         to={to}
-        className={`flex items-center text-blue-400 px-3 py-2 rounded-lg font-medium text-sm transition duration-300
-          hover:bg-blue-400 hover:text-white hover:outline-none hover:ring-2 hover:ring-gray-300
+        className={`flex items-center text-gatorblue-800 px-3 py-2 rounded-lg font-medium text-sm transition duration-300
+          hover:bg-gatorblue-800 hover:text-white hover:outline-none hover:ring-2 hover:ring-gray-300
         `}
       >
         {label}
@@ -63,9 +63,9 @@ const NavItem = ({ to, label, dropdown }) => {
 
 function Navbar() {
   return (
-    <nav className="w-full p-6 flex justify-between items-center bg-white bg-opacity-80">
+    <nav className="w-full p-3 flex justify-between items-center bg-white bg-opacity-80">
       <div>
-        <img src={logo} alt="MIL Logo" className="h-10" />
+        <img src={logo} alt="MIL Logo" className="h-12" />
       </div>
       <ul className="flex space-x-6">
         <NavItem to="/" label="Home" />

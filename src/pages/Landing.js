@@ -3,6 +3,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+
 import naviGatorImage from "../assets/navigator.jpg";
 import subjuGatorImage from "../assets/subjugator.jpg";
 import teamPhoto from "../assets/team_2024.jpg";
@@ -51,35 +57,53 @@ function Header() {
 
   return (
     <header
-      className="relative h-[667px] bg-cover bg-center"
+      className="relative h-[667px] bg-cover bg-center transition-opacity duration-700 ease-in-out"
       style={{
         backgroundImage: `url('${currentVehicle.image}')`,
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         backgroundBlendMode: "darken",
+        opacity: 1, // Add opacity to enable smooth fade
       }}
     >
+      {/* Navbar */}
       <div className="relative z-10">
         <Navbar />
       </div>
 
-      <div className="absolute bottom-10 left-10 bg-black bg-opacity-50 p-4 rounded-lg text-white">
-        <h2 className="text-3xl font-bold">{currentVehicle.name}</h2>
-        <p className="text-lg mt-1">{currentVehicle.description}</p>
+      {/* Text Area */}
+      <div className="absolute bottom-16 left-10 bg-white bg-opacity-60 p-3 rounded-md shadow-md backdrop-blur-sm text-gray-900 max-w-xs">
+        <h2 className="text-xl font-semibold">{currentVehicle.name}</h2>
+        <p className="text-sm mt-1">{currentVehicle.description}</p>
       </div>
 
-      <div className="absolute bottom-10 right-10 flex space-x-4">
+      {/* Chevron Buttons */}
+      <div className="absolute inset-0 flex items-center justify-between px-10">
         <button
           onClick={handlePrevious}
-          className="px-4 py-2 bg-gray-200 rounded-full text-black font-light hover:bg-gray-400 transition-all duration-300"
+          className="text-white bg-gray-800 bg-opacity-50 p-3 rounded-full hover:bg-opacity-80 transition duration-300 ease-in-out"
         >
-          Previous
+          <FontAwesomeIcon icon={faChevronLeft} size="lg" />
         </button>
         <button
           onClick={handleNext}
-          className="px-4 py-2 bg-gray-200 rounded-full text-black font-light hover:bg-gray-400 transition-all duration-300"
+          className="text-white bg-gray-800 bg-opacity-50 p-3 rounded-full hover:bg-opacity-80 transition duration-300 ease-in-out"
         >
-          Next
+          <FontAwesomeIcon icon={faChevronRight} size="lg" />
         </button>
+      </div>
+
+      {/* Indicator Circles */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        {vehicleData.map((_, index) => (
+          <span
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentIndex
+                ? "bg-white opacity-100"
+                : "bg-white opacity-50"
+            }`}
+          />
+        ))}
       </div>
     </header>
   );
@@ -88,7 +112,7 @@ function Header() {
 // Mission Component
 function Mission() {
   return (
-    <section className="py-8 bg-blue-200">
+    <section className="py-8 bg-gatorblue-200">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-12 font-light">Our Mission</h2>
         <p className="text-gray-600 px-10 mb-6">
@@ -114,7 +138,7 @@ function Mission() {
 // Projects Component
 function Projects() {
   return (
-    <section className="py-8 bg-blue-200">
+    <section className="py-8 bg-gatorblue-200">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">Our Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-10">
@@ -173,7 +197,7 @@ function Projects() {
 // Competitions Component
 function Competitions() {
   return (
-    <section className="py-8 bg-blue-200">
+    <section className="py-8 bg-gatorblue-200">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">
           Competitions & Achievements
@@ -192,7 +216,7 @@ function Competitions() {
 // UF Community Standing Component
 function Community() {
   return (
-    <section className="py-8 bg-blue-200">
+    <section className="py-8 bg-gatorblue-200">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">
           Our Place in the UF Community
@@ -211,7 +235,7 @@ function Community() {
 // Team Component
 function TeamSection() {
   return (
-    <section className="py-8 bg-blue-200">
+    <section className="py-8 bg-gatorblue-200">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">Meet the Team</h2>
         <p className="text-gray-600 px-10 mb-6">
@@ -234,7 +258,10 @@ function TeamSection() {
 
 const LandingPage = () => {
   return (
-    <div className="bg-blue-200" style={{ fontFamily: "Inter, sans-serif" }}>
+    <div
+      className="bg-gatorblue-200"
+      style={{ fontFamily: "Inter, sans-serif" }}
+    >
       <div className="relative">
         <Header />
       </div>

@@ -6,6 +6,7 @@ import {
   faYoutube,
   faInstagram,
   faTwitter,
+  faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
@@ -65,6 +66,14 @@ function Footer() {
           className="text-gray-400 hover:text-white"
         >
           <FontAwesomeIcon icon={faTwitter} size="2x" />
+        </a>
+        <a
+          href="https://discord.com/invite/Pw3NmhCF6U"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-white"
+        >
+          <FontAwesomeIcon icon={faDiscord} size="2x" />
         </a>
       </div>
 

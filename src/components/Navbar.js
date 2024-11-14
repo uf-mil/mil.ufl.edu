@@ -70,6 +70,14 @@ function Navbar() {
       <ul className="flex space-x-6">
         <NavItem to="/" label="Home" />
         <NavItem
+          to="/about"
+          label="About Us"
+          dropdown={[
+            { to: "/history", label: "History" },
+            { to: "/lab", label: "Lab Information" },
+          ]}
+        />
+        <NavItem
           to="/team"
           label="Team"
           dropdown={[
@@ -78,8 +86,16 @@ function Navbar() {
           ]}
         />
         <NavItem to="/vehicle" label="Vehicles" />
-        <NavItem to="/sponsors" label="Sponsors" />
-        <NavItem to="/donate" label="Donate" />
+        <NavItem to="/research" label="Research" />
+        <NavItem
+          to="/sponsors"
+          label="Sponsors"
+          dropdown={[
+            { to: "/donate", label: "Support Us" },
+            { to: "/sponsors/2024", label: "2024 Sponsors" },
+          ]}
+        />
+        <NavItem to="/blog" label="Blog" />
         <NavItem to="/apply" label="Apply" />
       </ul>
     </nav>

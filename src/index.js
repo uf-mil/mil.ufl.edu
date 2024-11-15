@@ -11,6 +11,7 @@ import { createRoot } from "react-dom/client";
 import "./output.css";
 import Landing from "./pages/Landing";
 import Sponsors from "./pages/Sponsors";
+import Apply from "./pages/Apply";
 
 import NavigateExternal from "./components/NavigateExternal";
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter(
     {
       path: "/sponsors",
       element: <Sponsors />,
+    },
+    {
+      path: "/apply",
+      element: <Apply />,
     },
     {
       path: "/discord",

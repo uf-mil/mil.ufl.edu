@@ -10,8 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import naviGatorImage from "../assets/navigator.jpg";
+import naviGatorImage2024 from "../assets/navigator_2024.jpg";
 import subjuGatorImage from "../assets/subjugator.jpg";
+import investigatorImage from "../assets/investigator.jpg";
 import teamPhoto from "../assets/team_2024.jpg";
+import softwareSolving from "../assets/software_solving.jpg";
 
 const vehicleData = [
   {
@@ -30,13 +33,13 @@ const vehicleData = [
     name: "Rover",
     description:
       "A terrestrial rover built to navigate challenging terrains for exploration.",
-    image: teamPhoto,
+    image: naviGatorImage,
   },
   {
     name: "Drone",
     description:
       "Aerial drone project with autonomous navigation and stability for aerial tasks.",
-    image: teamPhoto,
+    image: investigatorImage,
   },
 ];
 
@@ -144,7 +147,7 @@ function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-10">
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <img
-              src={teamPhoto}
+              src={naviGatorImage2024}
               alt="NaviGator AMS"
               className="rounded-lg mb-4"
             />
@@ -158,7 +161,7 @@ function Projects() {
           </div>
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <img
-              src={teamPhoto}
+              src={subjuGatorImage}
               alt="SubjuGator AUV"
               className="rounded-lg mb-4"
             />
@@ -171,7 +174,12 @@ function Projects() {
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-medium">Rover Project</h3>
+            <img
+              src={softwareSolving}
+              alt="SubjuGator AUV"
+              className="rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-medium">Mission Red Rover</h3>
             <p className="text-gray-600 mt-2">
               Our terrestrial rover project focuses on designing robotic rovers
               capable of navigating challenging terrains, enabling autonomous
@@ -180,7 +188,12 @@ function Projects() {
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-medium">Drone Project</h3>
+            <img
+              src={investigatorImage}
+              alt="SubjuGator AUV"
+              className="rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-medium">InvestiGator UAV</h3>
             <p className="text-gray-600 mt-2">
               Our aerial drone project combines stability, agility, and advanced
               navigation to perform aerial maneuvers autonomously. The drones

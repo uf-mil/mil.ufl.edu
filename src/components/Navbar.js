@@ -92,7 +92,7 @@ function Navbar() {
           label="Sponsors"
           dropdown={[
             { to: "/donate", label: "Support Us" },
-            { to: "/sponsors/2024", label: "2024 Sponsors" },
+            { to: "/sponsors", label: "2024 Sponsors" },
           ]}
         />
         <NavItem to="/blog" label="Blog" />

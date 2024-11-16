@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -64,9 +64,11 @@ const NavItem = ({ to, label, dropdown }) => {
 function Navbar() {
   return (
     <nav className="w-full p-3 flex justify-between items-center bg-white bg-opacity-80">
-      <div>
-        <img src={logo} alt="MIL Logo" className="h-12" />
-      </div>
+      <Link to="/">
+        <div>
+          <img src={logo} alt="MIL Logo" className="h-12" />
+        </div>
+      </Link>
       <ul className="flex space-x-6">
         <NavItem to="/" label="Home" />
         <NavItem
@@ -91,7 +93,8 @@ function Navbar() {
           to="/sponsors"
           label="Sponsors"
           dropdown={[
-            { to: "/donate", label: "Support Us" },
+            { to: "/donate", label: "Donate" },
+            { to: "/todo", label: "Become a Supporter" },
             { to: "/sponsors", label: "2024 Sponsors" },
           ]}
         />

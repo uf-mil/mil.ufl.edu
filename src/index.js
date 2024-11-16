@@ -12,6 +12,8 @@ import "./output.css";
 import Landing from "./pages/Landing";
 import Sponsors from "./pages/Sponsors";
 import Apply from "./pages/Apply";
+import Research from "./pages/Research";
+import Blog from "./pages/Blog";
 
 import NavigateExternal from "./components/NavigateExternal";
 
@@ -32,8 +34,22 @@ const router = createBrowserRouter(
       element: <Apply />,
     },
     {
+      path: "/research",
+      element: <Research />,
+    },
+    {
+      path: "/blog",
+      element: <Blog />,
+    },
+    {
       path: "/discord",
       element: <NavigateExternal to="https://discord.com/invite/Pw3NmhCF6U" />,
+    },
+    {
+      path: "/donate",
+      element: (
+        <NavigateExternal to="https://www.uff.ufl.edu/giving-opportunities/020149-machine-intelligence-lab/?appeal=GZAGTA7A1" />
+      ),
     },
   ],
   {},

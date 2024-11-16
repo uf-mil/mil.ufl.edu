@@ -11,6 +11,8 @@ import {
 
 import naviGatorImage from "../assets/navigator.jpg";
 import naviGatorImage2024 from "../assets/navigator_2024.jpg";
+import naviGatorLogo from "../assets/navigator_logo.png";
+import subjuGatorLogo from "../assets/subjugator_logo.png";
 import subjuGatorImage from "../assets/subjugator.jpg";
 import investigatorImage from "../assets/investigator.jpg";
 import teamPhoto from "../assets/team_2024.jpg";
@@ -151,7 +153,11 @@ function Projects() {
               alt="NaviGator AMS"
               className="rounded-lg mb-4"
             />
-            <h3 className="text-xl font-medium">NaviGator AMS</h3>
+            <img
+              src={naviGatorLogo}
+              alt="NaviGator AMS"
+              className="rounded-lg mb-4 px-6 mx-auto w-1/2 h-1/2"
+            />
             <p className="text-gray-600 mt-2">
               Our autonomous surface vehicle designed for maritime environments.
               NaviGator AMS has proven capabilities through extensive testing
@@ -165,7 +171,11 @@ function Projects() {
               alt="SubjuGator AUV"
               className="rounded-lg mb-4"
             />
-            <h3 className="text-xl font-medium">SubjuGator AUV</h3>
+            <img
+              src={subjuGatorLogo}
+              alt="SubjuGator AUV"
+              className="rounded-lg mb-4 px-6 mx-auto w-1/2"
+            />
             <p className="text-gray-600 mt-2">
               Our autonomous underwater vehicle (AUV) that can dive deep into
               underwater environments, performing complex tasks autonomously.

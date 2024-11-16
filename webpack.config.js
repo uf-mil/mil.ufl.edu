@@ -1,5 +1,6 @@
 const path = require("path");
 const HWP = require("html-webpack-plugin");
+const webpack = require("webpack");
 module.exports = {
   entry: path.join(__dirname, "/src/index.js"),
   output: {
@@ -23,6 +24,10 @@ module.exports = {
         loader: "babel-loader",
       },
       {
+        test: /\.md$/,
+        loader: "raw-loader",
+      },
+      {
         test: /\.css$/i,
         include: path.resolve(__dirname, "src"),
         use: ["style-loader", "css-loader"],
@@ -36,5 +41,16 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  plugins: [new HWP({ template: path.join(__dirname, "/src/index.html") })],
+  plugins: [
+    new HWP({ template: path.join(__dirname, "/src/index.html") }),
+    new webpack.ProvidePlugin({
+      Buffer: ["buffer", "Buffer"],
+    }),
+  ],
+  resolve: {
+    extensions: [".ts", ".js"],
+    fallback: {
+      buffer: require.resolve("buffer"),
+    },
+  },
 };

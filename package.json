@@ -1,7 +1,7 @@
 {
-  "name": "navigatoruf.org",
+  "name": "mil.ufl.edu",
   "version": "1.0.0",
-  "description": "Website for NaviGator AMS",
+  "description": "Website for Machine Intelligence Lab at the University of Florida",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
@@ -14,8 +14,12 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "buffer": "^6.0.3",
+    "gray-matter": "^4.0.3",
+    "raw-loader": "^4.0.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.7",

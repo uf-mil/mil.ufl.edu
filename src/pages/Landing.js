@@ -117,10 +117,10 @@ function Header() {
 // Mission Component
 function Mission() {
   return (
-    <section className="py-8 bg-gatorblue-200">
+    <section className="py-8">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-12 font-light">Our Mission</h2>
-        <p className="text-gray-600 px-10 mb-6">
+        <p className="text-white px-10 mb-6">
           The Machine Intelligence Laboratory (MIL) provides a synergistic
           environment dedicated to the study and development of intelligent,
           autonomous robots. The faculty and students associated with the
@@ -143,9 +143,11 @@ function Mission() {
 // Projects Component
 function Projects() {
   return (
-    <section className="py-8 bg-gatorblue-200">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold font-light mb-6">Our Projects</h2>
+    <section className="py-8">
+      <div className="max-w-6xl mx-auto text-center text-blue-600">
+        <h2 className="text-3xl font-bold font-light mb-6 text-white">
+          Our Projects
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-10">
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <img
@@ -156,9 +158,9 @@ function Projects() {
             <img
               src={naviGatorLogo}
               alt="NaviGator AMS"
-              className="rounded-lg mb-4 px-6 mx-auto w-1/2 h-1/2"
+              className="rounded-lg mb-4 px-6 mx-auto"
             />
-            <p className="text-gray-600 mt-2">
+            <p className="mt-2">
               Our autonomous surface vehicle designed for maritime environments.
               NaviGator AMS has proven capabilities through extensive testing
               and competition, demonstrating advanced autonomous navigation and
@@ -174,9 +176,9 @@ function Projects() {
             <img
               src={subjuGatorLogo}
               alt="SubjuGator AUV"
-              className="rounded-lg mb-4 px-6 mx-auto w-1/2"
+              className="rounded-lg mb-4 px-6 mx-auto"
             />
-            <p className="text-gray-600 mt-2">
+            <p className="mt-2">
               Our autonomous underwater vehicle (AUV) that can dive deep into
               underwater environments, performing complex tasks autonomously.
               SubjuGator has consistently performed well in national and
@@ -190,7 +192,7 @@ function Projects() {
               className="rounded-lg mb-4"
             />
             <h3 className="text-xl font-medium">Mission Red Rover</h3>
-            <p className="text-gray-600 mt-2">
+            <p className="mt-2">
               Our terrestrial rover project focuses on designing robotic rovers
               capable of navigating challenging terrains, enabling autonomous
               exploration and data collection in remote or dangerous
@@ -204,7 +206,7 @@ function Projects() {
               className="rounded-lg mb-4"
             />
             <h3 className="text-xl font-medium">InvestiGator UAV</h3>
-            <p className="text-gray-600 mt-2">
+            <p className="mt-2">
               Our aerial drone project combines stability, agility, and advanced
               navigation to perform aerial maneuvers autonomously. The drones
               are designed to participate in competitions and perform real-world
@@ -220,12 +222,12 @@ function Projects() {
 // Competitions Component
 function Competitions() {
   return (
-    <section className="py-8 bg-gatorblue-200">
+    <section className="py-8">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">
           Competitions & Achievements
         </h2>
-        <p className="text-gray-600 px-10 mb-6">
+        <p className="text-white px-10 mb-6">
           Our teams compete in prestigious competitions like RobotX, RoboSub,
           and RoboMaster, securing awards and achieving top ranks globally.
           Through these competitions, we push the limits of innovation in
@@ -239,12 +241,12 @@ function Competitions() {
 // UF Community Standing Component
 function Community() {
   return (
-    <section className="py-8 bg-gatorblue-200">
+    <section className="py-8">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">
           Our Place in the UF Community
         </h2>
-        <p className="text-gray-600 px-10">
+        <p className="text-white px-10">
           As part of the University of Florida, the Robotics Lab is a prominent
           space where interdisciplinary collaboration, hands-on learning, and
           cutting-edge research come together. Our work enhances UF’s reputation
@@ -258,10 +260,10 @@ function Community() {
 // Team Component
 function TeamSection() {
   return (
-    <section className="py-8 bg-gatorblue-200">
+    <section className="py-8">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">Meet the Team</h2>
-        <p className="text-gray-600 px-10 mb-6">
+        <p className="text-white px-10 mb-6">
           Our team is composed of students and faculty from various fields
           across the University of Florida, unified by a passion for robotics
           and innovation. We work closely to advance our robotics projects and
@@ -282,7 +284,7 @@ function TeamSection() {
 const LandingPage = () => {
   return (
     <div
-      className="bg-gatorblue-200"
+      className="bg-gradient-to-br from-blue-800 to-blue-500 text-white"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="relative">

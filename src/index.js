@@ -14,6 +14,7 @@ import Sponsors from "./pages/Sponsors";
 import Apply from "./pages/Apply";
 import Research from "./pages/Research";
 import Blog from "./pages/Blog";
+import Team2024Page from "./pages/teams/2024";
 
 import NavigateExternal from "./components/NavigateExternal";
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter(
     {
       path: "/blog",
       element: <Blog />,
+    },
+    {
+      path: "/team",
+      element: <Team2024Page />,
     },
     {
       path: "/discord",

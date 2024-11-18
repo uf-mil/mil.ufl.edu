@@ -82,10 +82,10 @@ function Navbar() {
         <NavItem
           to="/team"
           label="Team"
-          dropdown={[
-            { to: "/team", label: "2024 Team" },
-            { to: "/team/2022", label: "2022 Team" },
-          ]}
+          // dropdown={[
+          //   { to: "/team", label: "2024 Team" },
+          //   { to: "/team/2022", label: "2022 Team" },
+          // ]}
         />
         <NavItem to="/vehicle" label="Vehicles" />
         <NavItem to="/research" label="Research" />

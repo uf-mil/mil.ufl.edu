@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/mil.svg";
+import logo from "../assets/mil_white.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

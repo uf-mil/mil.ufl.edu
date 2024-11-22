@@ -87,7 +87,7 @@ function Navbar() {
           //   { to: "/team/2022", label: "2022 Team" },
           // ]}
         />
-        <NavItem to="/vehicle" label="Vehicles" />
+        <NavItem to="/vehicles" label="Vehicles" />
         <NavItem to="/research" label="Research" />
         <NavItem
           to="/sponsors"

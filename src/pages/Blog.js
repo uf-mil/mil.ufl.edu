@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
 import BlogPost from "../components/BlogPost";
@@ -114,6 +116,7 @@ const BlogPage = () => {
       <div className="relative">
         <BlogList />
       </div>
+      <Footer />
     </div>
   );
 };

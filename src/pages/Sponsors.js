@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const SponsorSection = ({ title, sponsors, bgColor }) => {
   return (
@@ -223,6 +224,7 @@ const SponsorsPage = () => {
         sponsors={bronzeSponsors}
         bgColor="bg-rose-50"
       />
+      <Footer />
     </div>
   );
 };

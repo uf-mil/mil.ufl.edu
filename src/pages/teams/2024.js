@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 import MemberCard from "../../components/MemberCard";
 
@@ -330,6 +331,7 @@ const TeamPage = () => {
       <MechanicalLeadership />
       <Advisors />
       <TeamList />
+      <Footer />
     </div>
   );
 };

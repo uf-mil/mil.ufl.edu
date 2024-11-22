@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Medal from "../components/Medal";
 import React from "react";
 
 import softwareSolving from "../assets/software_solving.jpg";
@@ -10,14 +11,12 @@ import instiGatorImage from "../assets/instigator.jpg";
 import koolioImage from "../assets/koolio.jpg";
 import propaGatorImage from "../assets/propagator.jpg";
 
-const VehicleCard = ({ title, description, image, medals, inactive }) => {
+const VehicleCard = ({ title, description, image, medals = [], inactive }) => {
   const bg = inactive ? "bg-gray-200" : "bg-white";
+
   return (
     <div
-      className={
-        "flex flex-col md:flex-row shadow-lg rounded-lg p-6 mb-6 mx-4 relative " +
-        bg
-      }
+      className={`flex flex-col md:flex-row shadow-lg rounded-lg p-6 mb-6 mx-4 relative ${bg} transform transition duration-300 hover:scale-105 hover:shadow-xl`}
     >
       {/* Inactive Badge */}
       {inactive && (
@@ -28,16 +27,20 @@ const VehicleCard = ({ title, description, image, medals, inactive }) => {
 
       {/* Card Content */}
       <div className="flex flex-col flex-1">
-        <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+        <h3 className="text-3xl font-bold text-gray-800">{title}</h3>
         <p className="text-gray-600 mt-2">{description}</p>
-        <div className="mt-4">
-          <h4 className="font-medium text-gray-800">Medals:</h4>
-          <ul className="list-disc list-inside text-gray-600 mt-2">
+        {/* Medals */}
+        {medals.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-4">
             {medals.map((medal, index) => (
-              <li key={index}>{medal}</li>
+              <Medal
+                key={index}
+                text={medal.text}
+                placement={medal.placement}
+              />
             ))}
-          </ul>
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Image */}
@@ -45,7 +48,7 @@ const VehicleCard = ({ title, description, image, medals, inactive }) => {
         <img
           src={image}
           alt={title}
-          className="w-full md:w-64 h-48 object-cover rounded-lg"
+          className="w-full md:w-64 h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-110"
         />
       </div>
     </div>
@@ -81,48 +84,62 @@ const VehiclePage = () => {
       description:
         "Our autonomous surface vehicle designed for maritime environments. NaviGator AMS has proven capabilities through extensive testing and competition, demonstrating advanced autonomous navigation and control.",
       image: naviGatorImage,
-      medals: ["Best Robotics Award 2023", "Exploration Excellence Medal"],
+      medals: [
+        { text: "VRX 2022", placement: "2nd" },
+        { text: "RobotX 2018", placement: "4th" },
+        { text: "RobotX 2016", placement: "1st" },
+      ],
     },
     {
       title: "SubjuGator AUV",
       description:
         "Our autonomous underwater vehicle (AUV) that can dive deep into underwater environments, performing complex tasks autonomously. SubjuGator has consistently performed well in national and international competitions.",
       image: subjuGatorImage,
-      medals: ["Innovation Gold Medal", "AI Integration Award"],
+      medals: [
+        { text: "RoboSub 2007", placement: "1st" },
+        { text: "RoboSub 2006", placement: "1st" },
+        { text: "RoboSub 2005", placement: "1st" },
+      ],
     },
     {
       title: "InvestiGator UAV",
       description:
         "Our aerial drone project combines stability, agility, and advanced navigation to perform aerial maneuvers autonomously. The drones are designed to participate in competitions and perform real-world applications.",
       image: investiGatorImage,
-      medals: ["Marine Engineering Prize", "Discovery Achievement Award"],
     },
     {
       title: "Mission Red Rover",
       description:
         "Our terrestrial rover project focuses on designing robotic rovers capable of navigating challenging terrains, enabling autonomous exploration and data collection in remote or dangerous environments.",
       image: softwareSolving,
-      medals: ["Marine Engineering Prize", "Discovery Achievement Award"],
     },
     {
       title: "PropaGator AMS",
-      description: "hi",
+      description:
+        "PropaGator is an autonomous water surface vehicle designed and built by graduate and undergraduate students of the Machine Intelligence Lab (MIL).",
       image: propaGatorImage,
-      medals: ["Marine Engineering Prize", "Discovery Achievement Award"],
       inactive: true,
+      medals: [
+        { text: "RoboBoat 2014", placement: "2nd" },
+        { text: "RoboBoat 2013", placement: "1st" },
+      ],
     },
     {
       title: "InstiGator Autonomous Lawn Mower",
-      description: "hi",
+      description:
+        "InstiGator is an autonomous lawn mower designed and built by undergraduate and graduate students of the Machine Intelligence Lab (MIL).",
       image: instiGatorImage,
-      medals: ["Marine Engineering Prize", "Discovery Achievement Award"],
       inactive: true,
+      medals: [
+        { text: "ION Lawn Mower 2011", placement: "1st" },
+        { text: "ION Lawn Mower 2010", placement: "2nd" },
+      ],
     },
     {
       title: "Koolio",
-      description: "hi",
+      description:
+        "Koolio is a traveling autonomous refrigerator robot - featured on MSNBC's Countdown with Olbermann on April 21st, 2004. It is designed to autonomously deliver refreshments on demand (via the web).",
       image: koolioImage,
-      medals: ["Marine Engineering Prize", "Discovery Achievement Award"],
       inactive: true,
     },
   ];

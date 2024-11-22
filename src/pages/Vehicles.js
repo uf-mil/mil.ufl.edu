@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import React from "react";
 
 import softwareSolving from "../assets/software_solving.jpg";
@@ -147,6 +148,7 @@ const VehiclePage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

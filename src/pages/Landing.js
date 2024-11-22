@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
@@ -31,14 +31,14 @@ const vehicleData = [
       "An autonomous underwater vehicle capable of deep diving and complex underwater tasks.",
     image: subjuGatorImage,
   },
+  // {
+  //   name: "Rover",
+  //   description:
+  //     "A terrestrial rover built to navigate challenging terrains for exploration.",
+  //   image: naviGatorImage,
+  // },
   {
-    name: "Rover",
-    description:
-      "A terrestrial rover built to navigate challenging terrains for exploration.",
-    image: naviGatorImage,
-  },
-  {
-    name: "Drone",
+    name: "InvestiGator UAV",
     description:
       "Aerial drone project with autonomous navigation and stability for aerial tasks.",
     image: investigatorImage,
@@ -58,6 +58,15 @@ function Header() {
     );
   };
 
+  // Automatically scroll to the next image every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((currentIndex + 1) % vehicleData.length);
+    }, 5000); // Change image every 5000ms (5 seconds)
+
+    return () => clearInterval(interval); // Cleanup the interval on component unmount
+  }, [currentIndex]);
+
   const currentVehicle = vehicleData[currentIndex];
 
   return (
@@ -67,7 +76,6 @@ function Header() {
         backgroundImage: `url('${currentVehicle.image}')`,
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         backgroundBlendMode: "darken",
-        opacity: 1, // Add opacity to enable smooth fade
       }}
     >
       {/* Navbar */}

@@ -12,16 +12,29 @@ import logo from "../assets/mil-logo-full.svg";
 const NavItem = ({ to, label, dropdown, closeMobileMenu }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const timeoutRef = useRef(null);
+  const mobileSize = 768;
 
+  // Desktop hover behavior
   const handleMouseEnter = () => {
-    clearTimeout(timeoutRef.current);
-    setDropdownOpen(true);
+    if (window.innerWidth >= mobileSize) {
+      clearTimeout(timeoutRef.current);
+      setDropdownOpen(true);
+    }
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setDropdownOpen(false);
-    }, 200);
+    if (window.innerWidth >= mobileSize) {
+      timeoutRef.current = setTimeout(() => {
+        setDropdownOpen(false);
+      }, 200);
+    }
+  };
+
+  // Mobile toggle behavior
+  const toggleDropdown = () => {
+    if (window.innerWidth < mobileSize) {
+      setDropdownOpen((prev) => !prev);
+    }
   };
 
   return (
@@ -30,20 +43,34 @@ const NavItem = ({ to, label, dropdown, closeMobileMenu }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <NavLink
-        to={to}
-        onClick={closeMobileMenu} // Close the menu on mobile
-        className={`flex items-center text-gatorblue-800 px-3 py-2 rounded-lg font-medium text-sm transition duration-300
-          hover:bg-gatorblue-800 hover:text-white hover:outline-none hover:ring-2 hover:ring-gray-300
-        `}
-      >
-        {label}
-        {dropdown && (
-          <FontAwesomeIcon icon={faChevronDown} className="ml-2 w-2.5 h-2.5" />
-        )}
-      </NavLink>
+      {dropdown ? (
+        <button
+          onClick={toggleDropdown}
+          className={`flex items-center text-gatorblue-800 px-3 py-2 rounded-lg font-medium text-sm transition duration-300
+            hover:bg-gatorblue-800 hover:text-white hover:outline-none hover:ring-2 hover:ring-gray-300
+          `}
+        >
+          {label}
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            className={`ml-2 w-2.5 h-2.5 transform transition-transform duration-300 ${
+              isDropdownOpen ? "rotate-180" : "rotate-0"
+            }`}
+          />
+        </button>
+      ) : (
+        <NavLink
+          to={to}
+          onClick={closeMobileMenu}
+          className={`flex items-center text-gatorblue-800 px-3 py-2 rounded-lg font-medium text-sm transition duration-300
+            hover:bg-gatorblue-800 hover:text-white hover:outline-none hover:ring-2 hover:ring-gray-300
+          `}
+        >
+          {label}
+        </NavLink>
+      )}
 
-      {/* Dropdown Menu */}
+      {/* Dropdown */}
       {dropdown && isDropdownOpen && (
         <div className="absolute left-0 mt-1 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow-lg z-10 dark:bg-gray-700">
           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">

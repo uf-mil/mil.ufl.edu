@@ -7,6 +7,30 @@ import MemberCard from "../../components/MemberCard";
 import memberImages from "../../assets/people/members";
 import advisorImages from "../../assets/people/advisors";
 
+const LeadershipSection = ({ title, members }) => {
+  return (
+    <section className="max-w-6xl mx-auto py-8 px-4 sm:px-6">
+      <div className="text-center mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">{title}</h2>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {members.map((member, index) => (
+          <MemberCard
+            key={index}
+            image={member.image}
+            name={member.name}
+            role={member.role}
+            degree={member.degree}
+            graduationYear={member.graduationYear}
+            linkedIn={member.linkedIn}
+            website={member.website}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const SoftwareLeadership = () => {
   const members = [
     {
@@ -52,27 +76,7 @@ const SoftwareLeadership = () => {
     },
   ];
 
-  return (
-    <section className="max-w-6xl mx-auto py-8 ">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-10">Software Leadership</h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {members.map((member, index) => (
-          <MemberCard
-            key={index}
-            image={member.image}
-            name={member.name}
-            role={member.role}
-            degree={member.degree}
-            graduationYear={member.graduationYear}
-            linkedIn={member.linkedIn}
-            website={member.website}
-          />
-        ))}
-      </div>
-    </section>
-  );
+  return <LeadershipSection title="Software Leadership" members={members} />;
 };
 
 const ElectricalLeadership = () => {
@@ -118,27 +122,7 @@ const ElectricalLeadership = () => {
     // },
   ];
 
-  return (
-    <section className="max-w-6xl mx-auto py-8 ">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-10">Electrical Leadership</h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {members.map((member, index) => (
-          <MemberCard
-            key={index}
-            image={member.image}
-            name={member.name}
-            role={member.role}
-            degree={member.degree}
-            graduationYear={member.graduationYear}
-            linkedIn={member.linkedIn}
-            website={member.website}
-          />
-        ))}
-      </div>
-    </section>
-  );
+  return <LeadershipSection title="Electrical Leadership" members={members} />;
 };
 
 const MechanicalLeadership = () => {
@@ -176,27 +160,7 @@ const MechanicalLeadership = () => {
     },
   ];
 
-  return (
-    <section className="max-w-6xl mx-auto py-8">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-10">Mechanical Leadership</h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {members.map((member, index) => (
-          <MemberCard
-            key={index}
-            image={member.image}
-            name={member.name}
-            role={member.role}
-            degree={member.degree}
-            graduationYear={member.graduationYear}
-            linkedIn={member.linkedIn}
-            website={member.website}
-          />
-        ))}
-      </div>
-    </section>
-  );
+  return <LeadershipSection title="Mechanical Leadership" members={members} />;
 };
 
 const Advisors = () => {
@@ -224,25 +188,7 @@ const Advisors = () => {
     },
   ];
 
-  return (
-    <section className="max-w-6xl mx-auto pb-16 ">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-10">Advisors</h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {advisors.map((member, index) => (
-          <MemberCard
-            key={index}
-            image={member.image}
-            name={member.name}
-            role={member.role}
-            linkedIn={member.linkedIn}
-            website={member.website}
-          />
-        ))}
-      </div>
-    </section>
-  );
+  return <LeadershipSection title="Advisors" members={advisors} />;
 };
 
 const TeamList = () => {

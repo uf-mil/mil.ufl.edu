@@ -16,6 +16,7 @@ import Research from "./pages/Research";
 import Blog from "./pages/Blog";
 import Vehicles from "./pages/Vehicles";
 import NotFound from "./pages/NotFound";
+import LabInfo from "./pages/LabInfo";
 import Team2024Page from "./pages/teams/2024";
 
 import NavigateExternal from "./components/NavigateExternal";
@@ -32,6 +33,10 @@ const router = createBrowserRouter(
     {
       path: "/sponsors",
       element: <Sponsors />,
+    },
+    {
+      path: "/lab",
+      element: <LabInfo />,
     },
     {
       path: "/apply",

@@ -1,6 +1,7 @@
 const path = require("path");
 const HWP = require("html-webpack-plugin");
 const webpack = require("webpack");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 module.exports = {
   entry: path.join(__dirname, "/src/index.js"),
   output: {
@@ -45,6 +46,9 @@ module.exports = {
     new HWP({ template: path.join(__dirname, "/src/index.html") }),
     new webpack.ProvidePlugin({
       Buffer: ["buffer", "Buffer"],
+    }),
+    new FaviconsWebpackPlugin({
+      logo: "./src/assets/mil_white.svg",
     }),
   ],
   resolve: {

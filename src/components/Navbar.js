@@ -104,7 +104,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="w-full p-3 bg-white bg-opacity-80 shadow-md z-50 relative">
+    <nav className="w-full p-3 bg-white bg-opacity-90 shadow-md z-50 relative">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <Link to="/" onClick={closeMobileMenu}>

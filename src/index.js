@@ -15,6 +15,7 @@ import Apply from "./pages/Apply";
 import Research from "./pages/Research";
 import Blog from "./pages/Blog";
 import Vehicles from "./pages/Vehicles";
+import NotFound from "./pages/NotFound";
 import Team2024Page from "./pages/teams/2024";
 
 import NavigateExternal from "./components/NavigateExternal";
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <Landing />,
+      errorElement: <NotFound />,
     },
     {
       path: "/sponsors",

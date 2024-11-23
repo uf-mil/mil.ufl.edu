@@ -1,10 +1,13 @@
 import React from "react";
 
+import robotXLogo from "../assets/robotx.svg";
+import robosubLogo from "../assets/robosub.svg";
+
 function BannerShape({ children, className }) {
   return (
     <div className={`relative w-48 h-64 text-center mx-auto ${className}`}>
       {/* Main Banner Body */}
-      <div className="h-full w-full flex flex-col items-center justify-center relative">
+      <div className="h-full w-full flex flex-col items-center justify-center relative shadow-2xl">
         {children}
       </div>
 
@@ -21,7 +24,7 @@ function BannerShape({ children, className }) {
 
 export default BannerShape;
 
-function PlacementBanner({ place, year, event }) {
+function PlacementBanner({ place, year, event, competition }) {
   // Determine the background color based on the place
   const bgColor =
     place.toLowerCase() === "1st place"
@@ -34,6 +37,13 @@ function PlacementBanner({ place, year, event }) {
 
   return (
     <BannerShape className={`${bgColor} text-white`}>
+      {/* Logo */}
+      <div className="w-1/2">
+        <img
+          src={competition === "RoboSub" ? robosubLogo : robotXLogo}
+          alt=""
+        />
+      </div>
       <div className="px-4">
         <div className="text-4xl mt-4 font-bold tracking-wide">{year}</div>
         <div className="text-lg font-bold uppercase tracking-wide">{place}</div>
@@ -43,7 +53,7 @@ function PlacementBanner({ place, year, event }) {
   );
 }
 
-function UnifiedBanner({ place, year, event }) {
+function UnifiedBanner({ place, year, event, competition }) {
   return (
     <BannerShape
       className="bg-white border-4 border-blue-900 relative"
@@ -53,6 +63,13 @@ function UnifiedBanner({ place, year, event }) {
         className="absolute inset-1 border-2 border-green-500 flex flex-col items-center justify-center"
         style={{ borderColor: "rgb(154 205 50)" }} // Inner border (pistachio green)
       >
+        {/* Logo */}
+        <div className="w-1/2">
+          <img
+            src={competition === "RoboSub" ? robosubLogo : robotXLogo}
+            alt=""
+          />
+        </div>
         <div className="px-4">
           <div className="text-4xl mt-4 font-bold tracking-wide text-blue-900">
             {year}

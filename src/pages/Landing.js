@@ -230,6 +230,7 @@ function makeBannerMap(scrollingBanners) {
             place={banner.place}
             year={banner.year}
             event={banner.event}
+            competition={banner.competition}
           />
         ) : (
           <UnifiedBanner
@@ -237,6 +238,7 @@ function makeBannerMap(scrollingBanners) {
             place={banner.place}
             year={banner.year}
             event={banner.event}
+            competition={banner.competition}
           />
         ),
       )}
@@ -248,15 +250,16 @@ function ScrollingBannerSection() {
   const banners = [
     {
       type: "placement",
-      place: "1st Place",
-      year: "2023",
-      event: "National Finals",
-    },
-    {
-      type: "placement",
       place: "2nd Place",
       year: "2022",
-      event: "Regional Qualifiers",
+      event: "Virtual RobotX Finals",
+    },
+    {
+      type: "unified",
+      place: "4th Place",
+      year: "2018",
+      event: "Overall RobotX",
+      competition: "RoboSub",
     },
     {
       type: "placement",
@@ -282,16 +285,16 @@ function ScrollingBannerSection() {
   const scrollingBanners = [...banners, ...banners];
 
   return (
-    <div className="relative overflow-x-hidden bg-gray-100 py-40">
+    <div className="relative overflow-x-hidden bg-gray-100 py-40 group">
       {/* first row */}
-      <div className="absolute top-0 flex animate-marquee whitespace-nowrap space-x-8">
+      <div className="absolute top-0 flex group-hover:pause animate-marquee whitespace-nowrap space-x-8">
         {makeBannerMap(scrollingBanners)}
         {/* Duplicate for seamless scrolling */}
         {makeBannerMap(scrollingBanners)}
       </div>
 
       {/* second row */}
-      <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap space-x-8">
+      <div className="absolute top-0 flex group-hover:pause animate-marquee2 whitespace-nowrap space-x-8">
         {makeBannerMap(scrollingBanners)}
         {/* Duplicate for seamless scrolling */}
         {makeBannerMap(scrollingBanners)}

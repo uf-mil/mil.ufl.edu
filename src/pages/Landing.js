@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { PlacementBanner, UnifiedBanner } from "../components/AwardBanner";
 import { NavLink } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -133,10 +134,10 @@ function Header() {
 // Mission Component
 function Mission() {
   return (
-    <section className="py-8">
+    <section className="py-12 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-12 font-light">Our Mission</h2>
-        <p className="text-white px-10 mb-6">
+        <h2 className="text-4xl font-bold mb-8 text-white">Our Mission</h2>
+        <p className="text-lg text-gray-200 leading-relaxed px-10">
           The Machine Intelligence Laboratory (MIL) provides a synergistic
           environment dedicated to the study and development of intelligent,
           autonomous robots. The faculty and students associated with the
@@ -159,110 +160,176 @@ function Mission() {
 // Projects Component
 function Projects() {
   return (
-    <section className="py-8">
-      <div className="max-w-6xl mx-auto text-center text-blue-600">
-        <h2 className="text-3xl font-bold font-light mb-6 text-white">
+    <section className="py-12 bg-gray-100">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-10 text-blue-900">
           Our Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-10">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src={naviGatorImage2024}
-              alt="NaviGator AMS"
-              className="rounded-lg mb-4"
-            />
-            <img
-              src={naviGatorLogo}
-              alt="NaviGator AMS"
-              className="rounded-lg mb-4 px-6 mx-auto"
-            />
-            <p className="mt-2">
-              Our autonomous surface vehicle designed for maritime environments.
-              NaviGator AMS has proven capabilities through extensive testing
-              and competition, demonstrating advanced autonomous navigation and
-              control.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src={subjuGatorImage}
-              alt="SubjuGator AUV"
-              className="rounded-lg mb-4"
-            />
-            <img
-              src={subjuGatorLogo}
-              alt="SubjuGator AUV"
-              className="rounded-lg mb-4 px-6 mx-auto"
-            />
-            <p className="mt-2">
-              Our autonomous underwater vehicle (AUV) that can dive deep into
-              underwater environments, performing complex tasks autonomously.
-              SubjuGator has consistently performed well in national and
-              international competitions.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src={softwareSolving}
-              alt="SubjuGator AUV"
-              className="rounded-lg mb-4"
-            />
-            <h3 className="text-xl font-medium">Mission Red Rover</h3>
-            <p className="mt-2">
-              Our terrestrial rover project focuses on designing robotic rovers
-              capable of navigating challenging terrains, enabling autonomous
-              exploration and data collection in remote or dangerous
-              environments.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src={investigatorImage}
-              alt="SubjuGator AUV"
-              className="rounded-lg mb-4"
-            />
-            <h3 className="text-xl font-medium">InvestiGator UAV</h3>
-            <p className="mt-2">
-              Our aerial drone project combines stability, agility, and advanced
-              navigation to perform aerial maneuvers autonomously. The drones
-              are designed to participate in competitions and perform real-world
-              applications.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+          {/* Individual Project Cards */}
+          {[
+            {
+              image: naviGatorImage2024,
+              logo: naviGatorLogo,
+              description:
+                "Our autonomous surface vehicle designed for maritime environments. NaviGator AMS has proven capabilities through extensive testing and competition.",
+            },
+            {
+              image: subjuGatorImage,
+              logo: subjuGatorLogo,
+              description:
+                "Our autonomous underwater vehicle (AUV) capable of diving deep into underwater environments and performing complex tasks autonomously.",
+            },
+            {
+              image: softwareSolving,
+              title: "Mission Red Rover",
+              description:
+                "Our terrestrial rover project focuses on designing robotic rovers capable of navigating challenging terrains for exploration.",
+            },
+            {
+              image: investigatorImage,
+              title: "InvestiGator UAV",
+              description:
+                "Our aerial drone project combines stability, agility, and advanced navigation to perform aerial maneuvers autonomously.",
+            },
+          ].map((project, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={project.image}
+                alt={project.title || "Project"}
+                className="rounded-lg mb-4"
+              />
+              {project.logo && (
+                <img
+                  src={project.logo}
+                  alt="Project Logo"
+                  className="rounded-lg mb-4 px-6 mx-auto"
+                />
+              )}
+              {project.title && (
+                <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                  {project.title}
+                </h3>
+              )}
+              <p className="text-gray-700">{project.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
+function makeBannerMap(scrollingBanners) {
+  return (
+    <>
+      {scrollingBanners.map((banner, index) =>
+        banner.type === "placement" ? (
+          <PlacementBanner
+            key={index}
+            place={banner.place}
+            year={banner.year}
+            event={banner.event}
+          />
+        ) : (
+          <UnifiedBanner
+            key={index}
+            place={banner.place}
+            year={banner.year}
+            event={banner.event}
+          />
+        ),
+      )}
+    </>
+  );
+}
+
+function ScrollingBannerSection() {
+  const banners = [
+    {
+      type: "placement",
+      place: "1st Place",
+      year: "2023",
+      event: "National Finals",
+    },
+    {
+      type: "placement",
+      place: "2nd Place",
+      year: "2022",
+      event: "Regional Qualifiers",
+    },
+    {
+      type: "placement",
+      place: "3rd Place",
+      year: "2021",
+      event: "City Tournament",
+    },
+    {
+      type: "unified",
+      place: "Participant",
+      year: "2020",
+      event: "Community Outreach",
+    },
+    {
+      type: "unified",
+      place: "Excellence Award",
+      year: "2019",
+      event: "Innovation Showcase",
+    },
+  ];
+
+  // duplicate banners for seamless scrolling
+  const scrollingBanners = [...banners, ...banners];
+
+  return (
+    <div className="relative overflow-x-hidden bg-gray-100 py-40">
+      {/* first row */}
+      <div className="absolute top-0 flex animate-marquee whitespace-nowrap space-x-8">
+        {makeBannerMap(scrollingBanners)}
+        {/* Duplicate for seamless scrolling */}
+        {makeBannerMap(scrollingBanners)}
+      </div>
+
+      {/* second row */}
+      <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap space-x-8">
+        {makeBannerMap(scrollingBanners)}
+        {/* Duplicate for seamless scrolling */}
+        {makeBannerMap(scrollingBanners)}
+      </div>
+    </div>
+  );
+}
+
 // Competitions Component
 function Competitions() {
   return (
-    <section className="py-8">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold font-light mb-6">
-          Competitions & Achievements
-        </h2>
-        <p className="text-white px-10 mb-6">
-          Our teams compete in prestigious competitions like RobotX, RoboSub,
-          and RoboMaster, securing awards and achieving top ranks globally.
-          Through these competitions, we push the limits of innovation in
-          robotics.
-        </p>
-      </div>
-    </section>
+    <>
+      <section className="py-12 bg-blue-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8 text-blue-900">
+            Competitions & Achievements
+          </h2>
+          <p className="text-lg text-gray-800 leading-relaxed px-10">
+            Our teams compete in prestigious competitions like RobotX, RoboSub,
+            and RoboMaster, securing awards and achieving top ranks globally.
+            These events push the limits of robotics innovation.
+          </p>
+        </div>
+      </section>
+      <ScrollingBannerSection />
+    </>
   );
 }
 
 // UF Community Standing Component
 function Community() {
   return (
-    <section className="py-8">
+    <section className="py-12 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 text-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold font-light mb-6">
+        <h2 className="text-4xl font-bold mb-8">
           Our Place in the UF Community
         </h2>
-        <p className="text-white px-10">
+        <p className="text-lg leading-relaxed px-10">
           As part of the University of Florida, the Robotics Lab is a prominent
           space where interdisciplinary collaboration, hands-on learning, and
           cutting-edge research come together. Our work enhances UF’s reputation
@@ -276,20 +343,19 @@ function Community() {
 // Team Component
 function TeamSection() {
   return (
-    <section className="py-8">
+    <section className="py-12 bg-gray-100">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold font-light mb-6">Meet the Team</h2>
-        <p className="text-white px-10 mb-6">
+        <h2 className="text-4xl font-bold mb-8 text-blue-900">Meet the Team</h2>
+        <p className="text-lg text-gray-800 leading-relaxed px-10 mb-8">
           Our team is composed of students and faculty from various fields
           across the University of Florida, unified by a passion for robotics
-          and innovation. We work closely to advance our robotics projects and
-          achieve remarkable results.
+          and innovation. We work together to achieve remarkable results.
         </p>
         <div className="flex justify-center">
           <img
             src={teamPhoto}
             alt="Team Photo"
-            className="max-w-5xl w-full rounded-lg"
+            className="max-w-5xl w-full rounded-lg shadow-lg"
           />
         </div>
       </div>

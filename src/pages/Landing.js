@@ -62,9 +62,9 @@ function Header() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((currentIndex + 1) % vehicleData.length);
-    }, 5000); // Change image every 5000ms (5 seconds)
+    }, 5000);
 
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
   }, [currentIndex]);
 
   const currentVehicle = vehicleData[currentIndex];
@@ -74,46 +74,54 @@ function Header() {
       className="relative h-[667px] bg-cover bg-center transition-opacity duration-700 ease-in-out"
       style={{
         backgroundImage: `url('${currentVehicle.image}')`,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        backgroundBlendMode: "darken",
       }}
     >
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
       {/* Navbar */}
       <div className="relative z-10">
         <Navbar />
       </div>
 
-      {/* Text Area */}
-      <div className="absolute bottom-16 left-10 bg-white bg-opacity-60 p-3 rounded-md shadow-md backdrop-blur-sm text-gray-900 max-w-xs">
-        <h2 className="text-xl font-semibold">{currentVehicle.name}</h2>
-        <p className="text-sm mt-1">{currentVehicle.description}</p>
+      {/* Text Area Integrated into Image */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent h-2/5 px-6 py-8 sm:px-10 sm:py-10">
+        <div className="absolute max-w-4xl bottom-10 left-6 sm:left-10 mx-auto text-white pb-6">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            {currentVehicle.name}
+          </h2>
+          <p className="mt-2 text-lg sm:text-xl">
+            {currentVehicle.description}
+          </p>
+        </div>
       </div>
 
       {/* Chevron Buttons */}
-      <div className="absolute inset-0 flex items-center justify-between px-10">
+      <div className="absolute inset-0 flex items-center justify-between px-5 sm:px-10">
         <button
           onClick={handlePrevious}
-          className="text-white bg-gray-800 bg-opacity-50 p-3 rounded-full hover:bg-opacity-80 transition duration-300 ease-in-out"
+          className="text-white bg-gray-900/60 p-4 rounded-full hover:bg-gray-900/80 transition duration-300 ease-in-out"
         >
           <FontAwesomeIcon icon={faChevronLeft} size="lg" />
         </button>
         <button
           onClick={handleNext}
-          className="text-white bg-gray-800 bg-opacity-50 p-3 rounded-full hover:bg-opacity-80 transition duration-300 ease-in-out"
+          className="text-white bg-gray-900/60 p-4 rounded-full hover:bg-gray-900/80 transition duration-300 ease-in-out"
         >
           <FontAwesomeIcon icon={faChevronRight} size="lg" />
         </button>
       </div>
 
       {/* Indicator Circles */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-3">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
         {vehicleData.map((_, index) => (
-          <span
+          <button
             key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            onClick={() => setCurrentIndex(index)}
+            className={`w-4 h-4 rounded-full transition-all duration-300 focus:outline-none ${
               index === currentIndex
-                ? "bg-white opacity-100"
-                : "bg-white opacity-50"
+                ? "bg-white scale-125 opacity-100"
+                : "bg-white opacity-50 hover:opacity-75"
             }`}
           />
         ))}

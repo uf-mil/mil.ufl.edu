@@ -166,7 +166,6 @@ function Projects() {
           Our Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-          {/* Individual Project Cards */}
           {[
             {
               image: naviGatorImage2024,
@@ -214,6 +213,22 @@ function Projects() {
               <p className="text-gray-700">{project.description}</p>
             </div>
           ))}
+          {/* Final Card Linking to Vehicles Page */}
+          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Explore All Vehicles
+            </h3>
+            <p className="text-gray-700 text-center mb-4">
+              Discover our full range of vehicles, including past and present
+              projects.
+            </p>
+            <a
+              href="/vehicles"
+              className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+            >
+              See All Vehicles
+            </a>
+          </div>
         </div>
       </div>
     </section>

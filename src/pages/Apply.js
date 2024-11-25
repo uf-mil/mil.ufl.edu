@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Introduction Component
 function Introduction() {
@@ -31,6 +31,47 @@ function Requirements() {
     "Able to commit 5 hours/week to lab activities (3 hours/week for new members)",
   ];
 
+  const applicationDeadline = new Date("2024-12-20T23:59:59-05:00");
+  const [timeLeft, setTimeLeft] = useState(
+    calculateTimeLeft(applicationDeadline),
+  );
+
+  function calculateTimeLeft(deadline) {
+    const now = new Date();
+    const difference = deadline - now;
+
+    if (difference <= 0) {
+      return "Applications are now closed!";
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  // Update the countdown every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(applicationDeadline));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [applicationDeadline]);
+
+  // Format the application deadline for natural display
+  const formattedDeadline = applicationDeadline.toLocaleString("en-US", {
+    month: "2-digit",
+    day: "2-digit",
+    year: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZoneName: "short",
+    timeZone: "America/New_York",
+  });
+
   return (
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto">
@@ -44,12 +85,17 @@ function Requirements() {
             </li>
           ))}
         </ul>
+
         <div className="flex justify-center mt-10">
           <a
             href="https://ufl.qualtrics.com/jfe/form/SV_3qNksg41Gdghz8y"
-            className="bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition duration-300"
+            className="bg-blue-800 text-white px-6 py-3 rounded-lg text-2xl font-medium hover:bg-blue-700 transition duration-300 flex flex-col items-center"
           >
             Apply Now
+            <span className="text-sm text-gray-200 mt-2 text-center leading-tight font-normal">
+              Due in {timeLeft}!<br />
+              (by {formattedDeadline})
+            </span>
           </a>
         </div>
       </div>

@@ -93,7 +93,7 @@ const VehiclePage = () => {
     {
       title: "SubjuGator AUV",
       description:
-        "Our autonomous underwater vehicle (AUV) that can dive deep into underwater environments, performing complex tasks autonomously. SubjuGator has consistently performed well in national and international competitions.",
+        "Our autonomous underwater vehicle (AUV) that can dive deep into underwater environments, performing complex tasks autonomously. SubjuGator has consistently performed well in national and international competitions. Boasting eight thrusters, two high-resolution cameras, an IMU, a DVL, and a barometer, SubjuGator has the capability to navigate and perform tasks in challenging underwater environments. Custom actuators allow for interacting in the local environment, and a custom-built control system allows for precise control and autonomy.",
       image: subjuGatorImage,
       medals: [
         { text: "RoboSub 2014", placement: "2nd" },

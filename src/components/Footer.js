@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "../assets/mil_white.svg";
+import hwcoe from "../assets/hwcoe.svg";
+import ece from "../assets/ece.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,18 +16,14 @@ function Footer() {
     <footer className="bg-gray-800 text-white py-8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* Logo Section */}
-        <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
+        <div className="flex flex-col items-center md:items-start mb-4 md:mb-0 space-y-3">
           <img src={logo} alt="Lab Logo" className="h-16 mb-2" />
-          <p className="text-sm text-gray-400">
-            Machine Intelligence Laboratory
-          </p>
+          <img src={hwcoe} alt="College Logo 1" className="h-12" />
+          <img src={ece} alt="College Logo 2" className="h-10 pt-2" />
         </div>
 
         {/* College Logos */}
-        <div className="flex space-x-6 mb-4 md:mb-0">
-          <img src={logo} alt="College Logo 1" className="h-12" />
-          <img src={logo} alt="College Logo 2" className="h-12" />
-        </div>
+        <div className="flex space-x-6 mb-4 md:mb-0"></div>
 
         {/* Contact Information */}
         <div className="text-center md:text-right">

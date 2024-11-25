@@ -96,9 +96,17 @@ const VehiclePage = () => {
         "Our autonomous underwater vehicle (AUV) that can dive deep into underwater environments, performing complex tasks autonomously. SubjuGator has consistently performed well in national and international competitions.",
       image: subjuGatorImage,
       medals: [
+        { text: "RoboSub 2014", placement: "2nd" },
+        { text: "RoboSub 2013", placement: "2nd" },
+        { text: "RoboSub 2012", placement: "2nd" },
+        { text: "RoboSub 2011", placement: "3rd" },
         { text: "RoboSub 2007", placement: "1st" },
         { text: "RoboSub 2006", placement: "1st" },
         { text: "RoboSub 2005", placement: "1st" },
+        { text: "RoboSub 2002", placement: "3rd" },
+        { text: "RoboSub 2001", placement: "3rd" },
+        { text: "RoboSub 1999", placement: "2nd" },
+        { text: "RoboSub 1998", placement: "3rd" },
       ],
     },
     {
@@ -132,7 +140,7 @@ const VehiclePage = () => {
       inactive: true,
       medals: [
         { text: "ION Lawn Mower 2011", placement: "1st" },
-        { text: "ION Lawn Mower 2010", placement: "2nd" },
+        { text: "ION Lawn Mower 2010", placement: "3rd" },
       ],
     },
     {

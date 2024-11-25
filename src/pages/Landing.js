@@ -319,7 +319,7 @@ function Competitions() {
           </p>
         </div>
       </section>
-      <ScrollingBannerSection />
+      {/* <ScrollingBannerSection /> */}
     </>
   );
 }

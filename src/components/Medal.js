@@ -8,7 +8,7 @@ const Medal = ({ text, placement }) => {
   const backgroundColors = {
     "1st": "bg-yellow-400",
     "2nd": "bg-gray-400",
-    "3rd": "bg-orange-400",
+    "3rd": "bg-bronze-400",
   };
   const textColors = {
     "1st": "text-black",

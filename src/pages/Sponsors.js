@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 const SponsorSection = ({ title, sponsors, bgColor }) => {
   return (
     <section className="container mx-auto py-6">
-      <h2 className="text-4xl font-bold text-center">{title}</h2>
+      <h2 className="text-4xl font-bold text-center text-white">{title}</h2>
       <div className={`flex flex-wrap justify-center gap-6 mt-8`}>
         {sponsors.map((sponsor, index) =>
           sponsor.type === "bronze" ? (
@@ -131,7 +131,7 @@ const SponsorsPage = () => {
         "The Electrical and Computer Engineering (ECE) Department at the University of Florida (UF) has pursued research, discoveries, and technologies that empower and touch lives everywhere by developing the best workforce in electrical and computer engineering in the state of Florida and for all the nation.",
       url: "https://ece.ufl.edu",
       imgSrc:
-        "https://www.ece.ufl.edu/wp-content/uploads/pub/identity/ECELogo2022_trans.png",
+        "https://www.ece.ufl.edu/wp-content/uploads/2024/10/ElectricalComputerEngineering-VECTOR-RGB.svg",
       imgAlt: "ECE Logo",
     },
     {
@@ -200,7 +200,7 @@ const SponsorsPage = () => {
   ];
   return (
     <div
-      className="bg-gatorblue-200"
+      className="bg-gradient-to-br from-blue-800 to-blue-500"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <Navbar />

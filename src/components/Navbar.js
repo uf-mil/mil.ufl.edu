@@ -146,11 +146,11 @@ function Navbar() {
             label="Vehicles"
             closeMobileMenu={closeMobileMenu}
           />
-          <NavItem
+          {/* <NavItem
             to="/research"
             label="Research"
             closeMobileMenu={closeMobileMenu}
-          />
+          /> */}
           <NavItem
             to="/sponsors"
             label="Sponsors"

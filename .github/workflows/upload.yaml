@@ -15,6 +15,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build && cd dist
+
       - name: Install lftp
         run: sudo apt-get install -y lftp sshpass
 
@@ -23,6 +35,8 @@ jobs:
           # We need to connect to the server for lftp to be happy, otherwise it
           # hangs on "Connecting...". Connecting will add the host to
           # known_hosts.
+          # Move .htaccess into dist so it gets copied
+          mv .htaccess dist
           sshpass -p ${{ secrets.MIL_UFL_SFTP_PASS }} \
             sftp -o StrictHostKeyChecking=no \
             -P ${{ secrets.MIL_UFL_SFTP_PORT }} mil@mil.ufl.edu << EOF
@@ -32,10 +46,9 @@ jobs:
             -p ${{ secrets.MIL_UFL_SFTP_PORT }} sftp://mil.ufl.edu << EOF
           mirror -c \
           --include='.*' \
-          --exclude='^\..*$' \
           --exclude='README.md' \
           -R --parallel --verbose \
-          . \
+          dist \
           htdocs
           exit
           EOF

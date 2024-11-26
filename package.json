@@ -1,0 +1,45 @@
+{
+  "name": "mil.ufl.edu",
+  "version": "1.0.0",
+  "description": "Website for Machine Intelligence Lab at the University of Florida",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "buffer": "^6.0.3",
+    "gray-matter": "^4.0.3",
+    "raw-loader": "^4.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.7",
+    "@babel/preset-env": "^7.25.7",
+    "@babel/preset-react": "^7.25.7",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.2.1",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^7.1.2",
+    "favicons": "^7.2.0",
+    "favicons-webpack-plugin": "^6.0.1",
+    "html-webpack-plugin": "^5.6.0",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^10.1.1",
+    "react-router-dom": "^6.26.2",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.14",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}

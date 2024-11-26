@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine On
+
+# check if request is not an existing file
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# check if request is not an existing directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect to index.html
+RewriteRule ^ index.html [QSA,L]

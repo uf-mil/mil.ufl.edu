@@ -439,7 +439,9 @@ function TeamSection() {
         <p className="text-lg text-gray-800 leading-relaxed px-10 mb-8">
           Our team is composed of students and faculty from various fields
           across the University of Florida, unified by a passion for robotics
-          and innovation. We work together to achieve remarkable results.
+          and innovation. We are primarily undergraduates with a few graduate
+          students and faculty advisors. We span a wide range of disciplines,
+          from physics to computer science.
         </p>
         <div className="flex justify-center">
           <img

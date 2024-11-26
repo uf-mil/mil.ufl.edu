@@ -4,6 +4,8 @@ name: Upload files to mil.ufl.edu
 # yamllint disable-line rule:truthy
 on:
   push:
+    branches:
+      - main
 
 jobs:
   upload:

@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
-import "./output.css";
+import "./input.css";
 import Landing from "./pages/Landing";
 import Sponsors from "./pages/Sponsors";
 import Apply from "./pages/Apply";

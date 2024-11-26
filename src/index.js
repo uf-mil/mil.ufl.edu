@@ -68,6 +68,10 @@ const router = createBrowserRouter(
         <NavigateExternal to="https://www.uff.ufl.edu/giving-opportunities/020149-machine-intelligence-lab/?appeal=GZAGTA7A1" />
       ),
     },
+    {
+      path: "/sponsor_packet",
+      element: <NavigateExternal to="https://mil.ufl.edu/sponsorship.pdf" />,
+    },
   ],
   {},
 );

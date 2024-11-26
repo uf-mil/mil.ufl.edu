@@ -153,7 +153,7 @@ function Navbar() {
             label="Sponsors"
             dropdown={[
               { to: "/donate", label: "Donate" },
-              { to: "/todo", label: "Become a Supporter" },
+              { to: "/sponsor_packet", label: "Become a Supporter" },
               { to: "/sponsors", label: "2024 Sponsors" },
             ]}
             closeMobileMenu={closeMobileMenu}

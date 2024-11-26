@@ -88,6 +88,16 @@ function Footer() {
         © 1995-{new Date().getFullYear()} Machine Intelligence Laboratory. All
         rights reserved.
       </div>
+      <div className="mt-4 text-center text-sm text-gray-500">
+        Built at: {BUILD_TIME} EST (from{" "}
+        <a
+          href={`https://github.com/uf-mil/mil.ufl.edu/commit/${COMMIT_HASH}`}
+          className="text-gray-300"
+        >
+          {COMMIT_HASH}
+        </a>
+        )
+      </div>
     </footer>
   );
 }

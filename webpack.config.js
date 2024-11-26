@@ -1,6 +1,26 @@
 const path = require("path");
 const HWP = require("html-webpack-plugin");
 const webpack = require("webpack");
+const commitHash = require("child_process").execSync(
+  "git rev-parse --short HEAD",
+);
+
+const getCurrentTimeEST = () => {
+  const now = new Date();
+  const options = {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  };
+  return new Intl.DateTimeFormat("en-US", options).format(now).replace(",", "");
+};
+const currentTime = getCurrentTimeEST();
+
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 module.exports = {
   entry: path.join(__dirname, "/src/index.js"),
@@ -49,6 +69,10 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin({
       logo: "./src/assets/mil_white.svg",
+    }),
+    new webpack.DefinePlugin({
+      COMMIT_HASH: JSON.stringify(commitHash.toString().trim()),
+      BUILD_TIME: JSON.stringify(currentTime),
     }),
   ],
   resolve: {

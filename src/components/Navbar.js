@@ -134,10 +134,7 @@ function Navbar() {
           <NavItem
             to="/about"
             label="About Us"
-            dropdown={[
-              { to: "/history", label: "History" },
-              { to: "/lab", label: "Lab Information" },
-            ]}
+            dropdown={[{ to: "/lab", label: "Lab Information" }]}
             closeMobileMenu={closeMobileMenu}
           />
           <NavItem to="/team" label="Team" closeMobileMenu={closeMobileMenu} />

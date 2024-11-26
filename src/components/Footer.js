@@ -22,9 +22,6 @@ function Footer() {
           <img src={ece} alt="College Logo 2" className="h-10 pt-2" />
         </div>
 
-        {/* College Logos */}
-        <div className="flex space-x-6 mb-4 md:mb-0"></div>
-
         {/* Contact Information */}
         <div className="text-center md:text-right">
           <p className="text-lg font-semibold">Contact Us</p>
@@ -39,7 +36,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* Social Media Links */}
+      {/* social media */}
       <div className="flex justify-center space-x-6 mt-6">
         <a
           href="https://www.youtube.com/@navigatoruf3224"

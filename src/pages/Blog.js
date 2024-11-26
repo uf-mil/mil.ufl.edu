@@ -50,60 +50,66 @@ const BlogList = () => {
         </h2>
 
         {/* Blog list */}
-        <div className="space-y-8">
-          {blogs.map((blog, index) => {
-            // Extract the first paragraph
-            const firstParagraph = blog.content.split("\n\n")[0];
-            const hasMoreContent = blog.content.split("\n\n").length > 1;
+        {blogs.length === 0 ? (
+          <p className="text-center text-lg text-gray-100">
+            There are no blogs right now, check back later!
+          </p>
+        ) : (
+          <div className="space-y-8">
+            {blogs.map((blog, index) => {
+              // Extract the first paragraph
+              const firstParagraph = blog.content.split("\n\n")[0];
+              const hasMoreContent = blog.content.split("\n\n").length > 1;
 
-            return (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg shadow-lg p-6 bg-white cursor-pointer hover:shadow-2xl transform hover:-translate-y-2 transition duration-300"
-                onClick={() => setSelectedBlog(blog)}
-              >
-                {/* Blog title */}
-                <h3 className="text-3xl font-bold text-gray-800 mb-2">
-                  {blog.title}
-                </h3>
+              return (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg shadow-lg p-6 bg-white cursor-pointer hover:shadow-2xl transform hover:-translate-y-2 transition duration-300"
+                  onClick={() => setSelectedBlog(blog)}
+                >
+                  {/* Blog title */}
+                  <h3 className="text-3xl font-bold text-gray-800 mb-2">
+                    {blog.title}
+                  </h3>
 
-                {/* Blog date */}
-                <p className="text-sm text-gray-500 mb-4">
-                  Published on{" "}
-                  {new Date(blog.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </p>
+                  {/* Blog date */}
+                  <p className="text-sm text-gray-500 mb-4">
+                    Published on{" "}
+                    {new Date(blog.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
 
-                {/* Author list */}
-                <div className="flex space-x-4 mb-4">
-                  {blog.authors.map((author, idx) => (
-                    <div key={idx} className="flex items-center space-x-3">
-                      {/* Profile picture */}
-                      <img
-                        src={author.profilePic}
-                        alt={`${author.name}'s profile`}
-                        className="w-12 h-12 rounded-full shadow-md border-2 border-gray-300"
-                      />
-                      {/* Author name */}
-                      <span className="text-gray-600 font-medium">
-                        {author.name}
-                      </span>
-                    </div>
-                  ))}
+                  {/* Author list */}
+                  <div className="flex space-x-4 mb-4">
+                    {blog.authors.map((author, idx) => (
+                      <div key={idx} className="flex items-center space-x-3">
+                        {/* Profile picture */}
+                        <img
+                          src={author.profilePic}
+                          alt={`${author.name}'s profile`}
+                          className="w-12 h-12 rounded-full shadow-md border-2 border-gray-300"
+                        />
+                        {/* Author name */}
+                        <span className="text-gray-600 font-medium">
+                          {author.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Blog content preview */}
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {firstParagraph}
+                    {hasMoreContent && "..."}
+                  </p>
                 </div>
-
-                {/* Blog content preview */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {firstParagraph}
-                  {hasMoreContent && "..."}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );

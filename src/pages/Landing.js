@@ -59,7 +59,6 @@ function Header() {
     );
   };
 
-  // Automatically scroll to the next image every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((currentIndex + 1) % vehicleData.length);
@@ -131,7 +130,6 @@ function Header() {
   );
 }
 
-// Mission Component
 function Mission() {
   return (
     <section className="py-12 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700">
@@ -157,7 +155,6 @@ function Mission() {
   );
 }
 
-// Projects Component
 function Projects() {
   return (
     <section className="py-12 bg-gray-100">
@@ -265,38 +262,115 @@ function ScrollingBannerSection() {
   const banners = [
     {
       type: "placement",
-      place: "2nd Place",
-      year: "2022",
-      event: "Virtual RobotX Finals",
+      place: "1st Place",
+      year: "2016",
+      event: "Overall Competition",
     },
     {
-      type: "unified",
-      place: "4th Place",
-      year: "2018",
-      event: "Overall RobotX",
+      type: "placement",
+      place: "1st Place",
+      year: "2013",
+      event: "Overall Competition",
+      competition: "RoboBoat",
+    },
+    {
+      type: "placement",
+      place: "1st Place",
+      year: "2007",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "1st Place",
+      year: "2006",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "1st Place",
+      year: "2005",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "2nd Place",
+      year: "2022",
+      event: "Virtual Overall",
+    },
+    {
+      type: "placement",
+      place: "2nd Place",
+      year: "2014",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "2nd Place",
+      year: "2013",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "2nd Place",
+      year: "2012",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "2nd Place",
+      year: "1999",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "2nd Place",
+      year: "2014",
+      event: "Overall Competition",
+      competition: "RoboBoat",
+    },
+    {
+      type: "placement",
+      place: "3rd Place",
+      year: "2011",
+      event: "Overall Competition",
       competition: "RoboSub",
     },
     {
       type: "placement",
       place: "3rd Place",
-      year: "2021",
-      event: "City Tournament",
+      year: "2002",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "3rd Place",
+      year: "2001",
+      event: "Overall Competition",
+      competition: "RoboSub",
+    },
+    {
+      type: "placement",
+      place: "3rd Place",
+      year: "1998",
+      event: "Overall Competition",
+      competition: "RoboSub",
     },
     {
       type: "unified",
-      place: "Participant",
-      year: "2020",
-      event: "Community Outreach",
-    },
-    {
-      type: "unified",
-      place: "Excellence Award",
-      year: "2019",
-      event: "Innovation Showcase",
+      place: "4th Place",
+      year: "2018",
+      event: "Overall Competition",
     },
   ];
 
-  // duplicate banners for seamless scrolling
   const scrollingBanners = [...banners, ...banners];
 
   return (
@@ -318,7 +392,6 @@ function ScrollingBannerSection() {
   );
 }
 
-// Competitions Component
 function Competitions() {
   return (
     <>
@@ -328,18 +401,18 @@ function Competitions() {
             Competitions & Achievements
           </h2>
           <p className="text-lg text-gray-800 leading-relaxed px-10">
-            Our teams compete in prestigious competitions like RobotX, RoboSub,
-            and RoboMaster, securing awards and achieving top ranks globally.
-            These events push the limits of robotics innovation.
+            Our teams compete in large international autonomous robotics
+            competitions, notably including RobotX and RoboSub. We have achieved
+            five first-place placements, and have come in the top 3 over
+            fourteen individual times.
           </p>
         </div>
       </section>
-      {/* <ScrollingBannerSection /> */}
+      <ScrollingBannerSection />
     </>
   );
 }
 
-// UF Community Standing Component
 function Community() {
   return (
     <section className="py-12 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 text-white">
@@ -358,10 +431,9 @@ function Community() {
   );
 }
 
-// Team Component
 function TeamSection() {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-6 bg-gray-100">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-8 text-blue-900">Meet the Team</h2>
         <p className="text-lg text-gray-800 leading-relaxed px-10 mb-8">
@@ -375,6 +447,14 @@ function TeamSection() {
             alt="Team Photo"
             className="max-w-5xl w-full rounded-lg shadow-lg"
           />
+        </div>
+        <div className="mt-8">
+          <a
+            href="/team"
+            className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+          >
+            Meet our Members!
+          </a>
         </div>
       </div>
     </section>
@@ -393,7 +473,7 @@ const LandingPage = () => {
       <Mission />
       <Projects />
       <Competitions />
-      <Community />
+      {/* <Community /> */}
       <TeamSection />
       <Footer />
     </div>

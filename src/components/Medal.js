@@ -14,7 +14,6 @@ const Medal = ({ text, placement }) => {
     "1st": "text-black",
   };
 
-  // Use a default color if placement is not defined
   const bgColor = backgroundColors[placement] || "bg-blue-400";
   const textColor = textColors[placement] || "text-white";
 

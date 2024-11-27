@@ -31,12 +31,15 @@ function ContactInfo() {
   return (
     <section className="py-8 bg-gray-100">
       <div className="max-w-6xl mx-auto px-6">
-        <h3 className="text-2xl font-bold text-blue-800 mb-4">Contact Us</h3>
-        <p className="text-gray-700 text-lg mb-6">
-          Reach out to us for inquiries, collaborations, or general questions.
-        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div>
+            <h3 className="text-2xl font-bold text-blue-800 mb-4">
+              Contact Us
+            </h3>
+            <p className="text-gray-700 text-lg mb-6">
+              Reach out to us for inquiries, collaborations, or general
+              questions.
+            </p>
             <h4 className="text-xl font-semibold text-blue-900">Address</h4>
             <p className="text-gray-600 mt-2">
               Machine Intelligence Laboratory
@@ -49,9 +52,7 @@ function ContactInfo() {
               <br />
               Gainesville, FL 32611
             </p>
-          </div>
-          <div>
-            <h4 className="text-xl font-semibold text-blue-900">
+            <h4 className="text-xl font-semibold text-blue-900 mt-4">
               Contact Information
             </h4>
             <p className="text-gray-600 mt-2">
@@ -62,9 +63,18 @@ function ContactInfo() {
               >
                 ems@ufl.edu
               </a>
-              <br />
-              Phone: (352) 392-2541
             </p>
+          </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.6144762212134!2d-82.34776149999999!3d29.643938499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e8a3773ea880c5%3A0x2d7889faeac87fe2!2sMachine%20Intelligence%20Laboratory%20(MIL)!5e0!3m2!1sen!2sus!4v1732679946255!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

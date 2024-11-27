@@ -28,11 +28,17 @@ function Footer() {
           <p className="text-sm text-gray-400 mt-1">
             Machine Intelligence Laboratory
           </p>
-          <p className="text-sm text-gray-400">
-            1889 Museum Road Room 3001, Gainesville, FL 32611
-          </p>
-          <p className="text-sm text-gray-400">(352) 392-2541</p>
-          <p className="text-sm text-gray-400">ems@ufl.edu</p>
+          <a
+            href="https://tinyurl.com/MIL-UF-MALA"
+            className="text-sm text-gray-400 hover:text-gray-100"
+          >
+            <p className="text-sm">
+              1889 Museum Road Room 3001
+              <br />
+              Gainesville, FL 32611
+            </p>
+          </a>
+          <p className="text-sm text-gray-400 mt-2">ems@ufl.edu</p>
         </div>
       </div>
 

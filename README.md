@@ -5,5 +5,15 @@ about our laboratory, our research, and our members.
 
 ## Contributing
 
-Currently, our website is a static site, meaning that you can work on the latest
-version of the site by just opening `index.html`.
+To setup and run the website:
+
+```
+npm install
+npm run start
+```
+
+To build the website:
+
+```
+npm run build
+```

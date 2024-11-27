@@ -1,6 +1,6 @@
 import React from "react";
 
-const RobotX = ({ lightColor = "#31b7e6", darkColor = "#214e8d" }) => {
+const RoboSub = ({ darkColor = "#31b7e6", lightColor = "#214e8d" }) => {
   return (
     <svg
       xmlnsDc="http://purl.org/dc/elements/1.1/"
@@ -67,7 +67,7 @@ const RobotX = ({ lightColor = "#31b7e6", darkColor = "#214e8d" }) => {
           <path
             id="path22"
             style={{
-              fill: darkColor,
+              fill: lightColor,
               fillOpacity: 1,
               fillRule: "nonzero",
               stroke: "none",
@@ -200,4 +200,4 @@ const RobotX = ({ lightColor = "#31b7e6", darkColor = "#214e8d" }) => {
   );
 };
 
-export default RobotX;
+export default RoboSub;

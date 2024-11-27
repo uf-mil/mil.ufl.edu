@@ -33,7 +33,7 @@ export default BannerShape;
 
 function PlacementBanner({ place, year, event, competition }) {
   // Places to dark, light colors
-  // ex: 1st place: dark gold, lighter gold
+  // ex: 1st place: lighter gold, darker gold
   const colors = {
     "1st place": ["#B8860B", "#8B6508"],
     "2nd place": ["#696969", "#4F4F4F"],
@@ -60,7 +60,7 @@ function PlacementBanner({ place, year, event, competition }) {
         style={{ borderColor: selectedColor[1] }} // Inner border (pistachio green)
       >
         <div className="w-1/2">
-          <Logo lightColor={selectedColor[1]} darkColor={selectedColor[0]} />
+          <Logo lightColor={selectedColor[0]} darkColor={selectedColor[1]} />
         </div>
         <div className="px-4">
           <div className="text-4xl mt-4 font-bold tracking-wide">{year}</div>

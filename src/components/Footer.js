@@ -38,7 +38,16 @@ function Footer() {
               Gainesville, FL 32611
             </p>
           </a>
-          <p className="text-sm text-gray-400 mt-2">ems@ufl.edu</p>
+          <p className="text-sm text-gray-400 mt-2">
+            Prof. Eric M. Schwartz, MIL Director
+            <br />
+            <a
+              href="mailto:ems@ufl.edu"
+              className="text-sm text-gray-400 hover:text-gray-100"
+            >
+              ems@ufl.edu
+            </a>
+          </p>
         </div>
       </div>
 

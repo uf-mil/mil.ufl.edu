@@ -56,6 +56,8 @@ function ContactInfo() {
               Contact Information
             </h4>
             <p className="text-gray-600 mt-2">
+              Prof. Eric M. Schwartz, MIL Director
+              <br />
               Email:{" "}
               <a
                 href="mailto:ems@ufl.edu"

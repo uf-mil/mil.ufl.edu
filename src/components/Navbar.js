@@ -7,6 +7,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
+import Banner from "../components/Banner";
 import logo from "../assets/mil-logo-full.svg";
 
 const NavItem = ({ to, label, dropdown, closeMobileMenu }) => {
@@ -103,70 +104,88 @@ function Navbar() {
     setMobileMenuOpen(false);
   };
 
+  const bannerMessage = (
+    <p>
+      Interested in applying for Spring 2024? Applications are open until
+      December 20! <b>Apply Now ➜</b>
+    </p>
+  );
+
   return (
-    <nav className="w-full p-3 bg-white bg-opacity-90 shadow-md z-50 relative">
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
-        {/* Logo */}
-        <Link to="/" onClick={closeMobileMenu}>
-          <div>
-            <img src={logo} alt="MIL Logo" className="h-12" />
-          </div>
-        </Link>
+    <>
+      <Banner message={bannerMessage} link="/apply" />
+      <nav className="w-full p-3 bg-white bg-opacity-90 shadow-md z-50 relative">
+        <div className="flex justify-between items-center max-w-7xl mx-auto">
+          {/* Logo */}
+          <Link to="/" onClick={closeMobileMenu}>
+            <div>
+              <img src={logo} alt="MIL Logo" className="h-12" />
+            </div>
+          </Link>
 
-        {/* Hamburger Menu for Mobile */}
-        <button
-          className="block md:hidden text-gatorblue-800 z-50"
-          onClick={toggleMobileMenu}
-        >
-          <FontAwesomeIcon
-            icon={isMobileMenuOpen ? faTimes : faBars}
-            className="w-6 h-6"
-          />
-        </button>
+          {/* Hamburger Menu for Mobile */}
+          <button
+            className="block md:hidden text-gatorblue-800 z-50"
+            onClick={toggleMobileMenu}
+          >
+            <FontAwesomeIcon
+              icon={isMobileMenuOpen ? faTimes : faBars}
+              className="w-6 h-6"
+            />
+          </button>
 
-        {/* Menu Items */}
-        <ul
-          className={`fixed top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-6 transform transition-transform duration-300 z-40 md:relative md:flex-row md:items-center md:justify-between md:space-x-6 md:space-y-0 md:transform-none md:h-auto md:w-auto md:bg-transparent ${
-            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-        >
-          <NavItem to="/" label="Home" closeMobileMenu={closeMobileMenu} />
-          <NavItem
-            to="/about"
-            label="About Us"
-            dropdown={[{ to: "/lab", label: "Lab Information" }]}
-            closeMobileMenu={closeMobileMenu}
-          />
-          <NavItem to="/team" label="Team" closeMobileMenu={closeMobileMenu} />
-          <NavItem
-            to="/vehicles"
-            label="Vehicles"
-            closeMobileMenu={closeMobileMenu}
-          />
-          {/* <NavItem
+          {/* Menu Items */}
+          <ul
+            className={`fixed top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-6 transform transition-transform duration-300 z-40 md:relative md:flex-row md:items-center md:justify-between md:space-x-6 md:space-y-0 md:transform-none md:h-auto md:w-auto md:bg-transparent ${
+              isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
+            <NavItem to="/" label="Home" closeMobileMenu={closeMobileMenu} />
+            <NavItem
+              to="/about"
+              label="About Us"
+              dropdown={[{ to: "/lab", label: "Lab Information" }]}
+              closeMobileMenu={closeMobileMenu}
+            />
+            <NavItem
+              to="/team"
+              label="Team"
+              closeMobileMenu={closeMobileMenu}
+            />
+            <NavItem
+              to="/vehicles"
+              label="Vehicles"
+              closeMobileMenu={closeMobileMenu}
+            />
+            {/* <NavItem
             to="/research"
             label="Research"
             closeMobileMenu={closeMobileMenu}
           /> */}
-          <NavItem
-            to="/sponsors"
-            label="Sponsors"
-            dropdown={[
-              { to: "/donate", label: "Donate" },
-              { to: "/sponsor_packet", label: "Become a Supporter" },
-              { to: "/sponsors", label: "2024 Sponsors" },
-            ]}
-            closeMobileMenu={closeMobileMenu}
-          />
-          <NavItem to="/blog" label="Blog" closeMobileMenu={closeMobileMenu} />
-          <NavItem
-            to="/apply"
-            label="Apply"
-            closeMobileMenu={closeMobileMenu}
-          />
-        </ul>
-      </div>
-    </nav>
+            <NavItem
+              to="/sponsors"
+              label="Sponsors"
+              dropdown={[
+                { to: "/donate", label: "Donate" },
+                { to: "/sponsor_packet", label: "Become a Supporter" },
+                { to: "/sponsors", label: "2024 Sponsors" },
+              ]}
+              closeMobileMenu={closeMobileMenu}
+            />
+            <NavItem
+              to="/blog"
+              label="Blog"
+              closeMobileMenu={closeMobileMenu}
+            />
+            <NavItem
+              to="/apply"
+              label="Apply"
+              closeMobileMenu={closeMobileMenu}
+            />
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 }
 

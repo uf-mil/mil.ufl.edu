@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -27,6 +28,12 @@ const SponsorSection = ({ title, sponsors, bgColor }) => {
   );
 };
 
+SponsorSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  sponsors: PropTypes.array.isRequired,
+  bgColor: PropTypes.string.isRequired,
+};
+
 const SponsorCard = ({ name, description, url, imgSrc, imgAlt, bgColor }) => {
   return (
     <div
@@ -47,6 +54,15 @@ const SponsorCard = ({ name, description, url, imgSrc, imgAlt, bgColor }) => {
   );
 };
 
+SponsorCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string,
+  imgAlt: PropTypes.string,
+  bgColor: PropTypes.string.isRequired,
+};
+
 const BronzeSponsorCard = ({ sponsor }) => {
   return (
     <div className="bg-rose-50 rounded-md p-6 shadow-md w-full md:w-[calc(25%-1.5rem)] lg:w-[calc(25%-1.5rem)]">
@@ -63,6 +79,10 @@ const BronzeSponsorCard = ({ sponsor }) => {
       )}
     </div>
   );
+};
+
+BronzeSponsorCard.propTypes = {
+  sponsor: PropTypes.object.isRequired,
 };
 
 const SponsorsPage = () => {

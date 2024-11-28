@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const RoboSub = ({ darkColor = "#31b7e6", lightColor = "#214e8d" }) => {
   return (
@@ -198,6 +199,11 @@ const RoboSub = ({ darkColor = "#31b7e6", lightColor = "#214e8d" }) => {
       </g>
     </svg>
   );
+};
+
+RoboSub.propTypes = {
+  darkColor: PropTypes.string,
+  lightColor: PropTypes.string,
 };
 
 export default RoboSub;

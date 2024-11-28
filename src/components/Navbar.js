@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import PropTypes from "prop-types";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -91,6 +92,13 @@ const NavItem = ({ to, label, dropdown, closeMobileMenu }) => {
       )}
     </div>
   );
+};
+
+NavItem.propTypes = {
+  to: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  dropdown: PropTypes.array,
+  closeMobileMenu: PropTypes.func.isRequired,
 };
 
 function Navbar() {

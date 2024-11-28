@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Medal from "../components/Medal";
 import React from "react";
+import PropTypes from "prop-types";
 
 import softwareSolving from "../assets/software_solving.jpg";
 import naviGatorImage from "../assets/navigator.jpg"; // Add images of the vehicles
@@ -55,27 +56,13 @@ const VehicleCard = ({ title, description, image, medals = [], inactive }) => {
   );
 };
 
-// Introduction Component
-function Introduction() {
-  return (
-    <section className="py-8">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold font-light mb-6">Research</h2>
-        <div className="flex justify-center">
-          <img
-            src={softwareSolving}
-            alt="Team Photo"
-            className="max-w-5xl w-full rounded-lg"
-          />
-        </div>
-        <p className="text-white px-10 my-6">
-          Our students and faculty are committed to producing high-quality
-          research. Check out some of our latest publications and projects.
-        </p>
-      </div>
-    </section>
-  );
-}
+VehicleCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  medals: PropTypes.array,
+  inactive: PropTypes.bool,
+};
 
 const VehiclePage = () => {
   const vehicles = [

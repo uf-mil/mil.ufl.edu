@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -58,5 +59,15 @@ function MemberCard({
     </div>
   );
 }
+
+MemberCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  degree: PropTypes.string.isRequired,
+  graduationYear: PropTypes.string.isRequired,
+  linkedIn: PropTypes.string,
+  website: PropTypes.string,
+};
 
 export default MemberCard;

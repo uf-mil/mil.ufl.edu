@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -29,6 +30,21 @@ const LeadershipSection = ({ title, members }) => {
       </div>
     </section>
   );
+};
+
+LeadershipSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  members: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      degree: PropTypes.string,
+      graduationYear: PropTypes.string,
+      linkedIn: PropTypes.string,
+      website: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 const SoftwareLeadership = () => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Banner({
   message,
@@ -51,5 +52,12 @@ function Banner({
     </div>
   );
 }
+
+Banner.propTypes = {
+  message: PropTypes.string.isRequired,
+  bgColor: PropTypes.string,
+  textColor: PropTypes.string,
+  link: PropTypes.string,
+};
 
 export default Banner;

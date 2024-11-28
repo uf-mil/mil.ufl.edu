@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import robotXLogo from "../assets/robotx.svg";
 import robosubLogo from "../assets/robosub.svg";
@@ -28,6 +29,12 @@ function BannerShape({ children, className, style }) {
     </div>
   );
 }
+
+BannerShape.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  style: PropTypes.object,
+};
 
 export default BannerShape;
 
@@ -74,6 +81,13 @@ function PlacementBanner({ place, year, event, competition }) {
   );
 }
 
+PlacementBanner.propTypes = {
+  place: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  event: PropTypes.string.isRequired,
+  competition: PropTypes.string.isRequired,
+};
+
 function UnifiedBanner({ place, year, event, competition }) {
   return (
     <BannerShape
@@ -104,6 +118,13 @@ function UnifiedBanner({ place, year, event, competition }) {
     </BannerShape>
   );
 }
+
+UnifiedBanner.propTypes = {
+  place: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  event: PropTypes.string.isRequired,
+  competition: PropTypes.string.isRequired,
+};
 
 // Export both
 export { PlacementBanner, UnifiedBanner };

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const RobotX = ({ lightColor = "#31b7e6", darkColor = "#214e8d" }) => {
   return (
@@ -158,6 +159,11 @@ const RobotX = ({ lightColor = "#31b7e6", darkColor = "#214e8d" }) => {
       </g>
     </svg>
   );
+};
+
+RobotX.propTypes = {
+  lightColor: PropTypes.string,
+  darkColor: PropTypes.string,
 };
 
 export default RobotX;

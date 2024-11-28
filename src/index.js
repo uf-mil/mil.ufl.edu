@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  createHashRouter,
-  createBrowserRouter,
-  RouterProvider,
-  Link,
-  Navigate,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
 import "./input.css";

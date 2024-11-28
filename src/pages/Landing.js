@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { PlacementBanner, UnifiedBanner } from "../components/AwardBanner";
-import { NavLink } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -413,23 +412,23 @@ function Competitions() {
   );
 }
 
-function Community() {
-  return (
-    <section className="py-12 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 text-white">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8">
-          Our Place in the UF Community
-        </h2>
-        <p className="text-lg leading-relaxed px-10">
-          As part of the University of Florida, the Robotics Lab is a prominent
-          space where interdisciplinary collaboration, hands-on learning, and
-          cutting-edge research come together. Our work enhances UF’s reputation
-          in robotics and AI.
-        </p>
-      </div>
-    </section>
-  );
-}
+// function Community() {
+//   return (
+//     <section className="py-12 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 text-white">
+//       <div className="max-w-6xl mx-auto text-center">
+//         <h2 className="text-4xl font-bold mb-8">
+//           Our Place in the UF Community
+//         </h2>
+//         <p className="text-lg leading-relaxed px-10">
+//           As part of the University of Florida, the Robotics Lab is a prominent
+//           space where interdisciplinary collaboration, hands-on learning, and
+//           cutting-edge research come together. Our work enhances UF’s reputation
+//           in robotics and AI.
+//         </p>
+//       </div>
+//     </section>
+//   );
+// }
 
 function TeamSection() {
   return (

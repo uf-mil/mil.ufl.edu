@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMedal } from "@fortawesome/free-solid-svg-icons";
@@ -27,6 +28,11 @@ const Medal = ({ text, placement }) => {
       </span>
     </div>
   );
+};
+
+Medal.propTypes = {
+  text: PropTypes.string.isRequired,
+  placement: PropTypes.string.isRequired,
 };
 
 export default Medal;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 
 const BlogPost = ({ title, authors, date, content, onBack }) => {
@@ -29,6 +30,19 @@ const BlogPost = ({ title, authors, date, content, onBack }) => {
       </div>
     </div>
   );
+};
+
+BlogPost.propTypes = {
+  title: PropTypes.string.isRequired,
+  authors: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      profilePic: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  date: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  onBack: PropTypes.func.isRequired,
 };
 
 export default BlogPost;

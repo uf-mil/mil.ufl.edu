@@ -156,7 +156,7 @@ function Mission() {
 
 function Projects() {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-gray-200">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-10 text-blue-900">
           Our Projects
@@ -168,12 +168,14 @@ function Projects() {
               logo: naviGatorLogo,
               description:
                 "Our autonomous surface vehicle designed for maritime environments. NaviGator AMS has proven capabilities through extensive testing and competition.",
+              link: "https://navigatoruf.org",
             },
             {
               image: subjuGatorImage,
               logo: subjuGatorLogo,
               description:
                 "Our autonomous underwater vehicle (AUV) capable of diving deep into underwater environments and performing complex tasks autonomously.",
+              link: "https://subjugator.org",
             },
             {
               image: softwareSolving,
@@ -188,39 +190,56 @@ function Projects() {
                 "Our aerial drone project combines stability, agility, and advanced navigation to perform aerial maneuvers autonomously.",
             },
           ].map((project, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-              <img
-                src={project.image}
-                alt={project.title || "Project"}
-                className="rounded-lg mb-4"
-              />
-              {project.logo && (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between h-full"
+            >
+              <div>
                 <img
-                  src={project.logo}
-                  alt="Project Logo"
-                  className="rounded-lg mb-4 px-6 mx-auto"
+                  src={project.image}
+                  alt={project.title || "Project"}
+                  className="rounded-lg mb-4"
                 />
+                {project.logo && (
+                  <img
+                    src={project.logo}
+                    alt="Project Logo"
+                    className="rounded-lg mb-4 px-6 mx-auto"
+                  />
+                )}
+                {project.title && (
+                  <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                    {project.title}
+                  </h3>
+                )}
+                <p className="text-gray-700">{project.description}</p>
+              </div>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-center bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 mt-4"
+                >
+                  Learn More
+                </a>
               )}
-              {project.title && (
-                <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                  {project.title}
-                </h3>
-              )}
-              <p className="text-gray-700">{project.description}</p>
             </div>
           ))}
           {/* Final Card Linking to Vehicles Page */}
-          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">
-              Explore All Vehicles
-            </h3>
-            <p className="text-gray-700 text-center mb-4">
-              Discover our full range of vehicles, including past and present
-              projects.
-            </p>
+          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+            <div>
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">
+                Explore All Vehicles
+              </h3>
+              <p className="text-gray-700 text-center mb-4">
+                Discover our full range of vehicles, including past and present
+                projects.
+              </p>
+            </div>
             <a
               href="/vehicles"
-              className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+              className="block text-center bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
             >
               See All Vehicles
             </a>

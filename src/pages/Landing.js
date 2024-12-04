@@ -23,7 +23,7 @@ const vehicleData = [
     name: "NaviGator AMS",
     description:
       "An autonomous surface vehicle designed for maritime navigation and competition.",
-    image: naviGatorImage,
+    image: naviGatorImage2024,
   },
   {
     name: "SubjuGator AUV",
@@ -164,7 +164,7 @@ function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
           {[
             {
-              image: naviGatorImage2024,
+              image: naviGatorImage,
               logo: naviGatorLogo,
               description:
                 "Our autonomous surface vehicle designed for maritime environments. NaviGator AMS has proven capabilities through extensive testing and competition.",

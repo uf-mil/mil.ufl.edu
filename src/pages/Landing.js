@@ -13,6 +13,8 @@ import naviGatorImage from "../assets/navigator.jpg";
 import naviGatorImage2024 from "../assets/navigator_2024.jpg";
 import naviGatorLogo from "../assets/navigator_logo.png";
 import subjuGatorLogo from "../assets/subjugator_logo.png";
+import investigatorLogo from "../assets/investigator.svg";
+import missionRedLogo from "../assets/red_rover.svg";
 import subjuGatorImage from "../assets/subjugator.jpg";
 import investigatorImage from "../assets/investigator.jpg";
 import teamPhoto from "../assets/team_2024.jpg";
@@ -179,13 +181,13 @@ function Projects() {
             },
             {
               image: softwareSolving,
-              title: "Mission Red Rover",
+              logo: missionRedLogo,
               description:
                 "Our terrestrial rover project focuses on designing robotic rovers capable of navigating challenging terrains for exploration.",
             },
             {
               image: investigatorImage,
-              title: "InvestiGator UAV",
+              logo: investigatorLogo,
               description:
                 "Our aerial drone project combines stability, agility, and advanced navigation to perform aerial maneuvers autonomously.",
             },

@@ -4,6 +4,8 @@ const webpack = require("webpack");
 const commitHash = require("child_process").execSync(
   "git rev-parse --short HEAD",
 );
+const CompressionPlugin = require("compression-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const getCurrentTimeEST = () => {
   const now = new Date();
@@ -59,6 +61,31 @@ module.exports = {
       },
     ],
   },
+  // TODO: why is this not working :(
+  // optimization: {
+  //   minimizer: [
+  //     new ImageMinimizerPlugin({
+  //       minimizer: {
+  //         implementation: ImageMinimizerPlugin.sharpMinify,
+  //         options: {
+  //           failOnError: false,
+  //           encodeOptions: {
+  //             jpeg: {
+  //               quality: 90,
+  //             },
+  //             // png by default sets the quality to 100%, which is same as lossless
+  //             // https://sharp.pixelplumbing.com/api-output#png
+  //             png: {},
+
+  //             // gif does not support lossless compression at all
+  //             // https://sharp.pixelplumbing.com/api-output#gif
+  //             gif: {},
+  //           },
+  //         },
+  //       },
+  //     }),
+  //   ],
+  // },
   devServer: {
     historyApiFallback: true,
   },
@@ -74,6 +101,7 @@ module.exports = {
       COMMIT_HASH: JSON.stringify(commitHash.toString().trim()),
       BUILD_TIME: JSON.stringify(currentTime),
     }),
+    new CompressionPlugin(),
   ],
   resolve: {
     extensions: [".ts", ".js"],

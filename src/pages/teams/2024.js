@@ -75,14 +75,6 @@ const SoftwareLeadership = () => {
       linkedIn: "keith-khadar",
     },
     {
-      image: memberImages["andrew.png"],
-      name: "Andrew Knee",
-      role: "Software Lead",
-      degree: "MS, Computer Science",
-      graduationYear: "Fall 2024",
-      linkedIn: "andrew-knee-j",
-    },
-    {
       image: memberImages["alex.png"],
       name: "Alex Johnson",
       role: "Software Lead",
@@ -101,8 +93,8 @@ const ElectricalLeadership = () => {
       image: memberImages["adrian.png"],
       name: "Adrian Fernandez",
       role: "Team Lead",
-      degree: "BS, Electrical Engineering",
-      graduationYear: "Fall 2024",
+      degree: "MS, Electrical/Computer Engineering",
+      graduationYear: "Fall 2025",
       linkedIn: "adrianfernandez23",
     },
     {
@@ -119,14 +111,6 @@ const ElectricalLeadership = () => {
       degree: "BS, Computer Engineering",
       graduationYear: "Spring 2025",
       linkedIn: "dominik-kapuscinski",
-    },
-    {
-      image: memberImages["kayleigh.jpg"],
-      name: "Kayleigh Beron",
-      role: "Operations Lead",
-      degree: "BS, Computer Engineering",
-      graduationYear: "Fall 2024",
-      linkedIn: "kayleigh-beron",
     },
     // {
     //   image: memberImages["jack.png"],

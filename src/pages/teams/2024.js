@@ -179,12 +179,37 @@ const MechanicalLeadership = () => {
   return <LeadershipSection title="Mechanical Leadership" members={members} />;
 };
 
+const Directors = () => {
+  const directors = [
+    {
+      image: advisorImages["schwartz.jpg"],
+      name: "Dr. Eric Schwartz",
+      role: (
+        <p>
+          MIL Director
+          <br />
+          Professor, ECE
+        </p>
+      ),
+      linkedIn: "eric-schwartz-4231924",
+      website: "https://mil.ufl.edu/ems/",
+    },
+  ];
+  return <LeadershipSection title="Directors" members={directors} />;
+};
+
 const Advisors = () => {
   const advisors = [
     {
       image: advisorImages["schwartz.jpg"],
       name: "Dr. Eric Schwartz",
-      role: "MIL Director",
+      role: (
+        <p>
+          MIL Director
+          <br />
+          Professor, ECE
+        </p>
+      ),
       linkedIn: "eric-schwartz-4231924",
       website: "https://mil.ufl.edu/ems/",
     },
@@ -205,6 +230,36 @@ const Advisors = () => {
   ];
 
   return <LeadershipSection title="Advisors" members={advisors} />;
+};
+
+const PastDirectors = () => {
+  const pastDirectors = [
+    {
+      image: advisorImages["arroyo.jpg"],
+      name: "Dr. A. Antonio Arroyo",
+      role: (
+        <p>
+          Past Director
+          <br />
+          Professor, ECE
+        </p>
+      ),
+      website: "https://mil.ufl.edu/~arroyo/",
+    },
+    {
+      image: advisorImages["doty.jpg"],
+      name: "Dr. Keith Doty",
+      role: (
+        <p>
+          Founding Director
+          <br />
+          Professor, ECE
+        </p>
+      ),
+      linkedIn: "keith-doty-a6213a47",
+    },
+  ];
+  return <LeadershipSection title="Past Directors" members={pastDirectors} />;
 };
 
 const TeamList = () => {
@@ -289,7 +344,9 @@ const TeamPage = () => {
       <SoftwareLeadership />
       <ElectricalLeadership />
       <MechanicalLeadership />
+      <Directors />
       <Advisors />
+      <PastDirectors />
       <TeamList />
       <Footer />
     </div>

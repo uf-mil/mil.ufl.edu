@@ -8,6 +8,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
+// eslint-disable-next-line no-unused-vars
 import Banner from "../components/Banner";
 import logo from "../assets/mil-logo-full.svg";
 
@@ -112,6 +113,7 @@ function Navbar() {
     setMobileMenuOpen(false);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const bannerMessage = (
     <p>
       Interested in applying for Spring 2024? Applications are open until
@@ -121,7 +123,6 @@ function Navbar() {
 
   return (
     <>
-      <Banner message={bannerMessage} link="/apply" />
       <nav className="w-full p-3 bg-white bg-opacity-90 shadow-md z-50 relative">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           {/* Logo */}

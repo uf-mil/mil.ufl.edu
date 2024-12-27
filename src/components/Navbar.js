@@ -153,7 +153,13 @@ function Navbar() {
             <NavItem
               to="/about"
               label="About Us"
-              dropdown={[{ to: "/lab", label: "Lab Information" }]}
+              dropdown={[
+                { to: "/lab", label: "Lab Information" },
+                {
+                  to: "https://mil.ufl.edu/docs",
+                  label: "Technical Documentation",
+                },
+              ]}
               closeMobileMenu={closeMobileMenu}
             />
             <NavItem

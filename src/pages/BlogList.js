@@ -15,11 +15,26 @@ const BlogList = () => {
       const { content, data } = matter(fileContent);
       // make unique slug for each post
       const slug = fileName.replace("./", "").replace(".md", "");
+      // ensure all images are require'd in
+      const processedContent = content.replace(
+        /!\[([^\]]*)\]\((\.\/[^)]+)\)/g,
+        (match, altText, relativePath) => {
+          try {
+            const resolvedPath = require(
+              `../assets/${relativePath.replace("../assets/", "")}`,
+            );
+            return `![${altText}](${resolvedPath})`;
+          } catch {
+            console.error(`Error resolving image path: ${relativePath}`);
+            return match;
+          }
+        },
+      );
       const authors = data.authors.map((author) => ({
         ...author,
         profilePic: require("../assets/people/" + author.profilePic),
       }));
-      return { ...data, authors, content: String(content), slug };
+      return { ...data, authors, content: String(processedContent), slug };
     });
 
     setBlogs(blogFiles);

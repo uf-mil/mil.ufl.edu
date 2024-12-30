@@ -1,77 +1,55 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import matter from "gray-matter";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import matter from "gray-matter";
-import BlogPost from "../components/BlogPost";
 
-// Blog List Component
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
-  const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
-    // Use Webpack's require.context to dynamically import markdown files
     const context = require.context("../blogs", false, /\.md$/);
     const blogFiles = context.keys().map((fileName) => {
-      const fileContent = context(fileName).default; // Markdown content
-      const { content, data } = matter(fileContent); // Parse metadata and content
-      // Resolve profile picture paths
+      const fileContent = context(fileName).default;
+      const { content, data } = matter(fileContent);
+      // make unique slug for each post
+      const slug = fileName.replace("./", "").replace(".md", "");
       const authors = data.authors.map((author) => ({
         ...author,
-        profilePic: require("../assets/people/" + author.profilePic), // Resolve image path dynamically
+        profilePic: require("../assets/people/" + author.profilePic),
       }));
-      return { ...data, authors, content: String(content) }; // Ensure content is a string
+      return { ...data, authors, content: String(content), slug };
     });
 
     setBlogs(blogFiles);
   }, []);
 
-  // Show the full blog post when a blog is clicked
-  if (selectedBlog) {
-    return (
-      <BlogPost
-        title={selectedBlog.title}
-        authors={selectedBlog.authors}
-        date={selectedBlog.date}
-        content={selectedBlog.content}
-        onBack={() => setSelectedBlog(null)}
-      />
-    );
-  }
-
   return (
     <section className="py-12 min-h-screen bg-gradient-to-br from-blue-800 to-blue-500 text-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section title */}
         <h2 className="text-5xl font-extrabold text-center mb-12 tracking-wide">
           Our Blogs
         </h2>
-
-        {/* Blog list */}
         {blogs.length === 0 ? (
           <p className="text-center text-lg text-gray-100">
             There are no blogs right now, check back later!
           </p>
         ) : (
           <div className="space-y-8">
-            {blogs.map((blog, index) => {
-              // Extract the first paragraph
-              const firstParagraph = blog.content.split("\n\n")[0];
-              const hasMoreContent = blog.content.split("\n\n").length > 1;
-
-              return (
+            {blogs.map((blog, index) => (
+              <Link
+                to={`/blog/${blog.slug}`}
+                key={index}
+                className="text-blue-500 font-medium mt-4 inline-block"
+              >
                 <div
                   key={index}
-                  className="border border-gray-200 rounded-lg shadow-lg p-6 bg-white cursor-pointer hover:shadow-2xl transform hover:-translate-y-2 transition duration-300"
-                  onClick={() => setSelectedBlog(blog)}
+                  className="border border-gray-200 rounded-lg shadow-lg p-6 bg-white hover:shadow-2xl transform hover:-translate-y-2 transition duration-300"
                 >
-                  {/* Blog title */}
                   <h3 className="text-3xl font-bold text-gray-800 mb-2">
                     {blog.title}
                   </h3>
-
-                  {/* Blog date */}
                   <p className="text-sm text-gray-500 mb-4">
                     Published on{" "}
                     {new Date(blog.date).toLocaleDateString("en-US", {
@@ -80,7 +58,6 @@ const BlogList = () => {
                       day: "numeric",
                     })}
                   </p>
-
                   {/* Author list */}
                   <div className="flex space-x-4 mb-4">
                     {blog.authors.map((author, idx) => (
@@ -98,15 +75,12 @@ const BlogList = () => {
                       </div>
                     ))}
                   </div>
-
-                  {/* Blog content preview */}
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    {firstParagraph}
-                    {hasMoreContent && "..."}
+                    {blog.content.split("\n\n")[0]}...
                   </p>
                 </div>
-              );
-            })}
+              </Link>
+            ))}
           </div>
         )}
       </div>

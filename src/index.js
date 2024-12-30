@@ -7,7 +7,8 @@ import Landing from "./pages/Landing";
 import Sponsors from "./pages/Sponsors";
 import Apply from "./pages/Apply";
 import Research from "./pages/Research";
-import Blog from "./pages/Blog";
+import BlogList from "./pages/BlogList";
+import BlogPost from "./pages/BlogPost";
 import Vehicles from "./pages/Vehicles";
 import NotFound from "./pages/NotFound";
 import LabInfo from "./pages/LabInfo";
@@ -46,7 +47,11 @@ const router = createBrowserRouter(
     },
     {
       path: "/blog",
-      element: <Blog />,
+      element: <BlogList />,
+    },
+    {
+      path: "/blog/:slug",
+      element: <BlogPost />,
     },
     {
       path: "/team",

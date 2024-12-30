@@ -76,7 +76,7 @@ const BlogList = () => {
                     ))}
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    {blog.content.split("\n\n")[0]}...
+                    {blog.content.slice(0, 400)}...
                   </p>
                 </div>
               </Link>

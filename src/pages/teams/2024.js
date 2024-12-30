@@ -136,7 +136,7 @@ const MechanicalLeadership = () => {
       linkedIn: "lorant-domokos-849094244",
     },
     {
-      image: memberImages["adam_m.jpeg"],
+      image: memberImages["adam_m.png"],
       name: "Adam McAleer",
       role: "Mechanisms Lead",
       degree: "BS, Mechanical Engineering",

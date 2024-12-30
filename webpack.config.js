@@ -36,7 +36,7 @@ module.exports = {
         .split("/")
         .slice(1)
         .join("/");
-      return `${filepath}/[name].[hash][ext][query]`;
+      return `${filepath}/[name][ext]`;
     },
   },
   module: {
@@ -56,7 +56,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
-        test: /\.(png|jpeg|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        test: /\.(png|jpeg|jpg|gif|svg|eot|ttf|woff|woff2|pdf)$/,
         type: "asset",
       },
     ],

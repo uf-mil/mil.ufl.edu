@@ -7,3 +7,7 @@
     animation-play-state: paused;
   }
 }
+
+.prose p {
+  margin-bottom: 1.5rem; /* Adjust spacing as needed */
+}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import matter from "gray-matter";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -66,7 +68,9 @@ const BlogPost = () => {
             ))}
           </div>
           <div className="prose max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {blog.content}
+            </ReactMarkdown>
           </div>
         </div>
       </div>

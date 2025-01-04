@@ -98,19 +98,19 @@ const ElectricalLeadership = () => {
       linkedIn: "adrianfernandez23",
     },
     {
+      image: memberImages["dominik.png"],
+      name: "Dominik Kapuscinski",
+      role: "Electrical Lead",
+      degree: "BS, Computer Engineering",
+      graduationYear: "Spring 2025",
+      linkedIn: "dominik-kapuscinski",
+    },
+    {
       image: memberImages["lester.jpg"],
       name: "Lester Bonilla",
       role: "Drone Lead",
       degree: "BS, Computer Engineering",
       graduationYear: "Spring 2025",
-    },
-    {
-      image: memberImages["dominik.png"],
-      name: "Dominik Kapuscinski",
-      role: "Drone Lead",
-      degree: "BS, Computer Engineering",
-      graduationYear: "Spring 2025",
-      linkedIn: "dominik-kapuscinski",
     },
     // {
     //   image: memberImages["jack.png"],
@@ -128,22 +128,6 @@ const ElectricalLeadership = () => {
 const MechanicalLeadership = () => {
   const members = [
     {
-      image: memberImages["lorant.png"],
-      name: "Lorant Domokos",
-      role: "Team Lead",
-      degree: "BS, Mechanical Engineering",
-      graduationYear: "Spring 2025",
-      linkedIn: "lorant-domokos-849094244",
-    },
-    {
-      image: memberImages["adam_m.png"],
-      name: "Adam McAleer",
-      role: "Mechanisms Lead",
-      degree: "BS, Mechanical Engineering",
-      graduationYear: "Fall 2024",
-      linkedIn: "adam-mcaleer",
-    },
-    {
       image: memberImages["sophie.png"],
       name: "Sophie Lanahan",
       role: "Mechanical Lead",
@@ -154,9 +138,25 @@ const MechanicalLeadership = () => {
     {
       image: memberImages["adam_h.png"],
       name: "Adam Hamdan",
-      role: "Operations Lead",
+      role: "Mechanical Lead",
       degree: "BS, Mechanical Engineering",
       graduationYear: "Spring 2026",
+    },
+    {
+      image: memberImages["adam_m.png"],
+      name: "Adam McAleer",
+      role: "Mechanisms Lead",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Fall 2024",
+      linkedIn: "adam-mcaleer",
+    },
+    {
+      image: memberImages["lorant.png"],
+      name: "Lorant Domokos",
+      role: "Mechanical Lead",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2025",
+      linkedIn: "lorant-domokos-849094244",
     },
   ];
 

@@ -50,7 +50,7 @@ LeadershipSection.propTypes = {
 const SoftwareLeadership = () => {
   const members = [
     {
-      image: memberImages["cameron.jpeg"],
+      image: memberImages["cameron_brown.jpeg"],
       name: "Cameron Brown",
       role: "Team Lead",
       degree: "BS, Computer Science",
@@ -59,7 +59,7 @@ const SoftwareLeadership = () => {
       website: "https://cbrxyz.com",
     },
     {
-      image: memberImages["daniel.jpeg"],
+      image: memberImages["daniel_parra.jpeg"],
       name: "Daniel Parra",
       role: "Software Lead",
       degree: "BS, Computer Science",
@@ -67,7 +67,7 @@ const SoftwareLeadership = () => {
       linkedIn: "daniparr",
     },
     {
-      image: memberImages["keith.jpeg"],
+      image: memberImages["keith_khadar.jpg"],
       name: "Keith Khadar",
       role: "Software Lead",
       degree: "BS, Computer Engineering",
@@ -75,7 +75,7 @@ const SoftwareLeadership = () => {
       linkedIn: "keith-khadar",
     },
     {
-      image: memberImages["alex.png"],
+      image: memberImages["alex_johnson.png"],
       name: "Alex Johnson",
       role: "Software Lead",
       degree: "BS, Computer Science",
@@ -90,7 +90,7 @@ const SoftwareLeadership = () => {
 const ElectricalLeadership = () => {
   const members = [
     {
-      image: memberImages["adrian.png"],
+      image: memberImages["adrian_fernandez.png"],
       name: "Adrian Fernandez",
       role: "Team Lead",
       degree: "MS, Electrical/Computer Engineering",
@@ -98,7 +98,7 @@ const ElectricalLeadership = () => {
       linkedIn: "adrianfernandez23",
     },
     {
-      image: memberImages["dominik.png"],
+      image: memberImages["dominik_kapuscinski.png"],
       name: "Dominik Kapuscinski",
       role: "Electrical Lead",
       degree: "BS, Computer Engineering",
@@ -106,7 +106,7 @@ const ElectricalLeadership = () => {
       linkedIn: "dominik-kapuscinski",
     },
     {
-      image: memberImages["lester.jpg"],
+      image: memberImages["lester_bonilla.jpg"],
       name: "Lester Bonilla",
       role: "Drone Lead",
       degree: "BS, Computer Engineering",
@@ -128,7 +128,7 @@ const ElectricalLeadership = () => {
 const MechanicalLeadership = () => {
   const members = [
     {
-      image: memberImages["sophie.png"],
+      image: memberImages["sophie_lanahan.png"],
       name: "Sophie Lanahan",
       role: "Mechanical Lead",
       degree: "BS, Mechanical Engineering",
@@ -136,14 +136,14 @@ const MechanicalLeadership = () => {
       linkedIn: "sophie-lanahan-9b2440325",
     },
     {
-      image: memberImages["adam_h.png"],
+      image: memberImages["adam_hamdan.png"],
       name: "Adam Hamdan",
       role: "Mechanical Lead",
       degree: "BS, Mechanical Engineering",
       graduationYear: "Spring 2026",
     },
     {
-      image: memberImages["adam_m.png"],
+      image: memberImages["adam_mcaleer.png"],
       name: "Adam McAleer",
       role: "Mechanisms Lead",
       degree: "BS, Mechanical Engineering",
@@ -151,7 +151,7 @@ const MechanicalLeadership = () => {
       linkedIn: "adam-mcaleer",
     },
     {
-      image: memberImages["lorant.png"],
+      image: memberImages["lorant_domokos.png"],
       name: "Lorant Domokos",
       role: "Mechanical Lead",
       degree: "BS, Mechanical Engineering",
@@ -166,7 +166,7 @@ const MechanicalLeadership = () => {
 const Directors = () => {
   const directors = [
     {
-      image: advisorImages["schwartz.jpg"],
+      image: advisorImages["eric_schwartz.jpg"],
       name: "Dr. Eric Schwartz",
       role: (
         <p>
@@ -185,7 +185,7 @@ const Directors = () => {
 const Advisors = () => {
   const advisors = [
     {
-      image: advisorImages["schwartz.jpg"],
+      image: advisorImages["eric_schwartz.jpg"],
       name: "Dr. Eric Schwartz",
       role: (
         <p>
@@ -198,14 +198,14 @@ const Advisors = () => {
       website: "https://mil.ufl.edu/ems/",
     },
     {
-      image: advisorImages["crane.jpg"],
+      image: advisorImages["carl_crane.jpg"],
       name: "Dr. Carl Crane",
       role: "Professor, MAE",
       linkedIn: "carl-crane-47839574",
       website: "https://mae.ufl.edu/people/profiles/carl-crane/",
     },
     {
-      image: advisorImages["andres.png"],
+      image: advisorImages["andres_pulido.png"],
       name: "Andres Pulido",
       role: "PhD Candidate, MAE",
       linkedIn: "andres-a-pulido",
@@ -219,7 +219,7 @@ const Advisors = () => {
 const PastDirectors = () => {
   const pastDirectors = [
     {
-      image: advisorImages["arroyo.jpg"],
+      image: advisorImages["antonio_a_arroyo.jpg"],
       name: "Dr. A. Antonio Arroyo",
       role: (
         <p>
@@ -231,7 +231,7 @@ const PastDirectors = () => {
       website: "https://mil.ufl.edu/~arroyo/",
     },
     {
-      image: advisorImages["doty.jpg"],
+      image: advisorImages["keith_doty.jpg"],
       name: "Dr. Keith Doty",
       role: (
         <p>

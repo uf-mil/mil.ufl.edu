@@ -31,10 +31,13 @@ function Requirements() {
     "Able to commit 5 hours/week to lab activities (3 hours/week for new members)",
   ];
 
-  const applicationDeadline = new Date("2024-12-20T23:59:59-05:00");
+  const applicationOpens = new Date("2025-04-20T00:00:00-05:00");
+  const applicationDeadline = new Date("2025-05-01T23:59:59-05:00");
   const [timeLeft, setTimeLeft] = useState(
     calculateTimeLeft(applicationDeadline),
   );
+  const applicationOpen =
+    new Date() >= applicationOpens && new Date() <= applicationDeadline;
 
   function calculateTimeLeft(deadline) {
     const now = new Date();
@@ -60,7 +63,16 @@ function Requirements() {
     return () => clearInterval(timer);
   }, [applicationDeadline]);
 
-  // Format the application deadline for natural display
+  const formattedOpen = applicationOpens.toLocaleString("en-US", {
+    month: "2-digit",
+    day: "2-digit",
+    year: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZoneName: "short",
+    timeZone: "America/New_York",
+  });
   const formattedDeadline = applicationDeadline.toLocaleString("en-US", {
     month: "2-digit",
     day: "2-digit",
@@ -86,18 +98,29 @@ function Requirements() {
           ))}
         </ul>
 
-        <div className="flex justify-center mt-10">
-          <a
-            href="https://ufl.qualtrics.com/jfe/form/SV_3qNksg41Gdghz8y"
-            className="bg-blue-800 text-white px-6 py-3 rounded-lg text-2xl font-medium hover:bg-blue-700 transition duration-300 flex flex-col items-center"
-          >
-            Apply Now
-            <span className="text-sm text-gray-200 mt-2 text-center leading-tight font-normal">
-              Due in {timeLeft}!<br />
-              (by {formattedDeadline})
-            </span>
-          </a>
-        </div>
+        {applicationOpen ? (
+          <div className="flex justify-center mt-10">
+            <a
+              href="https://ufl.qualtrics.com/jfe/form/SV_3qNksg41Gdghz8y"
+              className="bg-blue-800 text-white px-6 py-3 rounded-lg text-2xl font-medium hover:bg-blue-700 transition duration-300 flex flex-col items-center"
+            >
+              Apply Now
+              <span className="text-sm text-gray-200 mt-2 text-center leading-tight font-normal">
+                Due in {timeLeft}!<br />
+                (by {formattedDeadline})
+              </span>
+            </a>
+          </div>
+        ) : (
+          <div className="flex justify-center mt-10">
+            <div className="bg-white text-red-800 px-6 py-3 rounded-lg text-2xl font-medium flex flex-col items-center border-2 border-red-800 hover:cursor-not-allowed">
+              Applications are closed!
+              <span className="text-sm mt-2 text-center leading-tight font-normal">
+                (opens {formattedOpen})
+              </span>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

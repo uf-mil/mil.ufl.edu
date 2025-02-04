@@ -27,7 +27,7 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 module.exports = {
   entry: path.join(__dirname, "/src/index.js"),
   output: {
-    filename: "build.js",
+    filename: "build.[contenthash].js",
     path: path.join(__dirname, "/dist"),
     publicPath: "/",
     assetModuleFilename: (pathData) => {
@@ -36,7 +36,7 @@ module.exports = {
         .split("/")
         .slice(1)
         .join("/");
-      return `${filepath}/[name][ext]`;
+      return `${filepath}/[name].[hash][ext][query]`;
     },
   },
   module: {

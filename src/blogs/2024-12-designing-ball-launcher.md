@@ -2,7 +2,7 @@
 title: "Designing NaviGator's Ball Shooter"
 authors:
   - name: "Adam McAleer"
-    profilePic: "members/adam_m.png"
+    profilePic: "members/adam_mcaleer.png"
 date: "2024-12-30"
 ---
 

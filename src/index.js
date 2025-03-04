@@ -13,6 +13,7 @@ import Vehicles from "./pages/Vehicles";
 import NotFound from "./pages/NotFound";
 import LabInfo from "./pages/LabInfo";
 import Team2024Page from "./pages/teams/2024";
+import Alumni from "./pages/Alumni";
 
 import NavigateExternal from "./components/NavigateExternal";
 
@@ -56,6 +57,10 @@ const router = createBrowserRouter(
     {
       path: "/team",
       element: <Team2024Page />,
+    },
+    {
+      path: "/alumni",
+      element: <Alumni />,
     },
     {
       path: "/discord",

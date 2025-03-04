@@ -188,6 +188,11 @@ function Navbar() {
               closeMobileMenu={closeMobileMenu}
             />
             <NavItem
+            to="/alumni"
+            label="Alumni"
+            closeMobileMenu={closeMobileMenu}
+            />
+            <NavItem
               to="/blog"
               label="Blog"
               closeMobileMenu={closeMobileMenu}

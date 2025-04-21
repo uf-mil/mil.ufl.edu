@@ -101,7 +101,7 @@ function Requirements() {
         {applicationOpen ? (
           <div className="flex justify-center mt-10">
             <a
-              href="https://ufl.qualtrics.com/jfe/form/SV_3qNksg41Gdghz8y"
+              href="https://ufl.qualtrics.com/jfe/form/SV_3Ig66FjvOExwixM"
               className="bg-blue-800 text-white px-6 py-3 rounded-lg text-2xl font-medium hover:bg-blue-700 transition duration-300 flex flex-col items-center"
             >
               Apply Now

@@ -32,7 +32,7 @@ function Requirements() {
   ];
 
   const applicationOpens = new Date("2025-04-20T00:00:00-05:00");
-  const applicationDeadline = new Date("2025-05-01T23:59:59-05:00");
+  const applicationDeadline = new Date("2025-05-04T23:59:59-04:00");
   const [timeLeft, setTimeLeft] = useState(
     calculateTimeLeft(applicationDeadline),
   );

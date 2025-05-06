@@ -50,37 +50,12 @@ LeadershipSection.propTypes = {
 const SoftwareLeadership = () => {
   const members = [
     {
-      image: memberImages["cameron_brown.jpeg"],
-      name: "Cameron Brown",
-      role: "Team Lead",
-      degree: "BS, Computer Science",
-      graduationYear: "Spring 2025",
-      linkedIn: "cameron-brown37",
-      website: "https://cbrxyz.com",
-    },
-    {
       image: memberImages["daniel_parra.jpeg"],
       name: "Daniel Parra",
       role: "Software Lead",
       degree: "BS, Computer Science",
       graduationYear: "Spring 2026",
       linkedIn: "daniparr",
-    },
-    {
-      image: memberImages["keith_khadar.jpg"],
-      name: "Keith Khadar",
-      role: "Software Lead",
-      degree: "BS, Computer Engineering",
-      graduationYear: "Spring 2025",
-      linkedIn: "keith-khadar",
-    },
-    {
-      image: memberImages["alex_johnson.png"],
-      name: "Alex Johnson",
-      role: "Software Lead",
-      degree: "BS, Computer Science",
-      graduationYear: "Spring 2025",
-      linkedIn: "alexojohnson",
     },
   ];
 
@@ -149,14 +124,6 @@ const MechanicalLeadership = () => {
       degree: "BS, Mechanical Engineering",
       graduationYear: "Fall 2024",
       linkedIn: "adam-mcaleer",
-    },
-    {
-      image: memberImages["lorant_domokos.png"],
-      name: "Lorant Domokos",
-      role: "Mechanical Lead",
-      degree: "BS, Mechanical Engineering",
-      graduationYear: "Spring 2025",
-      linkedIn: "lorant-domokos-849094244",
     },
   ];
 

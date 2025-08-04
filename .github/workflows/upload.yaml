@@ -9,8 +9,8 @@ on:
 
 jobs:
   upload:
-    runs-on: self-hosted
-    timeout-minutes: 4
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,7 +28,9 @@ jobs:
         run: npm run build && cd dist
 
       - name: Install lftp
-        run: sudo apt-get install -y lftp sshpass
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y lftp sshpass
 
       - name: Upload files to web server
         run: |

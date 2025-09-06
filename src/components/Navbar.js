@@ -164,7 +164,11 @@ function Navbar() {
             />
             <NavItem
               to="/team"
-              label="Team"
+              label="People"
+              dropdown={[
+                { to: "/team", label: "Team" },
+                { to: "/alumni", label: "Alumni" },
+              ]}
               closeMobileMenu={closeMobileMenu}
             />
             <NavItem

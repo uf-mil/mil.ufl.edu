@@ -13,6 +13,7 @@ import Vehicles from "./pages/Vehicles";
 import NotFound from "./pages/NotFound";
 import LabInfo from "./pages/LabInfo";
 import Team2024Page from "./pages/teams/2024";
+import Press from "./pages/Press";
 
 import NavigateExternal from "./components/NavigateExternal";
 
@@ -71,6 +72,10 @@ const router = createBrowserRouter(
       path: "/sponsor_packet",
       element: <NavigateExternal to="https://mil.ufl.edu/sponsorship.pdf" />,
     },
+    {
+      path: "/press",
+      element: <Press />,
+    }
   ],
   {},
 );

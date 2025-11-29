@@ -36,9 +36,10 @@ LeadershipSection.propTypes = {
   title: PropTypes.string.isRequired,
   members: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.string.isRequired,
+      image: PropTypes.string,
       name: PropTypes.string.isRequired,
-      role: PropTypes.string.isRequired,
+      role: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+        .isRequired,
       degree: PropTypes.string,
       graduationYear: PropTypes.string,
       linkedIn: PropTypes.string,
@@ -136,11 +137,11 @@ const Directors = () => {
       image: advisorImages["eric_schwartz.jpg"],
       name: "Dr. Eric Schwartz",
       role: (
-        <p>
+        <span>
           MIL Director
           <br />
           Professor, ECE
-        </p>
+        </span>
       ),
       linkedIn: "eric-schwartz-4231924",
       website: "https://mil.ufl.edu/ems/",
@@ -155,11 +156,11 @@ const Advisors = () => {
       image: advisorImages["eric_schwartz.jpg"],
       name: "Dr. Eric Schwartz",
       role: (
-        <p>
+        <span>
           MIL Director
           <br />
           Professor, ECE
-        </p>
+        </span>
       ),
       linkedIn: "eric-schwartz-4231924",
       website: "https://mil.ufl.edu/ems/",
@@ -189,11 +190,11 @@ const PastDirectors = () => {
       image: advisorImages["antonio_a_arroyo.jpg"],
       name: "Dr. A. Antonio Arroyo",
       role: (
-        <p>
+        <span>
           Past Director
           <br />
           Professor, ECE
-        </p>
+        </span>
       ),
       website: "https://mil.ufl.edu/~arroyo/",
     },
@@ -201,11 +202,11 @@ const PastDirectors = () => {
       image: advisorImages["keith_doty.jpg"],
       name: "Dr. Keith Doty",
       role: (
-        <p>
+        <span>
           Founding Director
           <br />
           Professor, ECE
-        </p>
+        </span>
       ),
       linkedIn: "keith-doty-a6213a47",
     },

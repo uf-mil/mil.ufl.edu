@@ -62,10 +62,10 @@ function MemberCard({
 
 MemberCard.propTypes = {
   name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  degree: PropTypes.string.isRequired,
-  graduationYear: PropTypes.string.isRequired,
+  role: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  image: PropTypes.string,
+  degree: PropTypes.string,
+  graduationYear: PropTypes.string,
   linkedIn: PropTypes.string,
   website: PropTypes.string,
 };

@@ -74,14 +74,6 @@ const ElectricalLeadership = () => {
       linkedIn: "adrianfernandez23",
     },
     {
-      image: memberImages["dominik_kapuscinski.png"],
-      name: "Dominik Kapuscinski",
-      role: "Electrical Lead",
-      degree: "BS, Computer Engineering",
-      graduationYear: "Spring 2025",
-      linkedIn: "dominik-kapuscinski",
-    },
-    {
       image: memberImages["lester_bonilla.jpg"],
       name: "Lester Bonilla",
       role: "Drone Lead",

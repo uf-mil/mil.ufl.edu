@@ -1,8 +1,10 @@
 ---
 name: Run weekly checks
 
+# run monday morning at midnight
 on:
-  push:
+  schedule:
+    - cron: "0 0 * * 1"
 
 jobs:
   weekly-checks:

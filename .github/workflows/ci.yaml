@@ -56,11 +56,14 @@ jobs:
         if: steps.cache-pre-commit.outputs.cache-hit != 'true'
         run: |
           pre-commit install-hooks
-      - name: Install hadolint
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: "npm"
+      - name: Install npm dependencies
         run: |
-          URL=https://github.com/hadolint/hadolint/releases/download/v2.10.0/hadolint-Linux-x86_64
-          sudo wget -O /bin/hadolint $URL
-          sudo chmod +x /bin/hadolint
+          npm install
       - name: Run pre-commit
         run: |
           pre-commit run --all-files --show-diff-on-failure

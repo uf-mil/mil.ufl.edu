@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test:pr": "jest --testPathIgnorePatterns=\\.weekly\\.test\\.js$",
+    "test:weekly": "jest --testMatch='**/?(*.)+(weekly.test).[jt]s?(x)'"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "buffer": "^6.0.3",
     "gray-matter": "^4.0.3",
+    "jest-environment-jsdom": "^30.2.0",
     "raw-loader": "^4.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -28,6 +32,8 @@
     "@babel/preset-env": "^7.25.7",
     "@babel/preset-react": "^7.25.7",
     "@eslint/js": "^9.15.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^9.2.1",
     "babel-preset-env": "^1.7.0",
@@ -47,6 +53,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-pngquant": "^10.0.0",
     "imagemin-svgo": "^11.0.1",
+    "jest": "^30.2.0",
     "postcss": "^8.4.49",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^10.1.1",

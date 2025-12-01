@@ -1,4 +1,7 @@
 ---
+default_language_version:
+  node: latest
+
 ci:
   autofix_prs: false
   autoupdate_commit_msg: "Update pre-commit hooks to latest versions"
@@ -31,8 +34,9 @@ repos:
     hooks:
       - id: eslint
         additional_dependencies:
+          - globals@16.5.0
           - eslint@9.15.0
           - eslint-config-prettier@9.1.0
           - eslint-plugin-react@7.37.2
           - "@babel/eslint-parser@7.25.9"
-        exclude: "^.*\\.config.js|src/assets/.*$"
+        exclude: "^.*\\.config.js|src/assets/.*$|^.*\\.test\\.js$"

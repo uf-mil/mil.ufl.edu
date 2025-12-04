@@ -31,8 +31,8 @@ function Requirements() {
     "Able to commit 5 hours/week to lab activities (3 hours/week for new members)",
   ];
 
-  const applicationOpens = new Date("2025-08-03T00:00:00-05:00");
-  const applicationDeadline = new Date("2025-08-17T23:59:59-04:00");
+  const applicationOpens = new Date("2025-11-28T00:00:00-05:00");
+  const applicationDeadline = new Date("2026-01-02T23:59:59-05:00");
   const [timeLeft, setTimeLeft] = useState(
     calculateTimeLeft(applicationDeadline),
   );

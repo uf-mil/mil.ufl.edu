@@ -88,30 +88,32 @@ function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-700 mt-6 pt-4 text-center text-sm text-gray-500">
-        Built with ❤️ by{" "}
-        <a className="text-gray-300" href="https://cbrxyz.com">
-          Cameron Brown
-        </a>{" "}
-        and{" "}
-        <a className="text-gray-300" href="/team">
-          the software team
-        </a>
-        .
-      </div>
-      <div className="text-center text-sm text-gray-500">
-        © 1995-{new Date().getFullYear()} Machine Intelligence Laboratory. All
-        rights reserved.
-      </div>
-      <div className="mt-4 text-center text-sm text-gray-500">
-        Built at: {BUILD_TIME} EST (from{" "}
-        <a
-          href={`https://github.com/uf-mil/mil.ufl.edu/commit/${COMMIT_HASH}`}
-          className="text-gray-300"
-        >
-          {COMMIT_HASH}
-        </a>
-        )
+      <div className="px-4">
+        <div className="border-t border-gray-700 mt-6 pt-4 text-center text-sm text-gray-500">
+          Built with ❤️ by{" "}
+          <a className="text-gray-300" href="https://cbrxyz.com">
+            Cameron Brown
+          </a>{" "}
+          and{" "}
+          <a className="text-gray-300" href="/team">
+            the software team
+          </a>
+          .
+        </div>
+        <div className="text-center text-sm text-gray-500">
+          © 1995-{new Date().getFullYear()} Machine Intelligence Laboratory.
+          All rights reserved.
+        </div>
+        <div className="mt-4 text-center text-sm text-gray-500">
+          Built at: {BUILD_TIME} EST (from{" "}
+          <a
+            href={`https://github.com/uf-mil/mil.ufl.edu/commit/${COMMIT_HASH}`}
+            className="text-gray-300"
+          >
+            {COMMIT_HASH}
+          </a>
+          )
+        </div>
       </div>
     </footer>
   );

@@ -25,6 +25,7 @@ const LeadershipSection = ({ title, members }) => {
             graduationYear={member.graduationYear}
             linkedIn={member.linkedIn}
             website={member.website}
+            email={member.email}
           />
         ))}
       </div>
@@ -44,6 +45,7 @@ LeadershipSection.propTypes = {
       graduationYear: PropTypes.string,
       linkedIn: PropTypes.string,
       website: PropTypes.string,
+      email: PropTypes.string,
     }),
   ).isRequired,
 };
@@ -57,6 +59,7 @@ const SoftwareLeadership = () => {
       degree: "BS, Computer Science",
       graduationYear: "Spring 2026",
       linkedIn: "daniparr",
+      email: "dparra1@ufl.edu",
     },
   ];
 
@@ -66,19 +69,12 @@ const SoftwareLeadership = () => {
 const ElectricalLeadership = () => {
   const members = [
     {
-      image: memberImages["adrian_fernandez.png"],
-      name: "Adrian Fernandez",
-      role: "Team Lead",
-      degree: "MS, Electrical/Computer Engineering",
-      graduationYear: "Fall 2025",
-      linkedIn: "adrianfernandez23",
-    },
-    {
       image: memberImages["lester_bonilla.jpg"],
       name: "Lester Bonilla",
       role: "Drone Lead",
       degree: "BS, Computer Engineering",
       graduationYear: "Spring 2025",
+      email: "lester.bonilla@ufl.edu",
     },
     // {
     //   image: memberImages["jack.png"],
@@ -102,6 +98,7 @@ const MechanicalLeadership = () => {
       degree: "BS, Mechanical Engineering",
       graduationYear: "Fall 2026",
       linkedIn: "sophie-lanahan-9b2440325",
+      email: "sophielanahan@ufl.edu",
     },
     {
       image: memberImages["adam_hamdan.png"],
@@ -109,14 +106,16 @@ const MechanicalLeadership = () => {
       role: "Mechanical Lead",
       degree: "BS, Mechanical Engineering",
       graduationYear: "Spring 2026",
+      email: "adamhamdan@ufl.edu",
     },
     {
       image: memberImages["adam_mcaleer.png"],
       name: "Adam McAleer",
       role: "Mechanisms Lead",
       degree: "BS, Mechanical Engineering",
-      graduationYear: "Fall 2024",
+      graduationYear: "Spring 2026",
       linkedIn: "adam-mcaleer",
+      email: "adammcaleer@ufl.edu",
     },
   ];
 
@@ -137,6 +136,7 @@ const Directors = () => {
       ),
       linkedIn: "eric-schwartz-4231924",
       website: "https://mil.ufl.edu/ems/",
+      email: "ems@ufl.edu",
     },
   ];
   return <LeadershipSection title="Directors" members={directors} />;
@@ -156,6 +156,7 @@ const Advisors = () => {
       ),
       linkedIn: "eric-schwartz-4231924",
       website: "https://mil.ufl.edu/ems/",
+      email: "ems@ufl.edu",
     },
     {
       image: advisorImages["carl_crane.jpg"],

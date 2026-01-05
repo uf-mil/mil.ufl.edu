@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import React, { useState, useEffect } from "react";
+import FAQItem from "../components/FAQItem";
 
 // Introduction Component
 function Introduction() {
@@ -10,7 +11,7 @@ function Introduction() {
         <h2 className="text-4xl font-extrabold text-white mb-6">
           Apply to Join
         </h2>
-        <p className="text-lg text-gray-200 leading-relaxed">
+        <p className="text-lg text-gray-200 leading-relaxed px-4">
           Become a part of our innovative and collaborative team. As a member of
           our lab, you'll have the opportunity to work on cutting-edge robotics
           projects and make a meaningful impact in the field of autonomous
@@ -73,6 +74,7 @@ function Requirements() {
     timeZoneName: "short",
     timeZone: "America/New_York",
   });
+  const openInFuture = new Date() < applicationOpens;
   const formattedDeadline = applicationDeadline.toLocaleString("en-US", {
     month: "2-digit",
     day: "2-digit",
@@ -90,7 +92,7 @@ function Requirements() {
         <h3 className="text-3xl font-extrabold text-blue-800 text-center mb-6">
           Requirements to Join
         </h3>
-        <ul className="list-disc list-inside text-gray-700 space-y-4">
+        <ul className="list-disc list-inside text-gray-700 space-y-4 px-4">
           {requirements.map((requirement, index) => (
             <li key={index} className="text-lg leading-relaxed">
               {requirement}
@@ -114,13 +116,75 @@ function Requirements() {
         ) : (
           <div className="flex justify-center mt-10">
             <div className="bg-white text-red-800 px-6 py-3 rounded-lg text-2xl font-medium flex flex-col items-center border-2 border-red-800 hover:cursor-not-allowed">
-              Applications are closed!
+              Applications are currently closed!
               <span className="text-sm mt-2 text-center leading-tight font-normal">
-                (opens {formattedOpen})
+                {openInFuture ? (
+                  <span>opens {formattedOpen}</span>
+                ) : (
+                  <span>Stay tuned for when applications open!</span>
+                )}
               </span>
             </div>
           </div>
         )}
+      </div>
+    </section>
+  );
+}
+
+// FAQ Section
+function FAQ() {
+  const faqs = [
+    {
+      question: "Do I need prior robotics experience to apply?",
+      answer:
+        "Nope, no prior robotics experience is required! Many of our members join with little to no background and learn through hands-on projects, workshops, and mentorship.",
+    },
+    {
+      question: "What majors are allowed to apply?",
+      answer:
+        "We welcome students from all majors. Our members are most commonly pursuing degrees in Computer Science, Electrical Engineering, Mechanical Engineering, and Aerospace Engineering.",
+    },
+    {
+      question: "What does the application process look like?",
+      answer:
+        "Once the application deadline closes, all applications will be reviewed by each team's leadership. Depending on the amount of applications received, some teams may conduct secondary interviews to gauge interest and fit. Final decisions will be announced during the drop-add week.",
+    },
+    {
+      question: "Can freshmen apply?",
+      answer:
+        "Yes! Freshmen are highly encouraged to apply. Many of our most active members joined during their first year.",
+    },
+    {
+      question: "How many credits am I allowed to receive while participating?",
+      answer:
+        "All new members must enroll in EGN4912 for zero credits during their first semester in MIL. After that, members may enroll for 1-3 credits per semester, pending leader approval.",
+    },
+  ];
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4">
+        <h3 className="text-3xl font-extrabold text-blue-800 text-center mb-8">
+          Frequently Asked Questions
+        </h3>
+
+        <div className="bg-white rounded-xl shadow-sm divide-y">
+          {faqs.map((faq, index) => (
+            <FAQItem key={index} question={faq.question} answer={faq.answer} />
+          ))}
+        </div>
+
+        <div>
+          <p className="mt-8 text-center text-gray-600">
+            Have more questions? Feel free to email any of our leaders (or Dr.
+            Schwartz) for more information! Emails are available on the{" "}
+            <a href="/team" className="text-blue-600 underline">
+              Team
+            </a>{" "}
+            page.
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -135,6 +199,7 @@ const ApplyPage = () => {
         <Introduction />
       </div>
       <Requirements />
+      <FAQ />
       <Footer />
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function MemberCard({
   name,
@@ -10,6 +10,7 @@ function MemberCard({
   image,
   degree,
   graduationYear,
+  email,
   linkedIn,
   website,
 }) {
@@ -54,6 +55,14 @@ function MemberCard({
               />
             </a>
           )}
+          {email && (
+            <a href={`mailto:${email}`} aria-label="Email">
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                className="text-gray-600 hover:text-gray-800 text-2xl"
+              />
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -68,6 +77,7 @@ MemberCard.propTypes = {
   graduationYear: PropTypes.string,
   linkedIn: PropTypes.string,
   website: PropTypes.string,
+  email: PropTypes.string,
 };
 
 export default MemberCard;

@@ -26,6 +26,7 @@ const LeadershipSection = ({ title, members }) => {
             linkedIn={member.linkedIn}
             website={member.website}
             email={member.email}
+            company={member.company}
           />
         ))}
       </div>
@@ -165,13 +166,6 @@ const Advisors = () => {
       linkedIn: "carl-crane-47839574",
       website: "https://mae.ufl.edu/people/profiles/carl-crane/",
     },
-    {
-      image: advisorImages["andres_pulido.png"],
-      name: "Andres Pulido",
-      role: "PhD Candidate, MAE",
-      linkedIn: "andres-a-pulido",
-      website: "https://andrespulido8.github.io",
-    },
   ];
 
   return <LeadershipSection title="Advisors" members={advisors} />;
@@ -249,6 +243,135 @@ const TeamList = () => {
   );
 };
 
+const Alumni = () => {
+  const alumni = [
+    {
+      image: memberImages["cameron_brown.jpeg"],
+      name: "Cameron Brown",
+      degree: "BS, Computer Science",
+      graduationYear: "Spring 2025",
+      linkedIn: "cameron-brown37",
+      website: "https://cbrxyz.com",
+      company: "Glydways",
+    },
+    {
+      image: memberImages["alex_johnson.png"],
+      name: "Alex Johnson",
+      degree: "BS, Computer Science",
+      graduationYear: "Spring 2025",
+      linkedIn: "alexojohnson",
+      company: "Glydways",
+    },
+    {
+      image: memberImages["keith_khadar.jpg"],
+      name: "Keith Khadar",
+      degree: "BS, Computer Engineering",
+      graduationYear: "Spring 2025",
+      linkedIn: "keith-khadar",
+      company: "Google",
+    },
+    {
+      image: memberImages["adrian_fernandez.png"],
+      name: "Adrian Fernandez",
+      degree: "MS, Electrical/Computer Engineering",
+      graduationYear: "Fall 2025",
+      linkedIn: "adrianfernandez23",
+      company: "Ford Motor Company",
+    },
+    {
+      image: memberImages["lorant_domokos.png"],
+      name: "Lorant Domokos",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2025",
+      linkedIn: "lorant-domokos-849094244",
+      company: "SpaceX",
+    },
+    {
+      image: advisorImages["andres_pulido.png"],
+      name: "Andres Pulido",
+      linkedIn: "andres-a-pulido",
+      website: "https://andrespulido8.github.io",
+      graduationYear: "Fall 2025",
+      degree: "PhD, Mechanical Engineering",
+      company: "University of Florida",
+    },
+    {
+      image: memberImages["andrew_knee.png"],
+      name: "Andrew Knee",
+      company: "JHU APL",
+      degree: "MS, Computer Science",
+      graduationYear: "Fall 2024",
+      linkedIn: "andrew-knee-j",
+    },
+    {
+      image: memberImages["kayleigh_beron.jpg"],
+      name: "Kayleigh Beron",
+      company: "Amazon",
+      degree: "BS, Computer Engineering",
+      graduationYear: "Fall 2024",
+      linkedIn: "kayleigh-beron",
+    },
+    {
+      image: memberImages["alex_perez.jpg"],
+      name: "Alex Perez",
+      company: "L3Harris",
+      degree: "BS, Computer Engineering",
+      graduationYear: "Spring 2023",
+    },
+    {
+      image: memberImages["aditya_ramesh.png"],
+      name: "Aditya Ramesh",
+      company: "Carnegie Mellon University",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2024",
+      linkedIn: "aditya-ramesh-cmu",
+    },
+    {
+      image: memberImages["alex_kuzmicki.jpg"],
+      name: "Alex Kuzmicki",
+      company: "L3Harris",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2023",
+      linkedIn: "alexander-kuzmicki-550903182",
+    },
+    {
+      image: memberImages["andres_castrillon.jpg"],
+      name: "Andres Castrillon",
+      company: "Carnegie Mellon University",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2024",
+      linkedIn: "andres-castrillon4",
+    },
+    {
+      image: memberImages["jarrod_sanders.jpg"],
+      name: "Jarrod Sanders",
+      company: "L3Harris",
+      degree: "BS, Computer Science",
+      graduationYear: "Fall 2023",
+      linkedIn: "jarrod-sanders",
+    },
+    {
+      image: memberImages["mehron_talebi.jpg"],
+      name: "Mehron Talebi",
+      company: "UF ECE (MS)",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2023",
+    },
+  ];
+  // Sort alumni by graduation year + season
+  alumni.sort((a, b) => {
+    const seasonOrder = { Spring: 1, Summer: 2, Fall: 3 };
+    const [aSeason, aYear] = a.graduationYear.split(" ");
+    const [bSeason, bYear] = b.graduationYear.split(" ");
+    return (
+      parseInt(bYear) - parseInt(aYear) ||
+      seasonOrder[bSeason] - seasonOrder[aSeason] ||
+      a.name.localeCompare(b.name)
+    );
+  });
+  return <LeadershipSection title="Alumni" members={alumni} />;
+};
+
 const TeamPage = () => {
   return (
     <div
@@ -266,6 +389,7 @@ const TeamPage = () => {
       Removing the individual members list since it wasn't maintained super well:
       <TeamList />
       */}
+      <Alumni />
       <Footer />
     </div>
   );

@@ -13,6 +13,7 @@ function MemberCard({
   email,
   linkedIn,
   website,
+  company,
 }) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-3">
@@ -25,7 +26,7 @@ function MemberCard({
       </div>
       <div className="mt-2 text-center">
         <h3 className="text-xl font-bold text-black">{name}</h3>
-        <p className="text-gray-600">{role}</p>
+        <p className="text-gray-600">{role || company}</p>
         <p className="text-gray-500 text-sm mt-1">{degree}</p>
         <p className="text-gray-500 text-sm mt-1">{graduationYear}</p>
         <div className="flex justify-center mt-2 space-x-4">
@@ -78,6 +79,7 @@ MemberCard.propTypes = {
   linkedIn: PropTypes.string,
   website: PropTypes.string,
   email: PropTypes.string,
+  company: PropTypes.string,
 };
 
 export default MemberCard;

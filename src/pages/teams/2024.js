@@ -14,7 +14,7 @@ const LeadershipSection = ({ title, members }) => {
       <div className="text-center mb-6">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">{title}</h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6">
         {members.map((member, index) => (
           <MemberCard
             key={index}
@@ -207,50 +207,20 @@ const PastDirectors = () => {
   return <LeadershipSection title="Past Directors" members={pastDirectors} />;
 };
 
+// eslint-disable-next-line no-unused-vars
 const TeamList = () => {
   const teams = [
     {
       name: "Mechanical Team",
-      members: [
-        "Ryan Hoburg",
-        "Will MacGuire",
-        "Cade Sachs",
-        "Joshua Valencia",
-        "Diego Dominguez",
-        "Blake Cobo",
-        "Findlay Watson",
-        "Harin Patel",
-      ],
+      members: ["Example Mechanical Member"],
     },
     {
       name: "Software Team",
-      members: [
-        "Carlos Chavez",
-        "Javier Irizarry-Delgado",
-        "Mohana Pamidimukkala",
-        "Edward Guthrie",
-        "Max Vu",
-        "Lynette Hemingway",
-        "William Zhu",
-        "Thomas Canro",
-        "Charles Pratt",
-        "Tanushree Hadavale",
-        "Anthony Liao",
-        "Marcin Plaza",
-        "Danush Singla",
-        "Joshua Thomas",
-      ],
+      members: ["Example Software Member"],
     },
     {
       name: "Electrical Team",
-      members: [
-        "Joseph Goodman",
-        "Enoch Wang",
-        "Joshua Arroyo",
-        "Szander Brenner",
-        "Sanat Konda",
-        "Peter Van Kirk",
-      ],
+      members: ["Example Electrical Member"],
     },
   ];
   return (
@@ -292,7 +262,10 @@ const TeamPage = () => {
       <Directors />
       <Advisors />
       <PastDirectors />
+      {/*
+      Removing the individual members list since it wasn't maintained super well:
       <TeamList />
+      */}
       <Footer />
     </div>
   );

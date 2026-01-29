@@ -164,7 +164,7 @@ function Navbar() {
             />
             <NavItem
               to="/team"
-              label="Team"
+              label="People"
               closeMobileMenu={closeMobileMenu}
             />
             <NavItem

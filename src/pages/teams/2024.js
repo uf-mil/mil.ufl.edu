@@ -74,17 +74,25 @@ const ElectricalLeadership = () => {
       name: "Lester Bonilla",
       role: "Drone Lead",
       degree: "BS, Computer Engineering",
-      graduationYear: "Spring 2025",
+      graduationYear: "Spring 2026",
       email: "lester.bonilla@ufl.edu",
     },
-    // {
-    //   image: memberImages["jack.png"],
-    //   name: "Jack Rainville",
-    //   role: "Electrical Member",
-    //   degree: "BS, Electrical Engineering",
-    //   graduationYear: "Spring 2027",
-    //   linkedIn: "jack-rainville",
-    // },
+    {
+      image: memberImages["jack_rainville.png"],
+      name: "Jack Rainville",
+      role: "Electrical Lead",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2027",
+      linkedIn: "jack-rainville",
+    },
+    {
+      image: memberImages["russell_macgregor.jpg"],
+      name: "Russell MacGregor",
+      role: "Electrical Lead",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2027",
+      linkedIn: "russellmacgregor",
+    },
   ];
 
   return <LeadershipSection title="Electrical Leadership" members={members} />;
@@ -118,33 +126,21 @@ const MechanicalLeadership = () => {
       linkedIn: "adam-mcaleer",
       email: "adammcaleer@ufl.edu",
     },
+    {
+      image: memberImages["tyler_gunther.jpg"],
+      name: "Tyler Gunther",
+      role: "Mechanical Lead",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2028",
+      linkedIn: "tylerg-eng",
+    },
   ];
 
   return <LeadershipSection title="Mechanical Leadership" members={members} />;
 };
 
-const Directors = () => {
-  const directors = [
-    {
-      image: advisorImages["eric_schwartz.jpg"],
-      name: "Dr. Eric Schwartz",
-      role: (
-        <span>
-          MIL Director
-          <br />
-          Professor, ECE
-        </span>
-      ),
-      linkedIn: "eric-schwartz-4231924",
-      website: "https://mil.ufl.edu/ems/",
-      email: "ems@ufl.edu",
-    },
-  ];
-  return <LeadershipSection title="Directors" members={directors} />;
-};
-
-const Advisors = () => {
-  const advisors = [
+const Faculty = () => {
+  const faculty = [
     {
       image: advisorImages["eric_schwartz.jpg"],
       name: "Dr. Eric Schwartz",
@@ -168,7 +164,7 @@ const Advisors = () => {
     },
   ];
 
-  return <LeadershipSection title="Advisors" members={advisors} />;
+  return <LeadershipSection title="Faculty" members={faculty} />;
 };
 
 const PastDirectors = () => {
@@ -382,8 +378,7 @@ const TeamPage = () => {
       <SoftwareLeadership />
       <ElectricalLeadership />
       <MechanicalLeadership />
-      <Directors />
-      <Advisors />
+      <Faculty />
       <PastDirectors />
       {/*
       Removing the individual members list since it wasn't maintained super well:

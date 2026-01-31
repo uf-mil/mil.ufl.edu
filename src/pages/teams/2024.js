@@ -62,6 +62,22 @@ const SoftwareLeadership = () => {
       linkedIn: "daniparr",
       email: "dparra1@ufl.edu",
     },
+    {
+      image: memberImages["carlos_chavez.jpeg"],
+      name: "Carlos Chavez",
+      role: "Software Lead",
+      degree: "BS, Computer Science",
+      graduationYear: "Spring 2026",
+      linkedIn: "carlos-chavez-60a840252",
+    },
+    {
+      image: memberImages["mohana_pamidimukkala.jpg"],
+      name: "Mohana Pamidimukkala",
+      role: "Software Lead",
+      degree: "BS, Computer Science",
+      graduationYear: "Spring 2028",
+      linkedIn: "mohana-pamidi",
+    },
   ];
 
   return <LeadershipSection title="Software Leadership" members={members} />;
@@ -101,15 +117,6 @@ const ElectricalLeadership = () => {
 const MechanicalLeadership = () => {
   const members = [
     {
-      image: memberImages["sophie_lanahan.png"],
-      name: "Sophie Lanahan",
-      role: "Mechanical Lead",
-      degree: "BS, Mechanical Engineering",
-      graduationYear: "Fall 2026",
-      linkedIn: "sophie-lanahan-9b2440325",
-      email: "sophielanahan@ufl.edu",
-    },
-    {
       image: memberImages["adam_hamdan.png"],
       name: "Adam Hamdan",
       role: "Mechanical Lead",
@@ -127,12 +134,37 @@ const MechanicalLeadership = () => {
       email: "adammcaleer@ufl.edu",
     },
     {
+      image: memberImages["sophie_lanahan.png"],
+      name: "Sophie Lanahan",
+      role: "Mechanical Lead",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Fall 2026",
+      linkedIn: "sophie-lanahan-9b2440325",
+      email: "sophielanahan@ufl.edu",
+    },
+    {
+      image: memberImages["ryan_hoburg.jpg"],
+      name: "Ryan Hoburg",
+      role: "Mechanical Lead",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2027",
+      email: "ryanhoburg@gmail.com",
+    },
+    {
       image: memberImages["tyler_gunther.jpg"],
       name: "Tyler Gunther",
       role: "Mechanical Lead",
       degree: "BS, Mechanical Engineering",
       graduationYear: "Spring 2028",
       linkedIn: "tylerg-eng",
+    },
+    {
+      image: memberImages["ali_skarshinski_fred.jpg"],
+      name: "Ali Skarshinski-Fred",
+      role: "Mechanical Lead",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2028",
+      linkedIn: "alessandraskarshinski-fred",
     },
   ];
 

@@ -32,8 +32,8 @@ function Requirements() {
     "Able to commit 5 hours/week to lab activities (3 hours/week for new members)",
   ];
 
-  const applicationOpens = new Date("2025-11-28T00:00:00-05:00");
-  const applicationDeadline = new Date("2026-01-02T23:59:59-05:00");
+  const applicationOpens = new Date("2026-04-17T16:00:00-04:00");
+  const applicationDeadline = new Date("2026-05-01T23:59:59-04:00");
   const [timeLeft, setTimeLeft] = useState(
     calculateTimeLeft(applicationDeadline),
   );
@@ -103,7 +103,7 @@ function Requirements() {
         {applicationOpen ? (
           <div className="flex justify-center mt-10">
             <a
-              href="https://ufl.qualtrics.com/jfe/form/SV_5ckfLvcSW9MVWtg"
+              href="https://ufl.qualtrics.com/jfe/form/SV_cJi7jeGvKgTEnoW"
               className="bg-blue-800 text-white px-6 py-3 rounded-lg text-2xl font-medium hover:bg-blue-700 transition duration-300 flex flex-col items-center"
             >
               Apply Now

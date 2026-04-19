@@ -12,6 +12,8 @@ import {
 import Banner from "../components/Banner";
 import logo from "../assets/mil-logo-full.svg";
 
+import { applicationWindow, applicationSemester } from "../constants";
+
 const NavItem = ({ to, label, dropdown, closeMobileMenu }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const timeoutRef = useRef(null);
@@ -114,15 +116,35 @@ function Navbar() {
   };
 
   // eslint-disable-next-line no-unused-vars
+  const applicationOpen =
+    new Date() >= applicationWindow.opens &&
+    new Date() <= applicationWindow.closes;
+  const applicationMonthDayCloses = applicationWindow.closes.toLocaleDateString(
+    "en-US",
+    {
+      month: "long",
+      day: "numeric",
+      timeZone: "America/New_York",
+    },
+  );
   const bannerMessage = (
     <p>
-      Interested in applying for Spring 2024? Applications are open until
-      December 20! <b>Apply Now ➜</b>
+      Interested in applying for {applicationSemester()}? Applications are open
+      until {applicationMonthDayCloses}! <b>Apply Now ➜</b>
     </p>
   );
 
   return (
     <>
+      {applicationOpen ? (
+        <Link to="/apply">
+          <div className="w-full bg-yellow-300 text-yellow-900 text-sm text-center py-2 px-4">
+            {bannerMessage}
+          </div>
+        </Link>
+      ) : (
+        <></>
+      )}
       <nav className="w-full p-3 bg-white bg-opacity-90 shadow-md z-50 relative">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           {/* Logo */}

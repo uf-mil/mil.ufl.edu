@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import React, { useState, useEffect } from "react";
 import FAQItem from "../components/FAQItem";
 
+import { applicationWindow } from "../constants";
+
 // Introduction Component
 function Introduction() {
   return (
@@ -32,8 +34,8 @@ function Requirements() {
     "Able to commit 5 hours/week to lab activities (3 hours/week for new members)",
   ];
 
-  const applicationOpens = new Date("2026-04-17T16:00:00-04:00");
-  const applicationDeadline = new Date("2026-05-01T23:59:59-04:00");
+  const applicationOpens = applicationWindow.opens;
+  const applicationDeadline = applicationWindow.closes;
   const [timeLeft, setTimeLeft] = useState(
     calculateTimeLeft(applicationDeadline),
   );

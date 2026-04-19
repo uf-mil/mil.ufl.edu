@@ -17,6 +17,7 @@ import Team2024Page from "./pages/teams/2024";
 import NavigateExternal from "./components/NavigateExternal";
 
 // Use window.location.href
+
 const router = createBrowserRouter(
   [
     {

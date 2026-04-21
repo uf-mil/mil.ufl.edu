@@ -199,13 +199,17 @@ function Navbar() {
             label="Research"
             closeMobileMenu={closeMobileMenu}
           /> */}
+            {/* This list has not changed since 2024, so if we ever want to make a
+                "History of Sponsors" page, this list can be 2024 + 2025 (at
+                least as of 245592bfbe998c2c85d921bcfbcdbf0abb994d52) */}
+            ,
             <NavItem
               to="/sponsors"
               label="Sponsors"
               dropdown={[
+                { to: "/sponsors", label: "Current Sponsors" },
                 { to: "/donate", label: "Donate" },
                 { to: "/sponsor_packet", label: "Become a Supporter" },
-                { to: "/sponsors", label: "2024 Sponsors" },
               ]}
               closeMobileMenu={closeMobileMenu}
             />

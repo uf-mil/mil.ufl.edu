@@ -19,6 +19,7 @@ import subjuGatorImage from "../assets/subjugator.jpg";
 import investigatorImage from "../assets/investigator.jpg";
 import teamPhoto from "../assets/team_2024.jpg";
 import softwareSolving from "../assets/software_solving.jpg";
+import robotX2016Image from "../assets/robotx_2016.jpg";
 
 const vehicleData = [
   {
@@ -44,6 +45,12 @@ const vehicleData = [
     description:
       "Aerial drone project with autonomous navigation and stability for aerial tasks.",
     image: investigatorImage,
+  },
+  {
+    name: "Decades of Robotics Excellence",
+    description:
+      "Spanning over 30 years, our lab has consistently pushed the boundaries of autonomous robotics, across surface, underwater, and aerial domains.",
+    image: robotX2016Image,
   },
 ];
 

@@ -94,7 +94,7 @@ const ElectricalLeadership = () => {
       email: "lester.bonilla@ufl.edu",
     },
     {
-      image: memberImages["jack_rainville.png"],
+      image: memberImages["jack_rainville.jpg"],
       name: "Jack Rainville",
       role: "Electrical Lead",
       degree: "BS, Electrical Engineering",
@@ -134,7 +134,7 @@ const MechanicalLeadership = () => {
       email: "adammcaleer@ufl.edu",
     },
     {
-      image: memberImages["sophie_lanahan.png"],
+      image: memberImages["sophie_lanahan.jpg"],
       name: "Sophie Lanahan",
       role: "Mechanical Lead",
       degree: "BS, Mechanical Engineering",
@@ -283,7 +283,7 @@ const Alumni = () => {
       company: "Glydways",
     },
     {
-      image: memberImages["alex_johnson.png"],
+      image: memberImages["alex_johnson.jpg"],
       name: "Alex Johnson",
       degree: "BS, Computer Science",
       graduationYear: "Spring 2025",
@@ -307,7 +307,7 @@ const Alumni = () => {
       company: "Ford Motor Company",
     },
     {
-      image: memberImages["lorant_domokos.png"],
+      image: memberImages["lorant_domokos.jpg"],
       name: "Lorant Domokos",
       degree: "BS, Mechanical Engineering",
       graduationYear: "Spring 2025",

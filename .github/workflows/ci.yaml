@@ -82,7 +82,7 @@ jobs:
         run: |
           files=$(git ls-files --exclude-standard --cached --others -- "*.png")
           for file in $files; do
-            output=$(optipng -o3 -strip all -simulate "$file" 2>&1)
+            output=$(optipng -o5 -strip all -simulate "$file" 2>&1)
             if ! echo "$output" | grep -q "optimized"; then
               echo "Error: $file is not optimized. Please run optipng."
               exit 1

@@ -68,8 +68,8 @@ jobs:
         run: |
           pre-commit run --all-files --show-diff-on-failure
 
-  optim:
-    name: Ensure that images cannot be optimized
+  optipng:
+    name: Ensure that *.png images cannot be optimized
     runs-on: ubuntu-latest
     steps:
       - name: Check out code from GitHub
@@ -77,17 +77,28 @@ jobs:
       - name: Install optipng
         run: |
           sudo apt-get update
-          sudo apt-get install -y optipng jpegoptim
+          sudo apt-get install -y optipng
       - name: Check that all *.png files are optimized
         run: |
           files=$(git ls-files --exclude-standard --cached --others -- "*.png")
           for file in $files; do
-            output=$(optipng -o7 -strip all -simulate "$file" 2>&1)
+            output=$(optipng -o3 -strip all -simulate "$file" 2>&1)
             if ! echo "$output" | grep -q "optimized"; then
               echo "Error: $file is not optimized. Please run optipng."
               exit 1
             fi
           done
+
+  jpegoptim:
+    name: Ensure that *.jpg and *.jpeg images cannot be optimized
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code from GitHub
+        uses: actions/checkout@v4
+      - name: Install jpegoptim
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jpegoptim
       - name: Check that all *.jpg + *.jpeg files are optimized
         run: |
           files=$(git ls-files --exclude-standard --cached --others -- "*.jpg" "*.jpeg")

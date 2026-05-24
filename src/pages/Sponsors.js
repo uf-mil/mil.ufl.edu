@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import logos from "../assets/logos";
+import members from "../assets/people/members";
+
 const SponsorSection = ({ title, sponsors, bgColor }) => {
   return (
     <section className="container mx-auto py-6">
@@ -93,8 +96,7 @@ const SponsorsPage = () => {
       description:
         "L3Harris Technologies is an agile global aerospace and defense technology innovator, delivering end-to-end solutions that meet customers' mission-critical needs. The company provides advanced defense and commercial technologies across air, land, sea, space and cyber domains.",
       url: "https://l3harris.com",
-      imgSrc:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/L3Harris_Technologies_logo.svg/1280px-L3Harris_Technologies_logo.svg.png",
+      imgSrc: logos["l3harris.svg"],
       imgAlt: "L3 Harris Logo",
     },
     {
@@ -102,14 +104,15 @@ const SponsorsPage = () => {
       description:
         "Sylphase LLC designs extensible GNSS/INS systems for industrial and academic applications. Our GNSS/INS technology fuses satellite navigation observables with inertial sensor measurements into an optimal estimate of your platform's position, velocity, and attitude.",
       url: "https://sylphase.com",
-      imgSrc: "https://store.sylphase.com/static/sylphase.png",
+      // TODO: sylphase.svg renders somewhat pixelated
+      imgSrc: logos["sylphase.png"],
       imgAlt: "Sylphase",
     },
     {
       name: "Erik de la Iglesia",
       description:
         "Erik de la Iglesia is a MIL alumnus who graduated with his BS from the University of Florida in 1996 and his MS from Stanford University in 1997.",
-      imgSrc: "https://mil.ufl.edu/sponsors/Erik.png",
+      imgSrc: members["erik_de_la_iglesia.png"],
       imgAlt: "Erik de la Iglesia",
     },
   ];
@@ -120,8 +123,7 @@ const SponsorsPage = () => {
       description:
         "Texas Instruments is a company passionate about making a better world through making electronics more affordable through semiconductors. Texas Instruments plays a significant role in the manufacturing and distribution of sensors, solar panels, satellites, industrial robots, and so much more.",
       url: "https://ti.com",
-      imgSrc:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ti_stk_2c_pos_rgb.svg/1024px-Ti_stk_2c_pos_rgb.svg.png",
+      imgSrc: logos["texas_instruments.svg"],
       imgAlt: "Texas Instruments Logo",
     },
   ];
@@ -132,8 +134,7 @@ const SponsorsPage = () => {
       description:
         "SolidWorks is a 3D CAD design software company that offers tools for creating, simulating, publishing, and managing data. SolidWorks supports a 3D CAD software on every engineer's desktop.",
       url: "https://www.solidworks.com",
-      imgSrc:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/SolidWorks_Logo.svg/1024px-SolidWorks_Logo.svg.png",
+      imgSrc: logos["solidworks.svg"],
       imgAlt: "SolidWorks Logo",
     },
     {
@@ -141,8 +142,8 @@ const SponsorsPage = () => {
       description:
         "The Herbert Wertheim College of Engineering (HWCOE) at the University of Florida is dedicated to improving the social and economic well-being of the world, the nation, and the state of Florida through its engineering education, research, and service programs.",
       url: "https://eng.ufl.edu",
-      imgSrc:
-        "https://www.eng.ufl.edu/marcom-dev/wp-content/uploads/sites/175/2023/10/Herbert-Wertheim-COE-rgb.png",
+      // TODO: make these blue
+      imgSrc: logos["hwcoe.svg"],
       imgAlt: "UF HWCOE Logo",
     },
     {
@@ -150,8 +151,8 @@ const SponsorsPage = () => {
       description:
         "The Electrical and Computer Engineering (ECE) Department at the University of Florida (UF) has pursued research, discoveries, and technologies that empower and touch lives everywhere by developing the best workforce in electrical and computer engineering in the state of Florida and for all the nation.",
       url: "https://ece.ufl.edu",
-      imgSrc:
-        "https://www.ece.ufl.edu/wp-content/uploads/2024/10/ElectricalComputerEngineering-VECTOR-RGB.svg",
+      // TODO: make these blue
+      imgSrc: logos["ece.svg"],
       imgAlt: "ECE Logo",
     },
     {
@@ -159,7 +160,7 @@ const SponsorsPage = () => {
       description:
         "The Mechanical and Aerospace Engineering Department (MAE) at the University of Florida (UF) aims to shape the future of our fields and to inspire a new era of engineering possibilities, creating a better world for all.",
       url: "https://mae.ufl.edu",
-      imgSrc: "https://mil.ufl.edu/sponsors/MAE_logo.png",
+      imgSrc: logos["mae.png"],
       imgAlt: "MAE Logo",
     },
     {
@@ -167,7 +168,7 @@ const SponsorsPage = () => {
       description:
         "JD Squared, Inc. is a national manufacturer of high-quality, affordable tube and pipe benders and notchers.",
       url: "https://jd2.com",
-      imgSrc: "http://mil.ufl.edu/sponsors/JD-squared-transparent.png",
+      imgSrc: logos["jd2.png"],
       imgAlt: "JD2 Logo",
     },
     {
@@ -175,7 +176,7 @@ const SponsorsPage = () => {
       description:
         "Kevin Allen is a MIL alumnus who graduated with his BS in Computer Science and BA in Philosophy from the University of Florida in 2020 and now works in the robotics industry.",
       url: "https://kev.wiki/",
-      imgSrc: "http://mil.ufl.edu/sponsors/kevin.jpeg",
+      imgSrc: members["kevin_allen.jpeg"],
       imgAlt: "Kevin Allen",
     },
   ];
@@ -192,16 +193,14 @@ const SponsorsPage = () => {
     {
       name: "Apple",
       url: "https://www.apple.com",
-      imgSrc:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/833px-Apple_logo_black.svg.png",
+      imgSrc: logos["apple.svg"],
       imgAlt: "Apple Logo",
       type: "bronze",
     },
     {
       name: "Qualcomm",
       url: "https://www.qualcomm.com",
-      imgSrc:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Qualcomm-Logo.svg/1024px-Qualcomm-Logo.svg.png",
+      imgSrc: logos["qualcomm.svg"],
       imgAlt: "Qualcomm Logo",
       type: "bronze",
     },

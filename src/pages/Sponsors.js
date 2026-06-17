@@ -47,6 +47,7 @@ const SponsorCard = ({ name, description, url, imgSrc, imgAlt, bgColor }) => {
           <img
             src={imgSrc}
             alt={imgAlt}
+            loading="lazy"
             className="object-contain h-20 mx-auto"
           />
         )}
@@ -74,6 +75,7 @@ const BronzeSponsorCard = ({ sponsor }) => {
           <img
             src={sponsor.imgSrc}
             alt={sponsor.imgAlt}
+            loading="lazy"
             className="h-10 mx-auto"
           />
         </a>

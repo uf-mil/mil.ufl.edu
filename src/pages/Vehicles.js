@@ -49,6 +49,7 @@ const VehicleCard = ({ title, description, image, medals = [], inactive }) => {
         <img
           src={image}
           alt={title}
+          loading="lazy"
           className="w-full md:w-64 h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-110"
         />
       </div>

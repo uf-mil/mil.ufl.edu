@@ -21,6 +21,7 @@ function MemberCard({
         <img
           src={image}
           alt={name}
+          loading="lazy"
           className="object-cover w-full h-full absolute top-0 left-0"
         />
       </div>

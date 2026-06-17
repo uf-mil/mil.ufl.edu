@@ -17,11 +17,17 @@ function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* Logo Section */}
         <div className="flex flex-col items-center md:items-start mb-4 md:mb-0 space-y-3">
-          <img src={logo} alt="Lab Logo" className="h-16 mb-2" />
-          <img src={logos["hwcoe.svg"]} alt="College Logo 1" className="h-12" />
+          <img src={logo} alt="Lab Logo" loading="lazy" className="h-16 mb-2" />
+          <img
+            src={logos["hwcoe.svg"]}
+            alt="College Logo 1"
+            loading="lazy"
+            className="h-12"
+          />
           <img
             src={logos["ece.svg"]}
             alt="College Logo 2"
+            loading="lazy"
             className="h-10 pt-2"
           />
         </div>

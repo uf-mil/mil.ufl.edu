@@ -207,12 +207,14 @@ function Projects() {
                 <img
                   src={project.image}
                   alt={project.title || "Project"}
+                  loading="lazy"
                   className="rounded-lg mb-4"
                 />
                 {project.logo && (
                   <img
                     src={project.logo}
                     alt="Project Logo"
+                    loading="lazy"
                     className="rounded-lg mb-4 px-6 mx-auto"
                   />
                 )}
@@ -474,6 +476,7 @@ function TeamSection() {
           <img
             src={teamPhoto}
             alt="Team Photo"
+            loading="lazy"
             className="max-w-5xl w-full rounded-lg shadow-lg"
           />
         </div>

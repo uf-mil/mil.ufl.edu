@@ -54,20 +54,11 @@ LeadershipSection.propTypes = {
 const SoftwareLeadership = () => {
   const members = [
     {
-      image: memberImages["daniel_parra.jpeg"],
-      name: "Daniel Parra",
-      role: "Software Lead",
-      degree: "BS, Computer Science",
-      graduationYear: "Spring 2026",
-      linkedIn: "daniparr",
-      email: "dparra1@ufl.edu",
-    },
-    {
       image: memberImages["carlos_chavez.jpeg"],
       name: "Carlos Chavez",
       role: "Software Lead",
       degree: "BS, Computer Science",
-      graduationYear: "Spring 2026",
+      graduationYear: "Spring 2027",
       linkedIn: "carlos-chavez-60a840252",
     },
     {
@@ -90,7 +81,7 @@ const ElectricalLeadership = () => {
       name: "Lester Bonilla",
       role: "Drone Lead",
       degree: "BS, Computer Engineering",
-      graduationYear: "Spring 2026",
+      graduationYear: "Spring 2027",
       email: "lester.bonilla@ufl.edu",
     },
     {
@@ -116,32 +107,6 @@ const ElectricalLeadership = () => {
 
 const MechanicalLeadership = () => {
   const members = [
-    {
-      image: memberImages["adam_hamdan.png"],
-      name: "Adam Hamdan",
-      role: "Mechanical Lead",
-      degree: "BS, Mechanical Engineering",
-      graduationYear: "Spring 2026",
-      email: "adamhamdan@ufl.edu",
-    },
-    {
-      image: memberImages["adam_mcaleer.png"],
-      name: "Adam McAleer",
-      role: "Mechanisms Lead",
-      degree: "BS, Mechanical Engineering",
-      graduationYear: "Spring 2026",
-      linkedIn: "adam-mcaleer",
-      email: "adammcaleer@ufl.edu",
-    },
-    {
-      image: memberImages["sophie_lanahan.jpg"],
-      name: "Sophie Lanahan",
-      role: "Mechanical Lead",
-      degree: "BS, Mechanical Engineering",
-      graduationYear: "Fall 2026",
-      linkedIn: "sophie-lanahan-9b2440325",
-      email: "sophielanahan@ufl.edu",
-    },
     {
       image: memberImages["ryan_hoburg.jpg"],
       name: "Ryan Hoburg",
@@ -273,6 +238,42 @@ const TeamList = () => {
 
 const Alumni = () => {
   const alumni = [
+    {
+      image: memberImages["daniel_parra.jpeg"],
+      name: "Daniel Parra",
+      degree: "BS, Computer Science",
+      graduationYear: "Spring 2026",
+      linkedIn: "daniparr",
+      email: "dparra1@ufl.edu",
+      company: "Bloomberg",
+    },
+    {
+      image: memberImages["adam_hamdan.png"],
+      name: "Adam Hamdan",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2026",
+      email: "adamhamdan@ufl.edu",
+      website: "http://adamhamdan.me",
+      company: "DMC Engineering",
+    },
+    {
+      image: memberImages["adam_mcaleer.png"],
+      name: "Adam McAleer",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2026",
+      linkedIn: "adam-mcaleer",
+      email: "adammcaleer@ufl.edu",
+      company: "Northeastern University",
+    },
+    {
+      image: memberImages["sophie_lanahan.jpg"],
+      name: "Sophie Lanahan",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2026",
+      linkedIn: "sophie-lanahan-9b2440325",
+      email: "sophielanahan@ufl.edu",
+      company: "Northrop Grumman",
+    },
     {
       image: memberImages["cameron_brown.jpeg"],
       name: "Cameron Brown",

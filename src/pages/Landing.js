@@ -140,7 +140,7 @@ function Header() {
 
 function Mission() {
   return (
-    <section className="py-12 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700">
+    <section className="py-12 bg-gradient-to-b from-gatorblue-900 via-gatorblue-800 to-gatorblue-700">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-8 text-white">Our Mission</h2>
         <p className="text-lg text-gray-200 leading-relaxed px-10">
@@ -167,7 +167,7 @@ function Projects() {
   return (
     <section className="py-12 bg-gray-200">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-10 text-blue-900">
+        <h2 className="text-4xl font-bold text-center mb-10 text-gatorblue-900">
           Our Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
@@ -219,7 +219,7 @@ function Projects() {
                   />
                 )}
                 {project.title && (
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gatorblue-900 mb-2">
                     {project.title}
                   </h3>
                 )}
@@ -230,7 +230,7 @@ function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-center bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 mt-4"
+                  className="block text-center bg-gatorblue-900 text-white py-2 px-4 rounded hover:bg-gatorblue-700 transition duration-300 mt-4"
                 >
                   Learn More
                 </a>
@@ -240,7 +240,7 @@ function Projects() {
           {/* Final Card Linking to Vehicles Page */}
           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
             <div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              <h3 className="text-xl font-semibold text-gatorblue-900 mb-4">
                 Explore All Vehicles
               </h3>
               <p className="text-gray-700 text-center mb-4">
@@ -250,7 +250,7 @@ function Projects() {
             </div>
             <a
               href="/vehicles"
-              className="block text-center bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+              className="block text-center bg-gatorblue-900 text-white py-2 px-4 rounded hover:bg-gatorblue-700 transition duration-300"
             >
               See All Vehicles
             </a>
@@ -424,9 +424,9 @@ function ScrollingBannerSection() {
 function Competitions() {
   return (
     <>
-      <section className="py-12 bg-blue-50">
+      <section className="py-12 bg-gatorblue-50">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 text-blue-900">
+          <h2 className="text-4xl font-bold mb-8 text-gatorblue-900">
             Competitions & Achievements
           </h2>
           <p className="text-lg text-gray-800 leading-relaxed px-10">
@@ -444,7 +444,7 @@ function Competitions() {
 
 // function Community() {
 //   return (
-//     <section className="py-12 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 text-white">
+//     <section className="py-12 bg-gradient-to-b from-gatorblue-800 via-gatorblue-700 to-gatorblue-600 text-white">
 //       <div className="max-w-6xl mx-auto text-center">
 //         <h2 className="text-4xl font-bold mb-8">
 //           Our Place in the UF Community
@@ -464,7 +464,9 @@ function TeamSection() {
   return (
     <section className="py-6 bg-gray-100">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 text-blue-900">Meet the Team</h2>
+        <h2 className="text-4xl font-bold mb-8 text-gatorblue-900">
+          Meet the Team
+        </h2>
         <p className="text-lg text-gray-800 leading-relaxed px-10 mb-8">
           Our team is composed of students and faculty from various fields
           across the University of Florida, unified by a passion for robotics
@@ -483,7 +485,7 @@ function TeamSection() {
         <div className="mt-8">
           <a
             href="/team"
-            className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+            className="bg-gatorblue-900 text-white py-2 px-4 rounded hover:bg-gatorblue-700 transition duration-300"
           >
             Meet our Members!
           </a>
@@ -496,7 +498,7 @@ function TeamSection() {
 const LandingPage = () => {
   return (
     <div
-      className="bg-gradient-to-br from-blue-800 to-blue-500 text-white"
+      className="bg-gradient-to-br from-gatorblue-800 to-gatorblue-500 text-white"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="relative">

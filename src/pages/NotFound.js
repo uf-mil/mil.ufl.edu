@@ -24,7 +24,7 @@ function BackToHome() {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto text-center">
-        <h3 className="text-3xl font-extrabold text-blue-800 mb-6">
+        <h3 className="text-3xl font-extrabold text-gatorblue-800 mb-6">
           Let’s Get You Back on Track
         </h3>
         <p className="text-gray-700 text-lg leading-relaxed mb-6">
@@ -34,7 +34,7 @@ function BackToHome() {
         <div className="flex justify-center">
           <a
             href="/"
-            className="bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition duration-300"
+            className="bg-gatorblue-800 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-gatorblue-700 transition duration-300"
           >
             Back to Home
           </a>
@@ -48,7 +48,7 @@ const NotFoundPage = () => {
   return (
     <div className="font-sans">
       <Navbar />
-      <div className="bg-gradient-to-br from-blue-900 to-blue-600 text-white">
+      <div className="bg-gradient-to-br from-gatorblue-900 to-gatorblue-600 text-white">
         <NotFoundMessage />
       </div>
       <BackToHome />

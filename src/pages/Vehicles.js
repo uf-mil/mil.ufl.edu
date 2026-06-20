@@ -145,7 +145,7 @@ const VehiclePage = () => {
       <div className="relative">
         <Navbar />
       </div>
-      <div className="bg-gradient-to-br from-blue-800 to-blue-500 text-white">
+      <div className="bg-gradient-to-br from-gatorblue-800 to-gatorblue-500 text-white">
         <section className="py-8">
           <div className="max-w-6xl mx-auto">
             {vehicles.map((vehicle, index) => (

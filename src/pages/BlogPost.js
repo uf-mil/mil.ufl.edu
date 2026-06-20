@@ -39,7 +39,7 @@ const BlogPost = () => {
         <div className="max-w-4xl mx-auto px-6">
           <button
             onClick={() => navigate(-1)}
-            className="mb-6 text-blue-500 hover:underline"
+            className="mb-6 text-gatorblue-500 hover:underline"
           >
             ← Back to all blogs
           </button>

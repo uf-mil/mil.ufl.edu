@@ -7,7 +7,7 @@ const BlogPost = ({ title, authors, date, content, onBack }) => {
     <div className="py-8 bg-white max-w-6xl mx-auto px-4">
       <button
         onClick={onBack}
-        className="text-blue-600 underline mb-4 hover:text-blue-800"
+        className="text-gatorblue-600 underline mb-4 hover:text-gatorblue-800"
       >
         ← Back to Blogs
       </button>

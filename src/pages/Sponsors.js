@@ -221,14 +221,14 @@ const SponsorsPage = () => {
   ];
   return (
     <div
-      className="bg-gradient-to-br from-blue-800 to-blue-500"
+      className="bg-gradient-to-br from-gatorblue-800 to-gatorblue-500"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <Navbar />
       <SponsorSection
         title="Diamond Sponsors"
         sponsors={diamondSponsors}
-        bgColor="bg-blue-100"
+        bgColor="bg-gatorblue-100"
       />
       <SponsorSection
         title="Gold Sponsors"

@@ -91,7 +91,7 @@ PlacementBanner.propTypes = {
 function UnifiedBanner({ place, year, event, competition }) {
   return (
     <BannerShape
-      className="bg-white border-4 border-blue-900 relative"
+      className="bg-white border-4 border-gatorblue-900 relative"
       style={{ borderColor: "rgb(9 18 44)" }} // Outer border (dark blue)
     >
       <div
@@ -106,10 +106,10 @@ function UnifiedBanner({ place, year, event, competition }) {
           />
         </div>
         <div className="px-4">
-          <div className="text-4xl mt-4 font-bold tracking-wide text-blue-900">
+          <div className="text-4xl mt-4 font-bold tracking-wide text-gatorblue-900">
             {year}
           </div>
-          <div className="text-lg font-bold uppercase text-blue-900">
+          <div className="text-lg font-bold uppercase text-gatorblue-900">
             {place}
           </div>
           <div className="text-sm mt-2 text-gray-700">{event}</div>

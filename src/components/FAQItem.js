@@ -11,8 +11,10 @@ function FAQItem({ question, answer }) {
         className="w-full flex justify-between items-center py-5 text-left focus:outline-none"
         aria-expanded={open}
       >
-        <span className="text-lg font-medium text-blue-800">{question}</span>
-        <span className="text-2xl text-blue-800">{open ? "−" : "+"}</span>
+        <span className="text-lg font-medium text-gatorblue-800">
+          {question}
+        </span>
+        <span className="text-2xl text-gatorblue-800">{open ? "−" : "+"}</span>
       </button>
 
       <div

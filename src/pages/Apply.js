@@ -91,7 +91,7 @@ function Requirements() {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h3 className="text-3xl font-extrabold text-blue-800 text-center mb-6">
+        <h3 className="text-3xl font-extrabold text-gatorblue-800 text-center mb-6">
           Requirements to Join
         </h3>
         <ul className="list-disc list-inside text-gray-700 space-y-4 px-4">
@@ -106,7 +106,7 @@ function Requirements() {
           <div className="flex justify-center mt-10">
             <a
               href="https://ufl.qualtrics.com/jfe/form/SV_cJi7jeGvKgTEnoW"
-              className="bg-blue-800 text-white px-6 py-3 rounded-lg text-2xl font-medium hover:bg-blue-700 transition duration-300 flex flex-col items-center"
+              className="bg-gatorblue-800 text-white px-6 py-3 rounded-lg text-2xl font-medium hover:bg-gatorblue-700 transition duration-300 flex flex-col items-center"
             >
               Apply Now
               <span className="text-sm text-gray-200 mt-2 text-center leading-tight font-normal">
@@ -167,7 +167,7 @@ function FAQ() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4">
-        <h3 className="text-3xl font-extrabold text-blue-800 text-center mb-8">
+        <h3 className="text-3xl font-extrabold text-gatorblue-800 text-center mb-8">
           Frequently Asked Questions
         </h3>
 
@@ -181,7 +181,7 @@ function FAQ() {
           <p className="mt-8 text-center text-gray-600">
             Have more questions? Feel free to email any of our leaders (or Dr.
             Schwartz) for more information! Emails are available on the{" "}
-            <a href="/team" className="text-blue-600 underline">
+            <a href="/team" className="text-gatorblue-600 underline">
               Team
             </a>{" "}
             page.
@@ -197,7 +197,7 @@ const ApplyPage = () => {
   return (
     <div className="font-sans">
       <Navbar />
-      <div className="bg-gradient-to-br from-blue-900 to-blue-600 text-white">
+      <div className="bg-gradient-to-br from-gatorblue-900 to-gatorblue-600 text-white">
         <Introduction />
       </div>
       <Requirements />

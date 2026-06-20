@@ -403,7 +403,7 @@ const Alumni = () => {
 const TeamPage = () => {
   return (
     <div
-      className="bg-gradient-to-br from-blue-800 to-blue-500 text-white"
+      className="bg-gradient-to-br from-gatorblue-800 to-gatorblue-500 text-white"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <Navbar />

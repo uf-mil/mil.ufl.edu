@@ -41,7 +41,7 @@ const BlogList = () => {
   }, []);
 
   return (
-    <section className="py-12 min-h-screen bg-gradient-to-br from-blue-800 to-blue-500 text-white">
+    <section className="py-12 min-h-screen bg-gradient-to-br from-gatorblue-800 to-gatorblue-500 text-white">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-5xl font-extrabold text-center mb-12 tracking-wide">
           Our Blogs
@@ -56,7 +56,7 @@ const BlogList = () => {
               <Link
                 to={`/blog/${blog.slug}`}
                 key={index}
-                className="text-blue-500 font-medium mt-4 inline-block"
+                className="text-gatorblue-500 font-medium mt-4 inline-block"
               >
                 <div
                   key={index}

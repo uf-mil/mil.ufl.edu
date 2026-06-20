@@ -15,7 +15,7 @@ const Medal = ({ text, placement }) => {
     "1st": "text-black",
   };
 
-  const bgColor = backgroundColors[placement] || "bg-blue-400";
+  const bgColor = backgroundColors[placement] || "bg-gatorblue-400";
   const textColor = textColors[placement] || "text-white";
 
   return (

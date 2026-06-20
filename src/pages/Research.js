@@ -7,7 +7,7 @@ import softwareSolving from "../assets/software_solving.jpg";
 // Team Component
 function Introduction() {
   return (
-    <section className="py-8 bg-gradient-to-br from-blue-800 to-blue-500 text-white">
+    <section className="py-8 bg-gradient-to-br from-gatorblue-800 to-gatorblue-500 text-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">Research</h2>
         <div className="flex justify-center">

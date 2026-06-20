@@ -40,7 +40,7 @@ function MemberCard({
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
-                className="text-blue-600 hover:text-blue-800 text-2xl"
+                className="text-gatorblue-600 hover:text-gatorblue-800 text-2xl"
               />
             </a>
           )}

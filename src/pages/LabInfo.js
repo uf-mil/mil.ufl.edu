@@ -6,7 +6,7 @@ import labImage from "../assets/lab_space.jpg";
 
 function Introduction() {
   return (
-    <section className="py-8 bg-gradient-to-br from-blue-800 to-blue-500 text-white">
+    <section className="py-8 bg-gradient-to-br from-gatorblue-800 to-gatorblue-500 text-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-light mb-6">About Our Lab</h2>
         <div className="flex justify-center">
@@ -33,14 +33,16 @@ function ContactInfo() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-blue-800 mb-4">
+            <h3 className="text-2xl font-bold text-gatorblue-800 mb-4">
               Contact Us
             </h3>
             <p className="text-gray-700 text-lg mb-6">
               Reach out to us for inquiries, collaborations, or general
               questions.
             </p>
-            <h4 className="text-xl font-semibold text-blue-900">Address</h4>
+            <h4 className="text-xl font-semibold text-gatorblue-900">
+              Address
+            </h4>
             <p className="text-gray-600 mt-2">
               Machine Intelligence Laboratory
               <br />
@@ -52,7 +54,7 @@ function ContactInfo() {
               <br />
               Gainesville, FL 32611
             </p>
-            <h4 className="text-xl font-semibold text-blue-900 mt-4">
+            <h4 className="text-xl font-semibold text-gatorblue-900 mt-4">
               Contact Information
             </h4>
             <p className="text-gray-600 mt-2">
@@ -61,7 +63,7 @@ function ContactInfo() {
               Email:{" "}
               <a
                 href="mailto:ems@ufl.edu"
-                className="text-blue-600 hover:underline"
+                className="text-gatorblue-600 hover:underline"
               >
                 ems@ufl.edu
               </a>
@@ -86,7 +88,7 @@ function ContactInfo() {
 
 function SafetyDocument() {
   return (
-    <section className="py-8 bg-gradient-to-br from-blue-500 to-blue-800 text-white">
+    <section className="py-8 bg-gradient-to-br from-gatorblue-500 to-gatorblue-800 text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h3 className="text-2xl font-bold mb-4">Lab Safety</h3>
         <p className="text-lg mb-6">
@@ -98,7 +100,7 @@ function SafetyDocument() {
           href="https://mil.ufl.edu/MIL_Safety_and_Info.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white text-blue-800 px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-200 transition duration-300"
+          className="bg-white text-gatorblue-800 px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-200 transition duration-300"
         >
           View Lab Safety Document
         </a>

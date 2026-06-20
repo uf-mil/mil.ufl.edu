@@ -52,7 +52,7 @@ const NavItem = ({ to, label, dropdown, closeMobileMenu }) => {
         <button
           onClick={toggleDropdown}
           className={`flex items-center text-gatorblue-800 px-3 py-2 rounded-lg font-medium text-sm transition duration-300
-            hover:bg-gatorblue-800 hover:text-white hover:outline-none hover:ring-2 hover:ring-gray-300
+            hover:text-black
           `}
         >
           {label}
@@ -68,7 +68,7 @@ const NavItem = ({ to, label, dropdown, closeMobileMenu }) => {
           to={to}
           onClick={closeMobileMenu}
           className={`flex items-center text-gatorblue-800 px-3 py-2 rounded-lg font-medium text-sm transition duration-300
-            hover:bg-gatorblue-800 hover:text-white hover:outline-none hover:ring-2 hover:ring-gray-300
+            hover:text-black
           `}
         >
           {label}
@@ -145,7 +145,7 @@ function Navbar() {
       ) : (
         <></>
       )}
-      <nav className="w-full p-3 bg-white bg-opacity-90 shadow-md z-50 relative">
+      <nav className="w-full p-3 bg-white bg-opacity-90 shadow-lg shadow-black/25 z-50 relative">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           {/* Logo */}
           <Link to="/" onClick={closeMobileMenu}>

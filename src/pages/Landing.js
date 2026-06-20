@@ -403,7 +403,7 @@ function ScrollingBannerSection() {
   const scrollingBanners = [...banners, ...banners];
 
   return (
-    <div className="relative overflow-x-hidden bg-gray-100 py-40 group">
+    <div className="relative overflow-x-hidden bg-gatorblue-50 py-40 group">
       {/* first row */}
       <div className="absolute top-0 flex group-hover:pause animate-marquee whitespace-nowrap space-x-8">
         {makeBannerMap(scrollingBanners)}
@@ -463,32 +463,66 @@ function Competitions() {
 function TeamSection() {
   return (
     <section className="py-6 bg-gray-100">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 text-gatorblue-900">
-          Meet the Team
-        </h2>
-        <p className="text-lg text-gray-800 leading-relaxed px-10 mb-8">
-          Our team is composed of students and faculty from various fields
-          across the University of Florida, unified by a passion for robotics
-          and innovation. We are primarily undergraduates with a few graduate
-          students and faculty advisors. We span a wide range of disciplines,
-          from physics to computer science.
-        </p>
-        <div className="flex justify-center">
-          <img
-            src={teamPhoto}
-            alt="Team Photo"
-            loading="lazy"
-            className="max-w-5xl w-full rounded-lg shadow-lg"
-          />
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-4xl font-bold mb-8 text-gatorblue-900">
+              Meet the Team
+            </h2>
+            <p className="text-lg text-gray-800 leading-relaxed mb-8">
+              Our team is composed of students and faculty from various fields
+              across the University of Florida, unified by a passion for
+              robotics and innovation. We are primarily undergraduates with a
+              few graduate students and faculty advisors. We span a wide range
+              of disciplines, from physics to computer science.
+            </p>
+            <a
+              href="/team"
+              className="bg-gatorblue-900 text-white py-2 px-4 rounded hover:bg-gatorblue-700 transition duration-300"
+            >
+              Meet our Members!
+            </a>
+          </div>
+          <div>
+            <img
+              src={teamPhoto}
+              alt="Team Photo"
+              loading="lazy"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
         </div>
-        <div className="mt-8">
-          <a
-            href="/team"
-            className="bg-gatorblue-900 text-white py-2 px-4 rounded hover:bg-gatorblue-700 transition duration-300"
-          >
-            Meet our Members!
-          </a>
+      </div>
+    </section>
+  );
+}
+
+function VideoSection() {
+  return (
+    <section className="py-6 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+          <div className="aspect-video w-full">
+            <iframe
+              className="w-full h-full rounded-lg shadow-lg"
+              src="https://www.youtube.com/embed/oGszXLLkVvM"
+              title="SubjuGator 2025 team video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold mb-8 text-gatorblue-900">
+              Watch our latest video!
+            </h2>
+            <p className="text-lg text-gray-800 leading-relaxed">
+              Check out our most recent team video, made for the 2025 RoboSub
+              competition! Featuring our brand new submarine, SubjuGator 9, this
+              video highlights our team's capabilities and the exciting work
+              we're doing in the lab.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -509,6 +543,7 @@ const LandingPage = () => {
       <Competitions />
       {/* <Community /> */}
       <TeamSection />
+      <VideoSection />
       <Footer />
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -114,6 +114,15 @@ function Navbar() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
+  // Prevent body scroll when the mobile menu is open (which would allow the user
+  // to scroll the X off the page)
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   // eslint-disable-next-line no-unused-vars
   const applicationOpen =

@@ -502,17 +502,7 @@ function VideoSection() {
     <section className="py-6 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
-          <div className="aspect-video w-full">
-            <iframe
-              className="w-full h-full rounded-lg shadow-lg"
-              src="https://www.youtube.com/embed/oGszXLLkVvM"
-              title="SubjuGator 2025 team video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
-          <div>
+          <div className="sm:order-2">
             <h2 className="text-4xl font-bold mb-8 text-gatorblue-900">
               Watch our latest video!
             </h2>
@@ -522,6 +512,16 @@ function VideoSection() {
               video highlights our team's capabilities and the exciting work
               we're doing in the lab.
             </p>
+          </div>
+          <div className="aspect-video w-full sm:order-1">
+            <iframe
+              className="w-full h-full rounded-lg shadow-lg"
+              src="https://www.youtube.com/embed/oGszXLLkVvM"
+              title="SubjuGator 2025 team video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import RoboBoat from "../components/RoboBoat";
 function BannerShape({ children, className, style }) {
   return (
     <div
-      className={`relative w-48 h-64 text-center mx-auto ${className}`}
+      className={`relative w-40 h-56 sm:w-48 sm:h-64 text-center mx-auto ${className}`}
       style={style}
     >
       {/* Main Banner Body */}

@@ -174,12 +174,28 @@ const SponsorsPage = () => {
       imgAlt: "JD2 Logo",
     },
     {
+      name: "Institute of Electrical and Electronics Engineers",
+      description:
+        "IEEE's core purpose is to foster technological innovation and excellence for the benefit of humanity.",
+      url: "https://ieee.org",
+      imgSrc: logos["ieee.svg"],
+      imgAlt: "IEEE Logo",
+    },
+    {
       name: "Kevin Allen",
       description:
         "Kevin Allen is a MIL alumnus who graduated with his BS in Computer Science and BA in Philosophy from the University of Florida in 2020 and now works in the robotics industry.",
       url: "https://kev.wiki/",
       imgSrc: members["kevin_allen.jpeg"],
       imgAlt: "Kevin Allen",
+    },
+    {
+      name: "Matthew Langford",
+      description:
+        "Matthew Langford is a MIL alumnus who previously attended the University of Florida and now works in the self-driving car industry. He enjoys using nix-darwin and spending time with his dog Rosie.",
+      url: "https://matt.boats",
+      imgSrc: members["matt_langford.png"],
+      imgAlt: "Matthew Langford",
     },
   ];
 

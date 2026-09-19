@@ -62,6 +62,13 @@ const SoftwareLeadership = () => {
       linkedIn: "carlos-chavez-60a840252",
     },
     {
+      image: memberImages["ziyin_liu.jpg"],
+      name: "Dean Liu",
+      role: "Software Lead",
+      degree: "MS, Computer Science",
+      graduationYear: "Spring 2027",
+    },
+    {
       image: memberImages["mohana_pamidimukkala.jpg"],
       name: "Mohana Pamidimukkala",
       role: "Software Lead",
@@ -77,14 +84,6 @@ const SoftwareLeadership = () => {
 const ElectricalLeadership = () => {
   const members = [
     {
-      image: memberImages["lester_bonilla.jpg"],
-      name: "Lester Bonilla",
-      role: "Drone Lead",
-      degree: "BS, Computer Engineering",
-      graduationYear: "Spring 2027",
-      email: "lester.bonilla@ufl.edu",
-    },
-    {
       image: memberImages["jack_rainville.jpg"],
       name: "Jack Rainville",
       role: "Electrical Lead",
@@ -93,12 +92,55 @@ const ElectricalLeadership = () => {
       linkedIn: "jack-rainville",
     },
     {
+      image: memberImages["joe_goodman.jpg"],
+      name: "Joe Goodman",
+      role: "Electrical Lead",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2027",
+    },
+    {
       image: memberImages["russell_macgregor.jpg"],
       name: "Russell MacGregor",
       role: "Electrical Lead",
       degree: "BS, Electrical Engineering",
       graduationYear: "Spring 2027",
-      linkedIn: "russellmacgregor",
+      website: "radm.cc",
+      email: "russelladmacgregor@gmail.com",
+    },
+    {
+      image: memberImages["ethan_mitchell.jpg"],
+      name: "Ethan Mitchell",
+      role: "Drone Lead",
+      degree: "BS, Computer Engineering",
+      graduationYear: "Spring 2027",
+    },
+    {
+      image: memberImages["aiden_shepler.jpg"],
+      name: "Aiden Shepler",
+      role: "Electrical Lead",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2027",
+    },
+    {
+      image: memberImages["erik_neff_flahan.jpg"],
+      name: "Erik Neff-Flahan",
+      role: "Electrical Lead",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2027",
+    },
+    {
+      image: memberImages["natalia_ray.jpg"],
+      name: "Natalia Ray",
+      role: "Lead in Training",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2029",
+    },
+    {
+      image: memberImages["chinedu_okpala.jpg"],
+      name: "Chinedu Okpala",
+      role: "Lead in Training",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2029",
     },
   ];
 
@@ -130,6 +172,13 @@ const MechanicalLeadership = () => {
       degree: "BS, Mechanical Engineering",
       graduationYear: "Spring 2028",
       linkedIn: "alessandraskarshinski-fred",
+    },
+    {
+      image: memberImages["daniel_mcaleer.jpg"],
+      name: "Daniel McAleer",
+      role: "Mechanical Lead",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2028",
     },
   ];
 
@@ -238,6 +287,14 @@ const TeamList = () => {
 
 const Alumni = () => {
   const alumni = [
+    {
+      image: memberImages["lester_bonilla.jpg"],
+      name: "Lester Bonilla",
+      role: "Drone Lead",
+      degree: "BS, Computer Engineering",
+      graduationYear: "Spring 2027",
+      email: "lester.bonilla@ufl.edu",
+    },
     {
       image: memberImages["daniel_parra.jpeg"],
       name: "Daniel Parra",

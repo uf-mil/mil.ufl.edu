@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+/* ── design tokens ───────────────────────────────────────────────── */
+
+@theme inline {
+  --color-background: #08090f;
+  --color-surface: #0e1120;
+  --color-surface-2: #141826;
+  --color-border: #1c2236;
+  --color-accent: #00c8ff;
+  --color-accent-dim: #0099cc;
+  --color-text: #dce4f0;
+  --color-text-muted: #6b7a99;
+  --color-text-dim: #3d4d6b;
+  --color-warn: #f0a500;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── global base ─────────────────────────────────────────────────── */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1c2236 transparent;
+}
+*::-webkit-scrollbar { width: 4px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #1c2236; border-radius: 2px; }
+
+body {
+  background-color: #08090f;
+  color: #dce4f0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(0, 200, 255, 0.2);
+  color: #dce4f0;
+}
+
+/* ── animation utilities (from input.css) ────────────────────────── */
+
+@utility pause {
+  animation-play-state: paused;
+}
+
+/* ── prose styles (from input.css) ──────────────────────────────── */
+
+.prose p        { margin-bottom: 1.5rem; }
+.prose h1       { font-size: 2.25rem; font-weight: 700; color: #f1f5f9; margin-bottom: 1.5rem; line-height: 1.25; }
+.prose h2       { font-size: 1.875rem; font-weight: 600; color: #e2e8f0; margin-bottom: 1.25rem; line-height: 1.375; }
+.prose h3       { font-size: 1.5rem; font-weight: 500; color: #cbd5e1; margin-bottom: 1rem; line-height: 1.5; }
+.prose h4       { font-size: 1.25rem; font-weight: 500; color: #cbd5e1; margin-bottom: 0.75rem; line-height: 1.75; }
+.prose h5       { font-size: 1.125rem; font-weight: 500; color: #94a3b8; margin-bottom: 0.5rem; }
+.prose h6       { font-size: 1rem; font-weight: 500; color: #94a3b8; margin-bottom: 0.25rem; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; margin-top: 0; }
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 { scroll-margin-top: 6rem; }
+
+.prose ul       { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+.prose ul > li  { margin-bottom: 0.5rem; }
+.prose ol       { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1rem; }
+.prose ol > li  { margin-bottom: 0.5rem; }
+.prose li       { font-size: 1rem; line-height: 1.75; color: #94a3b8; }
+.prose img      { display: block; margin: 1rem auto; max-width: 100%; height: auto; }

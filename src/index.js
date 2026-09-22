@@ -9,7 +9,7 @@ import Apply from "./pages/Apply";
 import Research from "./pages/Research";
 import BlogList from "./pages/BlogList";
 import BlogPost from "./pages/BlogPost";
-import Vehicles from "./pages/Vehicles";
+import Vehicles from "./pages/vehicle_data/vehicle_page_setup";
 import NotFound from "./pages/NotFound";
 import LabInfo from "./pages/LabInfo";
 import Team2024Page from "./pages/teams/2024";

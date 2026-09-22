@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Vehicle page design tokens ───────────────────────────────── */
+:root {
+  --color-background: #08090f;
+  --color-surface:    #0e1120;
+  --color-surface-2:  #141826;
+  --color-border:     #1c2236;
+  --color-accent:     #00c8ff;
+  --color-text:       #dce4f0;
+  --color-text-muted: #6b7a99;
+  --color-text-dim:   #3d4d6b;
+  --font-display:     'Barlow Condensed', sans-serif;
+  --font-body:        'Inter', sans-serif;
+  --font-mono:        'JetBrains Mono', monospace;
+}
+
 @layer utilities {
   .pause {
     animation-play-state: paused;

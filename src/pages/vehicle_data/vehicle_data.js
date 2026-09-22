@@ -336,4 +336,66 @@ export const vehicles = [
       },
     ],
   },
+  {
+    id: "terragator",
+    name: "TerraGator",
+    shortName: "Rover",
+    type: "Rover",
+    tagline: "Mars Rover",
+    description:
+      "the best vehicle.",
+    specs: {
+      Purpose: "dunno",
+      Architecture: "mystery",
+      "Lore": "Unfathomable",
+    },
+    parts: [
+      {
+        id: "frame",
+        name: "frame",
+        category: "Structure",
+        description:
+          "ARG.",
+        specs: { Material: "HDPE + GF ribs", Weight: "28 kg", Freeboard: "0.35 m", "UV Stable": "Yes" },
+      },
+    ],
+    views: [
+      {
+        id: "top",
+        label: "Top View",
+        imagePath: sub_ortho,
+        hotspots: [
+          { partId: "monohull",     x: 50, y: 55 },
+          { partId: "stern-drive",  x: 50, y: 85 },
+          { partId: "survey-suite", x: 50, y: 28 },
+          { partId: "comms-mast",   x: 65, y: 40 },
+          { partId: "gen-power",    x: 35, y: 60 },
+        ],
+      },
+      {
+        id: "side",
+        label: "Side View",
+        imagePath: sub_ortho,
+        hotspots: [
+          { partId: "monohull",     x: 50, y: 65 },
+          { partId: "stern-drive",  x: 82, y: 72 },
+          { partId: "survey-suite", x: 35, y: 38 },
+          { partId: "comms-mast",   x: 55, y: 18 },
+          { partId: "gen-power",    x: 60, y: 55 },
+        ],
+      },
+      {
+        id: "ortho",
+        label: "Orthographic",
+        imagePath: sub_ortho,
+        hotspots: [
+          { partId: "monohull",     x: 48, y: 58 },
+          { partId: "stern-drive",  x: 25, y: 75 },
+          { partId: "survey-suite", x: 60, y: 28 },
+          { partId: "comms-mast",   x: 68, y: 18 },
+          { partId: "gen-power",    x: 42, y: 52 },
+        ],
+      },
+    ],
+  },
 ];

@@ -1,12 +1,15 @@
 
-import sub_images from "../../assets/vehicle_photos/subjugator9";
+
+import sub_bottom from "../../assets/vehicle_photos/subjugator9/sub_bottom.png";
+import sub_front from "../../assets/vehicle_photos/subjugator9/sub_front.png";
+import sub_ortho from "../../assets/vehicle_photos/subjugator9/sub_ortho.png";
 
 export const vehicles = [
   {
-    id: "asv-mk2",
-    name: "ASV Mk.II",
+    id: "prop3",
+    name: "PropaGator3",
     shortName: "ASV",
-    type: "Autonomous Surface Vehicle",
+    type: "Boat",
     tagline: "Long-Endurance Surface Reconnaissance",
     description:
       "Twin-hull autonomous surface vehicle designed for persistent coastal monitoring. Capable of 72-hour autonomous missions with AI-guided obstacle avoidance and multi-modal sensor fusion.",
@@ -101,22 +104,21 @@ export const vehicles = [
     ],
   },
   {
-    id: "auv-delta",
-    name: "SubjuGator",
+    id: "sub9",
+    name: "SubjuGator9",
     shortName: "AUV",
-    type: "Autonomous Underwater Vehicle",
-    tagline: "Full 6-DOF Competition AUV",
+    type: "Submarine",
+    tagline: "Our latest and greatest submarine",
     description:
-      "SubjuGator is a fully actuated 6-DOF AUV built for the RoboSub competition. Eight Blue Robotics T200 thrusters provide independent control in all axes. An open aluminum frame carries the buoyancy foam, electronics tube, battery system, and sensor payload.",
+      "SubjuGator9 is a fully actuated AUV built for the RoboSub and RobotX competitions. Eight Blue Robotics T200 thrusters provide independent control in all axes. An open aluminum frame carries the buoyancy foam, electronics tube, battery system, and sensor payload.",
     specs: {
       Configuration: "Open-frame",
-      DOF: "6 (full actuation)",
-      Thrusters: "8× BR T200",
+      Thrusters: "8× Blue Robotics T200",
       "Depth Rating": "~30 m",
       Navigation: "DVL + IMU",
-      Power: "14.8 V LiPo",
+      Power: "4S2P 9000mAh LiPo Battery",
       "Kill Switch": "Magnetic",
-      Team: "Machine Intelligence Lab",
+      "First Year at Competition": "2024",
     },
     parts: [
       {
@@ -124,47 +126,63 @@ export const vehicles = [
         name: "Aluminum Frame",
         category: "Structure",
         description:
-          "Open 6061-T6 aluminum plate-and-extrusion frame. The open architecture allows full water flow for thermal management and provides mounting points for all subsystems.",
+          "Open 6061-T6 aluminum plate-and-extrusion frame. The open architecture allows full water flow for thermal management and provides a modular mounting point for all subsystems.",
         specs: { Material: "Al 6061-T6", Finish: "Anodized", Configuration: "Open-frame", Mounting: "M5 captive nuts" },
       },
       {
         id: "thrusters",
-        name: "Thruster Array",
+        name: "T200 Thrusters",
         category: "Propulsion",
         description:
           "Eight Blue Robotics T200 thrusters arranged in a vectored configuration: four vertical thrusters for depth and roll/pitch control, four horizontal thrusters for surge, sway, and yaw.",
         specs: { Model: "BR T200", Count: "8×", "Max Thrust": "5.1 kgf ea.", ESC: "BR Basic ESC", Protocol: "PWM" },
       },
       {
-        id: "electronics-tube",
-        name: "Electronics Pressure Vessel",
+        id: "nav-tube",
+        name: "Navigation Tube",
         category: "Electronics",
         description:
-          "Watertight acrylic tube housing the mission computer, motor controllers, power distribution board, and sensor interfaces. Sealed with aluminum end caps and dual O-rings at each penetrator.",
-        specs: { Diameter: "4 in", Seals: "Dual O-ring", "End Caps": "Al 6061", Access: "Forward cap" },
+          "Watertight acrylic tube housing the IMU, connection to the hydrophones, and the Raspberry Pi 4B that accumulates this sensor data and forwards it to Sub9's primary computer within the computer box.",
+        specs: { Diameter: "4 in", Seals: "Dual O-ring", "End Caps": "Al 6061", Access: "Forward cap" , Power: "PoE"},
       },
       {
         id: "battery",
-        name: "Battery System",
+        name: "Battery Tube",
         category: "Power",
         description:
-          "Orange watertight enclosure housing the main LiPo battery packs. Provides both power storage and a significant portion of the vehicle's positive buoyancy. Includes a waterproof XT90 connector and magnetic kill switch.",
-        specs: { Chemistry: "LiPo", Voltage: "14.8 V (4S)", "Kill Switch": "Magnetic reed", Connector: "XT90 waterproof" },
+          "Sub9's batteries have a dedicated tube external to the primary computer box. Serves as an easy point to change out batteries when recharging is needed. Features a high-current SeaConn connector for an easy waterproof connection.",
+        specs: { Chemistry: "LiPo", Voltage: "14.8 V (4S2P)" },
       },
       {
         id: "dvl",
-        name: "DVL & Navigation",
+        name: "Doppler Velocity Logger",
         category: "Navigation",
         description:
           "Downward-facing Doppler Velocity Log provides ground-relative velocity estimates for dead-reckoning navigation. Fused with a 9-DOF IMU for full state estimation.",
         specs: { Sensor: "DVL (4-beam)", "Aux IMU": "9-DOF MEMS", Fusion: "EKF", "Update Rate": "up to 100 Hz" },
       },
       {
-        id: "vision",
-        name: "Vision & Sonar",
+        id: "hydrophones",
+        name: "Hydrophones",
+        category: "Navigation",
+        description:
+          "Allow Sub9 to locate acoustic pingers underwater, critical for navigation towards different tasks.",
+        specs: { meow1: ":3", "meow2": ":D", },
+      },
+      {
+        id: "front-cam",
+        name: "Front Camera",
         category: "Sensors",
         description:
-          "Forward-facing stereo camera pair for visual servoing and task recognition. Downward camera for target acquisition on the pool floor. Optional forward-looking sonar for acoustic landmark detection.",
+          "Forward-facing camera for vision models. Critical for most vision-related tasks.",
+        specs: { "Camera Model": "Blue Robotics Underwater HD Camera", },
+      },
+      {
+        id: "down-cam",
+        name: "Down Camera",
+        category: "Sensors",
+        description:
+          "Downward camera for target acquisition on the course floor.",
         specs: { Forward: "Stereo RGB", Downward: "Single RGB", Sonar: "Forward-look", Processing: "Onboard GPU" },
       },
       {
@@ -180,33 +198,34 @@ export const vehicles = [
       {
         id: "bottom",
         label: "Bottom View",
-        imagePath: sub_images["sub_bottom.png"],
+        imagePath: sub_bottom,
         hotspots: [
-          { partId: "thrusters",         x: 13, y: 14 },
-          { partId: "frame",             x: 50, y: 47 },
-          { partId: "dvl",               x: 21, y: 51 },
-          { partId: "buoyancy",          x: 87, y: 57 },
-          { partId: "electronics-tube",  x: 50, y: 12 },
-          { partId: "vision",            x: 65, y: 44 },
+          { partId: "thrusters",         x: 25, y: 27 },
+          { partId: "frame",             x: 49, y: 47 },
+          { partId: "dvl",               x: 63, y: 51 },
+          { partId: "buoyancy",          x: 85, y: 80 },
+          { partId: "battery",           x: 50, y: 26 },
+          { partId: "down-cam",          x: 31, y: 41 },
+          { partId: "hydrophones",       x: 20, y: 58 },
         ],
       },
       {
         id: "front",
         label: "Front View",
-        imagePath: sub_images["sub_front.png"],
+        imagePath: sub_front,
         hotspots: [
-          { partId: "battery",           x: 50, y: 29 },
-          { partId: "electronics-tube",  x: 50, y: 47 },
-          { partId: "thrusters",         x: 8,  y: 48 },
-          { partId: "vision",            x: 50, y: 65 },
-          { partId: "buoyancy",          x: 27, y: 84 },
-          { partId: "frame",             x: 75, y: 55 },
+          { partId: "nav-tube",          x: 50, y: 50 },
+          { partId: "thrusters",         x: 10,  y: 50 },
+          { partId: "front-cam",         x: 53, y: 65 },
+          { partId: "down-cam",          x: 60, y: 85 },
+          { partId: "buoyancy",          x: 50, y: 33 },
+          { partId: "frame",             x: 84, y: 55 },
         ],
       },
       {
         id: "ortho",
         label: "Orthographic",
-        imagePath: sub_images["sub_ortho.png"],
+        imagePath: sub_ortho,
         hotspots: [
           { partId: "battery",           x: 47, y: 21 },
           { partId: "frame",             x: 44, y: 57 },
@@ -219,10 +238,10 @@ export const vehicles = [
     ],
   },
   {
-    id: "usv-harbor",
-    name: "USV Harbor",
+    id: "investigator10",
+    name: "InvestiGator10",
     shortName: "USV",
-    type: "Unmanned Survey Vessel",
+    type: "Drone",
     tagline: "Port & Harbor Intelligence Platform",
     description:
       "Compact unmanned survey vessel purpose-built for port security, bathymetric charting, and environmental monitoring in confined waterways.",

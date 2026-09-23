@@ -200,7 +200,7 @@ export default function Vehicles() {
             </div>
             <div className="flex flex-col">
             {activeVehicle.parts.map((p, i) => {
-                const c = categoryColors[p.category] ?? "#4a5568";
+                const c = vehicle_info_category_colors[p.category] ?? "#4a5568";
                 const isActive = selectedPart?.id === p.id;
                 return (
                 <button

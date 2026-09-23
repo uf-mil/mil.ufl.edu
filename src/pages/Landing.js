@@ -12,24 +12,30 @@ import {
 import naviGatorImage from "../assets/navigator.jpg";
 import naviGatorImage2024 from "../assets/navigator_2024.jpg";
 import naviGatorLogo from "../assets/navigator_logo.png";
+
 import subjuGatorLogo from "../assets/subjugator_logo.png";
+import subjuGatorImage from "../assets/vehicle_photos/subjugator9/jack_sub_1.jpg";
+
 import investigatorLogo from "../assets/investigator.svg";
+import investigatorImage from "../assets/vehicle_photos/investigator10/investigator_outside_1.jpg";
+
+import propagatorImage from "../assets/vehicle_photos/propagator3/team_with_boat.jpg";
+
 import missionRedLogo from "../assets/red_rover.svg";
-import subjuGatorImage from "../assets/subjugator.jpg";
-import investigatorImage from "../assets/investigator.jpg";
+
 import teamPhoto from "../assets/team_2024.jpg";
 import softwareSolving from "../assets/software_solving.jpg";
 import robotX2016Image from "../assets/robotx_2016.jpg";
 
 const vehicleData = [
   {
-    name: "NaviGator AMS",
+    name: "PropaGator3",
     description:
       "An autonomous surface vehicle designed for maritime navigation and competition.",
-    image: naviGatorImage2024,
+    image: propagatorImage,
   },
   {
-    name: "SubjuGator AUV",
+    name: "SubjuGator9",
     description:
       "An autonomous underwater vehicle capable of deep diving and complex underwater tasks.",
     image: subjuGatorImage,
@@ -49,7 +55,7 @@ const vehicleData = [
   {
     name: "Decades of Robotics Excellence",
     description:
-      "Spanning over 30 years, our lab has consistently pushed the boundaries of autonomous robotics, across surface, underwater, and aerial domains.",
+      "Spanning nearly 40 years, our lab has consistently pushed the boundaries of autonomous robotics, across surface, underwater, and aerial domains.",
     image: robotX2016Image,
   },
 ];
@@ -172,6 +178,7 @@ function Projects() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
           {[
+            /*
             {
               image: naviGatorImage,
               logo: naviGatorLogo,
@@ -179,24 +186,35 @@ function Projects() {
                 "Our autonomous surface vehicle designed for maritime environments. NaviGator AMS has proven capabilities through extensive testing and competition.",
               link: "https://navigatoruf.org",
             },
+            */
+            {
+              image: propagatorImage,
+              logo: naviGatorLogo,
+              description:
+                "Our autonomous surface vehicle designed for maritime environments. PropaGator3 is our newest USV.",
+              link: "https://mil.ufl.edu/vehicles/prop3/ortho",
+            },
             {
               image: subjuGatorImage,
               logo: subjuGatorLogo,
               description:
                 "Our autonomous underwater vehicle (AUV) capable of diving deep into underwater environments and performing complex tasks autonomously.",
-              link: "https://subjugator.org",
+              link: "https://mil.ufl.edu/vehicles/sub9/ortho",
             },
+            /*
             {
               image: softwareSolving,
               logo: missionRedLogo,
               description:
                 "Our terrestrial rover project focuses on designing robotic rovers capable of navigating challenging terrains for exploration.",
             },
+            */
             {
               image: investigatorImage,
               logo: investigatorLogo,
               description:
                 "Our aerial drone project combines stability, agility, and advanced navigation to perform aerial maneuvers autonomously.",
+                link: "https://mil.ufl.edu/vehicles/investigator10/front",
             },
           ].map((project, index) => (
             <div
@@ -237,7 +255,8 @@ function Projects() {
               )}
             </div>
           ))}
-          {/* Final Card Linking to Vehicles Page */}
+          {/*
+          {/* Final Card Linking to Vehicles Page 
           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
             <div>
               <h3 className="text-xl font-semibold text-gatorblue-900 mb-4">
@@ -255,6 +274,7 @@ function Projects() {
               See All Vehicles
             </a>
           </div>
+          */}
         </div>
       </div>
     </section>
@@ -516,8 +536,8 @@ function VideoSection() {
           <div className="aspect-video w-full sm:order-1">
             <iframe
               className="w-full h-full rounded-lg shadow-lg"
-              src="https://www.youtube.com/embed/oGszXLLkVvM"
-              title="SubjuGator 2025 team video"
+              src="https://www.youtube.com/embed/yQaIlYINk4E?si=t5e2EFmfjR_lrmAd"
+              title="SubjuGator 2026 team video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               loading="lazy"

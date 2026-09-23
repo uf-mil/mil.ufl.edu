@@ -203,6 +203,15 @@ function Navbar() {
               label="Vehicles"
               closeMobileMenu={closeMobileMenu}
             />
+            <NavItem
+                to="/strategy"
+                label="Strategy"
+                dropdown={[
+                    { to: "/competition-strategy", label: "Competition Strategy" },
+                    { to: "/design-strategy", label: "Design Strategy" },
+                ]}
+                closeMobileMenu={closeMobileMenu}
+            />
             {/* <NavItem
             to="/research"
             label="Research"

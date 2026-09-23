@@ -4,101 +4,103 @@ import sub_bottom from "../../assets/vehicle_photos/subjugator9/sub_bottom.png";
 import sub_front from "../../assets/vehicle_photos/subjugator9/sub_front.png";
 import sub_ortho from "../../assets/vehicle_photos/subjugator9/sub_ortho.png";
 
+import boat_front from "../../assets/vehicle_photos/propagator3/boat_front.png";
+import boat_back from "../../assets/vehicle_photos/propagator3/boat_back.png";
+import boat_ortho from "../../assets/vehicle_photos/propagator3/boat_ortho.png";
+
+import drone_ortho from "../../assets/vehicle_photos/investigator10/drone_ortho.png";
+import drone_front from "../../assets/vehicle_photos/investigator10/drone_front.png";
+
+import rover_ortho from "../../assets/vehicle_photos/terragator/rover_ortho.png";
+
+
 export const vehicles = [
   {
     id: "prop3",
     name: "PropaGator3",
     shortName: "ASV",
     type: "Boat",
-    tagline: "Long-Endurance Surface Reconnaissance",
+    tagline: "Autonomous surface vehicle",
     description:
-      "Twin-hull autonomous surface vehicle designed for persistent coastal monitoring. Capable of 72-hour autonomous missions with AI-guided obstacle avoidance and multi-modal sensor fusion.",
+      "Twin-hull pontoon surface vehicle optimized for speedy navigation and tight turns. An off-the-shelf base with custom electronics.",
     specs: {
-      Length: "2.4 m",
-      Beam: "1.1 m",
-      Draft: "0.18 m",
-      "Max Speed": "4.2 kn",
-      Endurance: "72 hr",
-      Payload: "12 kg",
-      "Comm Range": "15 km LOS",
-      "Depth Rating": "Surface",
+      Length: "120cm",
+      Width: "46cm",
     },
     parts: [
       {
         id: "hull",
-        name: "Hydrodynamic Hull",
+        name: "BlueBoat Hull",
         category: "Structure",
         description:
           "Carbon fiber reinforced polymer catamaran hull with wave-piercing bow geometry. Optimized via CFD simulation for minimal drag at transit speed.",
-        specs: { Material: "CFRP", Weight: "4.2 kg", "Drag Coeff.": "0.031", "IP Rating": "IP68" },
+        specs: { "Hull Material": "LDPE", Color: "Mariner Blue", Vendor: "Blue Robotics" },
       },
       {
-        id: "propulsion",
-        name: "Propulsion Module",
-        category: "Propulsion",
-        description:
-          "Dual brushless DC thruster pods with hydrodynamically optimized propellers. Independent port/starboard control enables zero-radius turning.",
-        specs: { Thrust: "18 N ea.", Power: "180 W ea.", RPM: "0–3600", Protocol: "PWM / CAN" },
-      },
-      {
-        id: "sensor-array",
-        name: "Sensor Array",
+        id: "front-cam",
+        name: "Front Camera",
         category: "Sensors",
         description:
-          "Forward-facing sensor mast with stereo RGB cameras, LIDAR, and mmWave radar for autonomous navigation and target detection.",
-        specs: { LIDAR: "32-ch, 200 m", Camera: "4K stereo", Radar: "76 GHz mmWave", Update: "20 Hz" },
+          "Forward-facing cameras enable vision models to identify course elements for completing tasks. A large depth of field simplifies processing required for effective vision model performance.",
+        specs: { "Camera": "meow", "Depth of Field": "180deg", Vendor: "dunno" },
       },
       {
-        id: "avionics",
-        name: "Avionics Bay",
-        category: "Electronics",
+        id: "lidar",
+        name: "LiDAR",
+        category: "Sensors",
         description:
-          "Waterproof avionics enclosure housing the mission computer, GNSS receiver, IMU, and communication radios. Triple-redundant power regulation.",
-        specs: { CPU: "ARM Cortex-A72", RAM: "8 GB", GNSS: "RTK ±2 cm", "Data Link": "900 MHz / LTE" },
+          "A 360deg LiDAR allows PropaGator to identify obstacles before a risk of collision. LiDAR data is merged with the Infix V2 for localization and course navigation.",
+        specs: { "Model": "meow", Vendor: "dunno" },
       },
       {
-        id: "power",
-        name: "Power System",
-        category: "Power",
+        id: "thrusters",
+        name: "M200 Thrusters",
+        category: "Propulsion",
         description:
-          "Hot-swappable lithium-polymer battery pack with onboard BMS, state-of-charge telemetry, and thermal management.",
-        specs: { Capacity: "22 Ah / 44.4 V", Chemistry: "LiPo", BMS: "Active balancing", Cycles: ">500" },
+          "2x M200 thrusters with weedless propellers provide the primary propulsion for PropaGator. Due to their position on PropaGator, they help lift the USV out of the water at higher speeds, reducing overall drag.",
+        specs: { Motor: "M200", "Peak Current Draw": "24 Amps", "Motor kV": "470 RPM / V", "Max Torque": "0.5Nm", ESC: "Blue Robotics Basic ESC" },
+      },
+      {
+        id: "estop",
+        name: "Local E-Stop",
+        category: "Safety",
+        description:
+          "The E-Stop button is one safeguard built into PropaGator's safety systems. If pushed, all motors will instantly be killed regardless of system input.",
+        specs: { meow: "meow" },
       },
     ],
     views: [
       {
-        id: "top",
-        label: "Top View",
-        imagePath: sub_ortho,
+        id: "front",
+        label: "Front View",
+        imagePath: boat_front,
         hotspots: [
-          { partId: "hull",         x: 50, y: 60 },
-          { partId: "propulsion",   x: 50, y: 85 },
-          { partId: "sensor-array", x: 50, y: 18 },
-          { partId: "avionics",     x: 65, y: 45 },
-          { partId: "power",        x: 35, y: 45 },
+          { partId: "hull",         x: 10, y: 55 },
+          { partId: "front-cam",    x: 50.5, y: 34.5 },
+          { partId: "lidar",        x: 50.5, y: 18 },
         ],
       },
       {
-        id: "front",
-        label: "Front View",
-        imagePath: sub_ortho,
+        id: "back",
+        label: "Back View",
+        imagePath: boat_back,
         hotspots: [
-          { partId: "hull",         x: 50, y: 65 },
-          { partId: "sensor-array", x: 50, y: 20 },
-          { partId: "avionics",     x: 65, y: 40 },
-          { partId: "power",        x: 35, y: 40 },
+          { partId: "hull",         x: 10, y: 55 },
+          { partId: "thrusters",    x: 22, y: 77 },
+          { partId: "lidar",        x: 50, y: 20 },
+          { partId: "estop",        x: 18, y: 48 },
         ],
       },
       {
         id: "ortho",
         label: "Orthographic",
-        imagePath: sub_ortho,
+        imagePath: boat_ortho,
         hotspots: [
-          { partId: "hull",         x: 45, y: 60 },
-          { partId: "propulsion",   x: 20, y: 75 },
-          { partId: "sensor-array", x: 72, y: 20 },
-          { partId: "avionics",     x: 55, y: 42 },
-          { partId: "power",        x: 38, y: 50 },
+          { partId: "hull",         x: 45, y: 70 },
+          { partId: "estop",        x: 87, y: 44 },
+          { partId: "front-cam",    x: 45, y: 39 },
+          { partId: "lidar",        x: 50, y: 26 },
+          { partId: "thrusters",    x: 94, y: 55 },
         ],
       },
     ],
@@ -215,7 +217,7 @@ export const vehicles = [
         imagePath: sub_front,
         hotspots: [
           { partId: "nav-tube",          x: 50, y: 50 },
-          { partId: "thrusters",         x: 10,  y: 50 },
+          { partId: "thrusters",         x: 10, y: 50 },
           { partId: "front-cam",         x: 53, y: 65 },
           { partId: "down-cam",          x: 60, y: 85 },
           { partId: "buoyancy",          x: 50, y: 33 },
@@ -242,100 +244,93 @@ export const vehicles = [
     name: "InvestiGator10",
     shortName: "USV",
     type: "Drone",
-    tagline: "Port & Harbor Intelligence Platform",
+    tagline: "Autonomous Surveying & Monitoring Vehicle",
     description:
-      "Compact unmanned survey vessel purpose-built for port security, bathymetric charting, and environmental monitoring in confined waterways.",
+      "Built compact but strong, capable of carrying multiple batteries and mechanisms.",
     specs: {
-      Length: "3.2 m",
-      Beam: "1.4 m",
-      Draft: "0.22 m",
-      "Max Speed": "6.5 kn",
-      Endurance: "48 hr",
-      Payload: "25 kg",
-      "Comm Range": "30 km",
+      Geofence: "Custom Polygon",
+      "Mission Planner": "Custom",
+      "Flight Time": "20 mins",
+      "Comm Range": "2 km",
       "Depth Rating": "Surface",
     },
     parts: [
       {
-        id: "monohull",
-        name: "Survey Monohull",
+        id: "frame",
+        name: "X650 Frame Kit",
         category: "Structure",
         description:
-          "Injection-molded high-density polyethylene monohull with internal reinforcement ribs. Designed for repeated beaching and shallow-water deployment.",
-        specs: { Material: "HDPE + GF ribs", Weight: "28 kg", Freeboard: "0.35 m", "UV Stable": "Yes" },
+          "A carbon fiber and stainless steel frame provides InvestiGator with a strong, modular body.",
+        specs: { Manufacturer: "Holybro", },
       },
       {
-        id: "stern-drive",
-        name: "Stern Drive Unit",
-        category: "Propulsion",
+        id: "magnet",
+        name: "Electromagnet",
+        category: "Mechanism",
         description:
-          "Diesel-electric stern drive with articulating nozzle for tight-space maneuvering. Direct integration with the vessel management system.",
-        specs: { Type: "Diesel-electric", Power: "4 kW", Nozzle: "±35°", Fuel: "10 L diesel" },
+          "A toggleable electromagnet allows InvestiGator to pick up and move objects throughout the competition course. Its toggle topology reduces its current draw, increasing InvestiGator's flight time.",
+        specs: { Manufacturer: "dunno", "Communication Interface": "CANBUS" },
       },
       {
-        id: "survey-suite",
-        name: "Survey Sensor Suite",
-        category: "Sensors",
-        description:
-          "Integrated survey package including single-beam echosounder, water quality sonde, and GNSS antenna array for precise georeferencing.",
-        specs: { Echo: "200 kHz SBS", GNSS: "L1/L2 + L5", "Water Quality": "7-param sonde", Georef: "RTK ±3 cm" },
-      },
-      {
-        id: "comms-mast",
-        name: "Communications Mast",
+        id: "raspberry-pi",
+        name: "Raspberry Pi",
         category: "Electronics",
         description:
-          "Retractable communications mast with AIS transponder, VHF radio, cellular LTE modem, and maritime satcom terminal.",
-        specs: { AIS: "Class B", VHF: "Ch 1–88", LTE: "Cat-M1", Satcom: "Iridium Certus" },
+          "A Raspberry Pi 5 serves as the primary computer on InvestiGator. This device takes in sensor and flight controller data from the CubePilot Orange+ and commands InvestiGator's ESCs.",
+        specs: { RAM: "-16GB", Software: ":3" },
       },
       {
-        id: "gen-power",
-        name: "Generator & Power Bus",
+        id: "cubepilot",
+        name: "CubePilot Orange+",
+        category: "Sensors",
+        description:
+          "The CubePilot Orange+ is InvestiGator's flight controller. This device fuses data from three high-precision IMUs and determines what to do next based on the msision being run.",
+        specs: { meow: "cat", },
+      },
+      {
+        id: "radio-modem",
+        name: "RFD900x Radio Modem",
+        category: "Communication",
+        description:
+          "The RFD900x is the primary radio between InvestiGator and MIL's Operator Control Station (OCS). This device can also be used to communicate with PropaGator3.",
+        specs: { meow: "cat", },
+      },
+      {
+        id: "battery",
+        name: "6S2P LiPo Battery",
         category: "Power",
         description:
-          "Onboard diesel generator with 48 V DC power bus, smart load management, and shore-power charging interface.",
-        specs: { Generator: "2 kW diesel", Bus: "48 V DC", "Shore Power": "230 V AC", Monitoring: "CAN bus" },
+          "PropaGator hosts a large LiPo which powers all onboard electronics, mechanisms, and motors.",
+        specs: { Chemistry: "LiPo", Voltage: "22.2V (6S2P)" },
       },
     ],
     views: [
       {
-        id: "top",
-        label: "Top View",
-        imagePath: sub_ortho,
+        id: "front",
+        label: "Front View",
+        imagePath: drone_front,
         hotspots: [
-          { partId: "monohull",     x: 50, y: 55 },
-          { partId: "stern-drive",  x: 50, y: 85 },
-          { partId: "survey-suite", x: 50, y: 28 },
-          { partId: "comms-mast",   x: 65, y: 40 },
-          { partId: "gen-power",    x: 35, y: 60 },
-        ],
-      },
-      {
-        id: "side",
-        label: "Side View",
-        imagePath: sub_ortho,
-        hotspots: [
-          { partId: "monohull",     x: 50, y: 65 },
-          { partId: "stern-drive",  x: 82, y: 72 },
-          { partId: "survey-suite", x: 35, y: 38 },
-          { partId: "comms-mast",   x: 55, y: 18 },
-          { partId: "gen-power",    x: 60, y: 55 },
+          { partId: "frame",             x: 44, y: 55 },
+          { partId: "magnet",            x: 54, y: 78 },
+          { partId: "raspberry-pi",      x: 54, y: 42 },
+          { partId: "cubepilot",         x: 54, y: 36 },
+          { partId: "radio-modem",       x: 60, y: 36 },
+          { partId: "battery",           x: 54, y: 48 },
         ],
       },
       {
         id: "ortho",
         label: "Orthographic",
-        imagePath: sub_ortho,
+        imagePath: drone_ortho,
         hotspots: [
-          { partId: "monohull",     x: 48, y: 58 },
-          { partId: "stern-drive",  x: 25, y: 75 },
-          { partId: "survey-suite", x: 60, y: 28 },
-          { partId: "comms-mast",   x: 68, y: 18 },
-          { partId: "gen-power",    x: 42, y: 52 },
+          { partId: "frame",             x: 48, y: 50 },
+          { partId: "magnet",            x: 51, y: 90 },
+          { partId: "radio-modem",       x: 56, y: 54 },
         ],
       },
     ],
   },
+  /*
   {
     id: "terragator",
     name: "TerraGator",
@@ -361,9 +356,9 @@ export const vehicles = [
     ],
     views: [
       {
-        id: "top",
-        label: "Top View",
-        imagePath: sub_ortho,
+        id: "ortho",
+        label: "Orthographic",
+        imagePath: rover_ortho,
         hotspots: [
           { partId: "monohull",     x: 50, y: 55 },
           { partId: "stern-drive",  x: 50, y: 85 },
@@ -372,30 +367,7 @@ export const vehicles = [
           { partId: "gen-power",    x: 35, y: 60 },
         ],
       },
-      {
-        id: "side",
-        label: "Side View",
-        imagePath: sub_ortho,
-        hotspots: [
-          { partId: "monohull",     x: 50, y: 65 },
-          { partId: "stern-drive",  x: 82, y: 72 },
-          { partId: "survey-suite", x: 35, y: 38 },
-          { partId: "comms-mast",   x: 55, y: 18 },
-          { partId: "gen-power",    x: 60, y: 55 },
-        ],
-      },
-      {
-        id: "ortho",
-        label: "Orthographic",
-        imagePath: sub_ortho,
-        hotspots: [
-          { partId: "monohull",     x: 48, y: 58 },
-          { partId: "stern-drive",  x: 25, y: 75 },
-          { partId: "survey-suite", x: 60, y: 28 },
-          { partId: "comms-mast",   x: 68, y: 18 },
-          { partId: "gen-power",    x: 42, y: 52 },
-        ],
-      },
     ],
   },
+  */
 ];

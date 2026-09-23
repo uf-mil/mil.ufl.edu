@@ -2,17 +2,12 @@ import ImageViewer from "../../components/ImageViewer";
 import { vehicles } from "./vehicle_data";
 import React, { useState, useRef, useEffect } from "react";
 
+import { useParams, useNavigate } from "react-router-dom";
+
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-const categoryColors = {
-  Structure:   "#4a6fa5",
-  Propulsion:  "#2a8a5a",
-  Sensors:     "#c8821a",
-  Electronics: "#7a4aaa",
-  Navigation:  "#2a7aaa",
-  Power:       "#aa6a1a",
-};
+import { categoryColors } from "../../constants/vehicle_category_colors";
 
 function SpecRow({ label, value }) {
   return (
@@ -114,105 +109,134 @@ function VehicleOverview({ vehicle }) {
 }
 
 export default function Vehicles() {
-  const [activeVehicle, setActiveVehicle] = useState(vehicles[0]);
-  const [selectedPart, setSelectedPart] = useState(null);
+    const { vehicleId, viewId } = useParams();
+    const navigate = useNavigate();
 
-  const handleVehicleChange = (v) => {
-    setActiveVehicle(v);
-    setSelectedPart(null);
-  };
+    const activeVehicle =
+    vehicles.find((v) => v.id === vehicleId) ?? vehicles[0];
 
-  return (
+    const activeView =
+    activeVehicle.views.find((view) => view.id === viewId) ?? activeVehicle.views[0];
+
+
+    const [selectedPart, setSelectedPart] = useState(null);
+
+    const handleVehicleChange = (v) => {
+        navigate(`/vehicles/${v.id}/${v.views[0].id}`);
+        setSelectedPart(null);
+    };
+
+    const handleViewChange = (view) => {
+        navigate(`/vehicles/${activeVehicle.id}/${view.id}`);
+    };
+
+    useEffect(() => {
+        if (!vehicleId) {
+            navigate(`/vehicles/${vehicles[0].id}/${vehicles[0].views[0].id}`, { replace: true });
+        return;
+        }
+        if (!viewId) {
+            navigate(`/vehicles/${activeVehicle.id}/${activeVehicle.views[0].id}`, { replace: true });
+        }
+    }, [vehicleId, viewId, navigate, activeVehicle]);
+
+    return (
     <div className="flex flex-col min-h-screen" style={{ background: "var(--color-background)" }}>
+      <Navbar />
 
-    <Navbar />
 
-      {/* ── page header ───────────────────────────────────────── */}
-      <div className="px-8 py-6 flex items-end justify-between flex-shrink-0" style={{ borderBottom: "1px solid var(--color-border)" }}>
+        {/* ── page header ───────────────────────────────────────── */}
+        <div className="px-8 py-6 flex items-end justify-between flex-shrink-0" style={{ borderBottom: "1px solid var(--color-border)" }}>
         <div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", marginBottom: "0.3rem" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", marginBottom: "0.3rem" }}>
             Interactive Platform Explorer
-          </div>
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "2.4rem", fontWeight: 800, letterSpacing: "0.02em", color: "var(--color-text)", lineHeight: 1 }}>
+            </div>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "2.4rem", fontWeight: 800, letterSpacing: "0.02em", color: "var(--color-text)", lineHeight: 1 }}>
             Autonomous Vehicle Fleet
-          </h1>
+            </h1>
         </div>
         <p style={{ fontFamily: "var(--font-body)", color: "var(--color-text-muted)", fontSize: "0.78rem", lineHeight: 1.6, textAlign: "right", maxWidth: "22rem" }}>
-          Select a vehicle, switch views, and click any annotation
-          <br />marker to inspect subsystem specifications.
+            Select a vehicle, switch views, and click any annotation
+            <br />marker to inspect subsystem specifications.
         </p>
-      </div>
+        </div>
 
-      {/* ── vehicle tabs ──────────────────────────────────────── */}
-      <div className="flex flex-shrink-0" style={{ borderBottom: "1px solid var(--color-border)" }}>
+        {/* ── vehicle tabs ──────────────────────────────────────── */}
+        <div className="flex flex-shrink-0" style={{ borderBottom: "1px solid var(--color-border)" }}>
         {vehicles.map((v) => (
-          <VehicleTab key={v.id} vehicle={v} active={v.id === activeVehicle.id} onClick={() => handleVehicleChange(v)} />
+            <VehicleTab key={v.id} vehicle={v} active={v.id === activeVehicle.id} onClick={() => handleVehicleChange(v)} />
         ))}
         <div className="flex-1" style={{ borderBottom: "1px solid var(--color-border)" }} />
-      </div>
+        </div>
 
-      {/* ── main content ──────────────────────────────────────── */}
-      <div className="flex flex-1 min-h-0">
+        {/* ── main content ──────────────────────────────────────── */}
+        <div className="flex flex-1 min-h-0">
 
         {/* left sidebar */}
         <div className="flex-shrink-0 overflow-y-auto" style={{ width: 280, borderRight: "1px solid var(--color-border)", background: "var(--color-surface)" }}>
-          {selectedPart
+            {selectedPart
             ? <PartPanel part={selectedPart} onClose={() => setSelectedPart(null)} />
             : <VehicleOverview vehicle={activeVehicle} />
-          }
+            }
         </div>
 
         {/* image viewer */}
         <div className="flex-1 flex flex-col min-h-0" style={{ minHeight: 480 }}>
-          <ImageViewer vehicle={activeVehicle} onPartSelect={setSelectedPart} selectedPart={selectedPart} />
+            <ImageViewer
+                vehicle={activeVehicle}
+                activeView={activeView}
+                onViewChange={handleViewChange}
+                onPartSelect={setSelectedPart}
+                selectedPart={selectedPart} 
+            />
         </div>
 
         {/* right sidebar — component index */}
         <div className="flex-shrink-0 overflow-y-auto" style={{ width: 220, borderLeft: "1px solid var(--color-border)", background: "var(--color-surface)" }}>
-          <div className="px-4 py-4" style={{ borderBottom: "1px solid var(--color-border)" }}>
+            <div className="px-4 py-4" style={{ borderBottom: "1px solid var(--color-border)" }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-text-dim)" }}>
-              Component Index
+                Component Index
             </div>
-          </div>
-          <div className="flex flex-col">
+            </div>
+            <div className="flex flex-col">
             {activeVehicle.parts.map((p, i) => {
-              const c = categoryColors[p.category] ?? "#4a5568";
-              const isActive = selectedPart?.id === p.id;
-              return (
+                const c = categoryColors[p.category] ?? "#4a5568";
+                const isActive = selectedPart?.id === p.id;
+                return (
                 <button
-                  key={p.id}
-                  onClick={() => setSelectedPart(isActive ? null : p)}
-                  className="flex items-start gap-3 px-4 py-3 text-left"
-                  style={{ background: isActive ? c + "18" : "transparent", borderBottom: "1px solid var(--color-border)", borderLeft: isActive ? `2px solid ${c}` : "2px solid transparent" }}
+                    key={p.id}
+                    onClick={() => setSelectedPart(isActive ? null : p)}
+                    className="flex items-start gap-3 px-4 py-3 text-left"
+                    style={{ background: isActive ? c + "18" : "transparent", borderBottom: "1px solid var(--color-border)", borderLeft: isActive ? `2px solid ${c}` : "2px solid transparent" }}
                 >
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", color: "var(--color-text-dim)", paddingTop: "0.15rem", flexShrink: 0 }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", color: "var(--color-text-dim)", paddingTop: "0.15rem", flexShrink: 0 }}>
                     {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex flex-col gap-0.5">
+                    </span>
+                    <div className="flex flex-col gap-0.5">
                     <span style={{ fontFamily: "var(--font-display)", fontSize: "0.85rem", fontWeight: 600, color: isActive ? "var(--color-text)" : "var(--color-text-muted)", letterSpacing: "0.02em", lineHeight: 1.2 }}>
-                      {p.name}
+                        {p.name}
                     </span>
                     <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.1em", textTransform: "uppercase", color: c, opacity: 0.8 }}>
-                      {p.category}
+                        {p.category}
                     </span>
-                  </div>
+                    </div>
                 </button>
-              );
+                );
             })}
-          </div>
-          <div className="px-4 py-4" style={{ borderTop: "1px solid var(--color-border)" }}>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: selectedPart ? "var(--color-accent)" : "#2a8a5a" }} />
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.12em", color: "var(--color-text-dim)", textTransform: "uppercase" }}>
-                {selectedPart ? selectedPart.name : "No selection"}
-              </span>
             </div>
-          </div>
+            <div className="px-4 py-4" style={{ borderTop: "1px solid var(--color-border)" }}>
+            <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: selectedPart ? "var(--color-accent)" : "#2a8a5a" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.12em", color: "var(--color-text-dim)", textTransform: "uppercase" }}>
+                {selectedPart ? selectedPart.name : "No selection"}
+                </span>
+            </div>
+            </div>
         </div>
-      </div>
+        </div>
 
-      {/* ── footer ────────────────────────────────────────────── */}
-      <Footer />
+        {/* ── footer ────────────────────────────────────────────── */}
+        <Footer />
     </div>
-  );
+    );
 }

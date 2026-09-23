@@ -209,6 +209,7 @@ function Navbar() {
                 dropdown={[
                     { to: "/competition-strategy", label: "Competition Strategy" },
                     { to: "/design-strategy", label: "Design Strategy" },
+                    { to: "/testing-log", label: "Testing Log" },
                 ]}
                 closeMobileMenu={closeMobileMenu}
             />

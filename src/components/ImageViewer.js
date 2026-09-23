@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import { categoryColors } from "../constants/vehicle_category_colors";
+import { vehicle_info_category_colors } from "../constants/colors_and_labels";
 
 function HotspotPin({ hotspot, part, selected, onClick }) {
   const [hovered, setHovered] = useState(false);
-  const color = categoryColors[part.category] ?? "#4a5568";
+  const color = vehicle_info_category_colors[part.category] ?? "#4a5568";
   const active = selected || hovered;
 
   return (

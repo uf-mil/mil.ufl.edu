@@ -1,5 +1,5 @@
 import ImageViewer from "../../components/ImageViewer";
-import { vehicles } from "./vehicle_data";
+import { vehicles } from "./vehicle-data";
 import React, { useState, useRef, useEffect } from "react";
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-import { categoryColors } from "../../constants/vehicle_category_colors";
+import { vehicle_info_category_colors } from "../../constants/colors_and_labels";
 
 function SpecRow({ label, value }) {
   return (
@@ -26,7 +26,7 @@ function SpecRow({ label, value }) {
 }
 
 function PartPanel({ part, onClose }) {
-  const catColor = categoryColors[part.category] ?? "#4a5568";
+  const catColor = vehicle_info_category_colors[part.category] ?? "#4a5568";
   return (
     <div className="flex flex-col overflow-hidden h-full">
       <div className="flex items-start justify-between gap-4 px-5 pt-5 pb-4" style={{ borderBottom: "1px solid var(--color-border)" }}>

@@ -1,17 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const categoryColors = {
-  Structure:   "#4a6fa5",
-  Propulsion:  "#2a8a5a",
-  Sensors:     "#c8821a",
-  Electronics: "#7a4aaa",
-  Navigation:  "#2a7aaa",
-  Power:       "#aa6a1a",
-};
+import { vehicle_info_category_colors } from "../constants/colors_and_labels";
 
 function HotspotPin({ hotspot, part, selected, onClick }) {
   const [hovered, setHovered] = useState(false);
-  const color = categoryColors[part.category] ?? "#4a5568";
+  const color = vehicle_info_category_colors[part.category] ?? "#4a5568";
   const active = selected || hovered;
 
   return (
@@ -120,34 +113,26 @@ function ImagePlaceholder({ view }) {
   );
 }
 
-export default function ImageViewer({ vehicle, onPartSelect, selectedPart }) {
-  const [activeViewId, setActiveViewId] = useState(vehicle.views[0].id);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const imgRef = useRef(null);
+export default function ImageViewer({ vehicle, activeView, onViewChange, onPartSelect, selectedPart }) {
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const imgRef = useRef(null);
 
-  const activeView = vehicle.views.find((v) => v.id === activeViewId) ?? vehicle.views[0];
-
-  useEffect(() => {
-    setActiveViewId(vehicle.views[0].id);
+    useEffect(() => {
     setImageLoaded(false);
-  }, [vehicle.id]);
+    }, [vehicle.id, activeView.id]);
 
-  useEffect(() => {
-    setImageLoaded(false);
-  }, [activeViewId]);
-
-  return (
+    return (
     <div className="flex flex-col w-full h-full">
-      {/* view switcher */}
-      <div className="flex flex-shrink-0" style={{ borderBottom: "1px solid var(--color-border)" }}>
+        {/* view switcher */}
+        <div className="flex flex-shrink-0" style={{ borderBottom: "1px solid var(--color-border)" }}>
         {vehicle.views.map((view) => {
-          const active = view.id === activeViewId;
-          return (
+            const active = view.id === activeView.id;
+            return (
             <button
-              key={view.id}
-              onClick={() => setActiveViewId(view.id)}
-              className="relative px-5 py-2.5 transition-all duration-150"
-              style={{
+                key={view.id}
+                onClick={() => onViewChange(view)}
+                className="relative px-5 py-2.5 transition-all duration-150"
+                style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.6rem",
                 letterSpacing: "0.16em",
@@ -155,100 +140,100 @@ export default function ImageViewer({ vehicle, onPartSelect, selectedPart }) {
                 color: active ? "var(--color-accent)" : "var(--color-text-dim)",
                 background: active ? "var(--color-surface-2)" : "transparent",
                 borderRight: "1px solid var(--color-border)",
-              }}
+                }}
             >
-              {active && <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "var(--color-accent)" }} />}
-              {view.label}
+                {active && <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "var(--color-accent)" }} />}
+                {view.label}
             </button>
-          );
+            );
         })}
         <div className="flex-1" />
         <div className="flex items-center px-4 gap-2" style={{ borderLeft: "1px solid var(--color-border)" }}>
-          <div className="w-1.5 h-1.5" style={{ background: "var(--color-accent)", opacity: 0.5 }} />
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.14em", color: "var(--color-text-dim)", textTransform: "uppercase" }}>
+            <div className="w-1.5 h-1.5" style={{ background: "var(--color-accent)", opacity: 0.5 }} />
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.14em", color: "var(--color-text-dim)", textTransform: "uppercase" }}>
             {activeView.hotspots.length} annotation{activeView.hotspots.length !== 1 ? "s" : ""}
-          </span>
+            </span>
         </div>
-      </div>
+        </div>
 
-      {/* image area */}
-      <div
+        {/* image area */}
+        <div
         className="relative flex-1 overflow-hidden flex items-center justify-center"
         onClick={() => onPartSelect(null)}
         style={{ cursor: "default" }}
-      >
+        >
         <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
+            className="absolute inset-0 pointer-events-none"
+            style={{
             backgroundImage: "linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px)",
             backgroundSize: "48px 48px",
             opacity: 0.3,
-          }}
+            }}
         />
 
         <div className="relative" style={{ maxWidth: "100%", maxHeight: "100%" }}>
-          <img
+            <img
             ref={imgRef}
             src={activeView.imagePath}
             alt={`${vehicle.name} — ${activeView.label}`}
             className="block transition-opacity duration-300"
             style={{
-              maxWidth: "100%",
-              maxHeight: "calc(100vh - 280px)",
-              objectFit: "contain",
-              opacity: imageLoaded ? 1 : 0,
-              userSelect: "none",
+                maxWidth: "100%",
+                maxHeight: "calc(100vh - 280px)",
+                objectFit: "contain",
+                opacity: imageLoaded ? 1 : 0,
+                userSelect: "none",
             }}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageLoaded(false)}
             draggable={false}
-          />
+            />
 
-          {!imageLoaded && (
+            {!imageLoaded && (
             <div style={{ width: 640, height: 360, position: "relative" }}>
-              <ImagePlaceholder view={activeView} />
+                <ImagePlaceholder view={activeView} />
             </div>
-          )}
+            )}
 
-          {imageLoaded && (
+            {imageLoaded && (
             <div className="absolute inset-0 pointer-events-none">
-              <div className="relative w-full h-full pointer-events-auto">
+                <div className="relative w-full h-full pointer-events-auto">
                 {activeView.hotspots.map((hs) => {
-                  const part = vehicle.parts.find((p) => p.id === hs.partId);
-                  if (!part) return null;
-                  return (
+                    const part = vehicle.parts.find((p) => p.id === hs.partId);
+                    if (!part) return null;
+                    return (
                     <HotspotPin
-                      key={hs.partId}
-                      hotspot={hs}
-                      part={part}
-                      selected={selectedPart?.id === hs.partId}
-                      onClick={() => onPartSelect(selectedPart?.id === hs.partId ? null : part)}
+                        key={hs.partId}
+                        hotspot={hs}
+                        part={part}
+                        selected={selectedPart?.id === hs.partId}
+                        onClick={() => onPartSelect(selectedPart?.id === hs.partId ? null : part)}
                     />
-                  );
+                    );
                 })}
-              </div>
+                </div>
             </div>
-          )}
+            )}
         </div>
 
         {!selectedPart && imageLoaded && (
-          <div
+            <div
             className="absolute bottom-5 left-1/2 -translate-x-1/2 pointer-events-none"
             style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-text-dim)" }}
-          >
+            >
             click a marker to inspect component
-          </div>
+            </div>
         )}
 
         <div className="absolute top-5 right-6 pointer-events-none flex flex-col items-end gap-0.5">
-          <div style={{ fontFamily: "var(--font-display)", fontSize: "3.5rem", fontWeight: 800, letterSpacing: "0.06em", color: "var(--color-text-dim)", lineHeight: 1, opacity: 0.35 }}>
+            <div style={{ fontFamily: "var(--font-display)", fontSize: "3.5rem", fontWeight: 800, letterSpacing: "0.06em", color: "var(--color-text-dim)", lineHeight: 1, opacity: 0.35 }}>
             {vehicle.shortName}
-          </div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.2em", color: "var(--color-text-dim)", opacity: 0.4, textTransform: "uppercase" }}>
+            </div>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.2em", color: "var(--color-text-dim)", opacity: 0.4, textTransform: "uppercase" }}>
             {activeView.label}
-          </div>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-  );
+    );
 }

@@ -9,10 +9,13 @@ import Apply from "./pages/Apply";
 import Research from "./pages/Research";
 import BlogList from "./pages/BlogList";
 import BlogPost from "./pages/BlogPost";
-import Vehicles from "./pages/vehicle_data/vehicle_page_setup";
+import Vehicles from "./pages/vehicle_data/vehicle-page-setup";
+import CompetitionStrategy from "./pages/competition-strategy";
+import DesignStrategy from "./pages/design-strategy";
 import NotFound from "./pages/NotFound";
 import LabInfo from "./pages/LabInfo";
 import Team2024Page from "./pages/teams/2024";
+import TestingLog from "./pages/testing_log/testing-log-setup";
 
 import NavigateExternal from "./components/NavigateExternal";
 
@@ -46,12 +49,32 @@ const router = createBrowserRouter(
       element: <Vehicles />,
     },
     {
+    path: "/vehicles/:vehicleId",
+    element: <Vehicles />,
+    },
+    {
+    path: "/vehicles/:vehicleId/:viewId",
+    element: <Vehicles />,
+    },
+    {
+    path: "/testing-log",
+    element: <TestingLog />,
+    },
+    {
       path: "/blog",
       element: <BlogList />,
     },
     {
       path: "/blog/:slug",
       element: <BlogPost />,
+    },
+    {
+    path: "/competition-strategy",
+    element: <CompetitionStrategy />,
+    },
+    {
+    path: "/design-strategy",
+    element: <DesignStrategy />,
     },
     {
       path: "/team",

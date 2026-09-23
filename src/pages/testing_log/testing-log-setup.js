@@ -54,23 +54,40 @@ function SessionCard({ session }) {
       {/* card header */}
       <div className="px-5 pt-4 pb-3" style={{ borderBottom: "1px solid var(--color-border)" }}>
         <div className="flex items-start justify-between gap-3 mb-2">
-          <div
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "1rem",
-              fontWeight: 700,
-              letterSpacing: "0.03em",
-              color: "var(--color-text)",
-              lineHeight: 1.2,
-            }}
-          >
-            {formatDate(session.date)}
+          <div className="flex items-baseline gap-3">
+            <div
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "1rem",
+                fontWeight: 700,
+                letterSpacing: "0.03em",
+                color: "var(--color-text)",
+                lineHeight: 1.2,
+              }}
+            >
+              {formatDate(session.date)}
+            </div>
+            {session.author && (
+              <span
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "0.78rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.04em",
+                  color: primaryColor,
+                  opacity: 0.85,
+                  lineHeight: 1.2,
+                }}
+              >
+                {session.author}
+              </span>
+            )}
           </div>
           <div className="flex gap-1.5 flex-wrap justify-end">
             {session.vehicles.map((v) => <VehicleTag key={v} id={v} />)}
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           <div className="flex items-center gap-1.5">
             <svg width="9" height="9" viewBox="0 0 9 9" fill="none" style={{ color: primaryColor, opacity: 0.7 }}>
               <circle cx="4.5" cy="4.5" r="3.5" stroke="currentColor" strokeWidth="1" />
@@ -153,6 +170,7 @@ function SessionCard({ session }) {
     </div>
   );
 }
+
 
 export default function TestingLog() {
   const [search, setSearch] = useState("");

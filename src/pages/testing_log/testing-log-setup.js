@@ -244,39 +244,51 @@ export default function TestingLog() {
           >
             Testing Log
           </h1>
-          <div className="flex gap-6">
-            {[
-              { value: sessions.length, label: "Sessions" },
-              { value: sessions.reduce((a, s) => a + s.hours, 0).toFixed(1) + "h", label: "Total Hours" },
-              { value: sessions.reduce((a, s) => a + s.items.length, 0), label: "Items Tested" },
-            ].map(({ value, label }) => (
-              <div key={label} className="flex flex-col items-end">
-                <span
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "1.8rem",
-                    fontWeight: 800,
-                    letterSpacing: "0.04em",
-                    color: "var(--color-accent)",
-                    lineHeight: 1,
-                  }}
-                >
-                  {value}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.5rem",
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "var(--color-text-dim)",
-                    marginTop: "0.2rem",
-                  }}
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
+          <div className="flex flex-col items-end gap-2">
+            <div className="flex gap-6">
+              {[
+                { value: sessions.length, label: "Sessions" },
+                { value: sessions.reduce((a, s) => a + s.hours, 0).toFixed(1) + "h", label: "Total Hours" },
+                { value: sessions.reduce((a, s) => a + s.items.length, 0), label: "Items Tested" },
+              ].map(({ value, label }) => (
+                <div key={label} className="flex flex-col items-end">
+                  <span
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "1.8rem",
+                      fontWeight: 800,
+                      letterSpacing: "0.04em",
+                      color: "var(--color-accent)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    {value}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.5rem",
+                      letterSpacing: "0.16em",
+                      textTransform: "uppercase",
+                      color: "var(--color-text-dim)",
+                      marginTop: "0.2rem",
+                    }}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.5rem",
+                letterSpacing: "0.12em",
+                color: "var(--color-text-dim)",
+              }}
+            >
+              since {formatDate([...sessions].sort((a, b) => a.date.localeCompare(b.date))[0].date)}
+            </span>
           </div>
         </div>
       </div>

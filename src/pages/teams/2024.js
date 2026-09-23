@@ -92,7 +92,7 @@ const ElectricalLeadership = () => {
       linkedIn: "jack-rainville",
     },
     {
-      image: memberImages["joe_goodman.jpg"],
+      image: memberImages["joe_goodman.png"],
       name: "Joe Goodman",
       role: "Electrical Lead",
       degree: "BS, Electrical Engineering",

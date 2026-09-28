@@ -14,6 +14,31 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const sessions = [
+    {
+    date: "2026-09-27",
+    hours: 6.0,
+    location: "On20 Apartment Pool",
+    author: "Russell MacGregor",
+    vehicles: ["prop3"],
+    items: [
+      "Tested Sub9's controller on Prop3",
+      "Found a bug in code, error was only being calculated in odom frame and not baselink frame",
+      "Good find since this also affects sub, boat localization seems to be working",
+      "Also tested Carlos's boat-only controller, also seems to work well",
+    ],
+    notes: "Both Sub9's controller and boat-only controller work on boat! Need to decide which to use",
+  },
+  {
+    date: "2026-09-27",
+    hours: 6.0,
+    location: "Drone Testing Park",
+    author: "Russell MacGregor",
+    vehicles: ["inv10"],
+    items: [
+      "something",
+    ],
+    notes: ":3",
+  },
   {
     date: "2026-09-23",
     hours: 6.0,
